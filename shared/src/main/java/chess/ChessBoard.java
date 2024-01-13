@@ -40,15 +40,58 @@ public class ChessBoard {
         return "ChessBoard{" + "squares=" + Arrays.toString(squares) + '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ChessBoard that=(ChessBoard) o;
+        return Arrays.equals(squares, that.squares);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(squares);
+    }
+
     /**
      * Sets the board to the default starting board
      * (How the game of chess normally starts)
      */
     public void resetBoard() {
-        for(ChessPiece i : this.squares[2]){
-            i = null;
+        ChessGame.TeamColor color;
+        for(int i = 1; i <= 8; i+=8){
+
+            if(i == 0){
+                color = ChessGame.TeamColor.WHITE;
+            }
+            else{
+                color = ChessGame.TeamColor.BLACK;
+            }
+            addPiece(new ChessPosition(i,1), new ChessPiece(color, ChessPiece.PieceType.ROOK));
+            addPiece(new ChessPosition(i,2), new ChessPiece(color, ChessPiece.PieceType.KNIGHT));
+            addPiece(new ChessPosition(i,3), new ChessPiece(color, ChessPiece.PieceType.BISHOP));
+            addPiece(new ChessPosition(i,4), new ChessPiece(color, ChessPiece.PieceType.QUEEN));
+            addPiece(new ChessPosition(i,5), new ChessPiece(color, ChessPiece.PieceType.KING));
+            addPiece(new ChessPosition(i,6), new ChessPiece(color, ChessPiece.PieceType.BISHOP));
+            addPiece(new ChessPosition(i,7), new ChessPiece(color, ChessPiece.PieceType.KNIGHT));
+            addPiece(new ChessPosition(i,8), new ChessPiece(color, ChessPiece.PieceType.ROOK));
         }
-
-
+        for(int i = 2; i <= 7; i+=5){
+            if(i == 2){
+                color = ChessGame.TeamColor.WHITE;
+            }
+            else{
+                color = ChessGame.TeamColor.BLACK;
+            }
+            for(int j = 1; j <= 8; j++){
+                addPiece(new ChessPosition(i,j), new ChessPiece(color, ChessPiece.PieceType.PAWN));
+            }
+        }
+        for(int i = 3; i <=6; i++){
+            for(int j = i; j<=8; j++){
+                addPiece(new ChessPosition(i,j), null);
+            }
+        }
     }
+
 }

@@ -1,9 +1,3 @@
 
-T
-java:S12261">Introduce a new variable instead of reusing the parameter "i".(œŒŠ
-—
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥·
-K
-java:S18541"5Remove this useless assignment to local variable "i".(œŒŠ
-A
-java:S14810"&Remove this unused "i" local variable.(É¬©ëøÿÿÿÿ
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥·8Ùâ²¦Ğ1
