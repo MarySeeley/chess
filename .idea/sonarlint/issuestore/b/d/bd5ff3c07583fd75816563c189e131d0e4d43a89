@@ -1,0 +1,10 @@
+
+s
+java:S1104"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8ş¸¥Ğ1
+b
+java:S2259"EA "NullPointerException" could be thrown; "options" is nullable here.(¿Â“Ñ8Š¹¥Ğ1
+b
+java:S2259"EA "NullPointerException" could be thrown; "options" is nullable here.(ÕşÉÂ8Š¹¥Ğ1
+E	java:S108")Either remove or fill this block of code.(á¢–¬8¹¥Ğ1
+H
+java:S1168!"+Return an empty collection instead of null.(¥¹ï8¹¥Ğ1

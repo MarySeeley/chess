@@ -1,0 +1,15 @@
+
+z	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(Æå‘¤ûÿÿÿÿ8“µ Ğ1
+z	java:S135'"YReduce the total number of break and continue statements in this loop to use at most one.(÷í€çûÿÿÿÿ8˜µ Ğ1
+u	java:S1355"YReduce the total number of break and continue statements in this loop to use at most one.(ù¿¥´8˜µ Ğ1
+z	java:S135C"YReduce the total number of break and continue statements in this loop to use at most one.(—üîıÿÿÿÿ8™µ Ğ1
+s
+java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8›µ Ğ1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Öíƒ8Ï¹ Ğ1
+G	java:S106"+Replace this use of System.out by a logger.(ÆÎñ…8Ö¹ Ğ1
+L	java:S106"+Replace this use of System.out by a logger.(…îÏƒúÿÿÿÿ8Ù¹ Ğ1
+G	java:S106#"+Replace this use of System.out by a logger.(Ë‚’Ü8İ¹ Ğ1
+F	java:S106&"+Replace this use of System.out by a logger.(Üâœ8Ş¹ Ğ1
+G	java:S106Q"+Replace this use of System.out by a logger.(ëôßÊ8ë¹ Ğ1
+G	java:S106R"+Replace this use of System.out by a logger.(Ë‚’Ü8ì¹ Ğ1

@@ -57,6 +57,8 @@ public class ChessGame {
      */
     public void makeMove(ChessMove move) throws InvalidMoveException {
         throw new RuntimeException("Not implemented");
+        //Set start to null
+        //Set end to piece or promotion piece
     }
 
     /**

@@ -45,6 +45,11 @@ public class ChessPiece {
         return this.type;
     }
 
+    @Override
+    public String toString() {
+        return "ChessPiece{" + "pieceColor=" + pieceColor + ", type=" + type + '}';
+    }
+
     /**
      * Calculates all the positions a chess piece can move to
      * Does not take into account moves that are illegal due to leaving the king in
@@ -54,15 +59,17 @@ public class ChessPiece {
      */
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         ChessPiece piece = board.getPiece(myPosition);
+        System.out.println(piece.type);
+        Collection<ChessMove> moves=null;
         switch (piece.type){
-            case KING:
-                System.out.println("king moves");
-                break;
+            case KING: 
             case QUEEN:
                 System.out.println("queen moves");
                 break;
             case BISHOP:
-                System.out.println("bishop moves");
+                BishopMove bishop = new BishopMove(board, myPosition, piece);
+                moves = bishop.allMoves();
+                System.out.println(moves);
                 break;
             case KNIGHT:
                 System.out.println("knight moves");
@@ -76,6 +83,7 @@ public class ChessPiece {
             default:
                 System.out.println("invalid moves");
         }
-        return new ArrayList<>();
+        // Returns a collection of how this piece can move
+        return moves;
     }
 }

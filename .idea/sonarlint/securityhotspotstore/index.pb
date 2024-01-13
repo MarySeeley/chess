@@ -21,3 +21,9 @@ R
 -src/main/java/chess/InvalidMoveException.java,7\4\74dbc6a85b1a58bc483c83143b099c250c60bd7d
 x
 Hsrc/test/java/passoffTests/chessTests/chessPieceTests/KingMoveTests.java,c\8\c8fdb66b0b2fbf354a13043e7235ba7f1b490c86
+Q
+!src/main/java/chess/PawnMove.java,b\d\bd5ff3c07583fd75816563c189e131d0e4d43a89
+S
+#src/main/java/chess/BishopMove.java,3\f\3f8ad18abd89b5270f6db792c33a352880a8f7eb
+i
+9src/test/java/passoffTests/chessTests/ChessMoveTests.java,a\0\a0bc00fb950062d271c9643912a81fc31f765326
