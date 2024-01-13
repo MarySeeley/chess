@@ -66,7 +66,8 @@ public class ChessPiece {
                 moves = king.allMoves();
                 break;
             case QUEEN:
-                System.out.println("queen moves");
+                QueenMove queen = new QueenMove(board, myPosition, piece);
+                moves = queen.allMoves();
                 break;
             case BISHOP:
                 BishopMove bishop = new BishopMove(board, myPosition, piece);

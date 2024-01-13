@@ -29,3 +29,7 @@ Q
 !src/main/java/chess/KingMove.java,4\6\46be9cdbcda2e4ff97472b0dce87a64ca7f942d0
 x
 Hsrc/test/java/passoffTests/chessTests/chessPieceTests/KingMoveTests.java,c\8\c8fdb66b0b2fbf354a13043e7235ba7f1b490c86
+R
+"src/main/java/chess/QueenMove.java,3\4\34a6a74434c19ae42a5a123d6468f3ed86b97e1f
+y
+Isrc/test/java/passoffTests/chessTests/chessPieceTests/QueenMoveTests.java,6\f\6fcaede35267e7775e58c69043350c168133442f
