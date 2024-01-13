@@ -1,4 +1,9 @@
 
-b	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(Ö–†8¯¥²€Ğ1
+[
+java:S12261">Introduce a new variable instead of reusing the parameter "i".(œŒŠ8Û¾è…Ğ1
 
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥·8ƒ¦²€Ğ1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥·8ø›É…Ğ1
+R
+java:S18541"5Remove this useless assignment to local variable "i".(œŒŠ8õ¾è…Ğ1
+H
+java:S14810"&Remove this unused "i" local variable.(É¬©ëøÿÿÿÿ8œÉ…Ğ1
