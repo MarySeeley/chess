@@ -73,7 +73,8 @@ public class ChessPiece {
                 System.out.println("knight moves");
                 break;
             case ROOK:
-                System.out.println("rook moves");
+                RookMove rook = new RookMove(board, myPosition, piece);
+                moves = rook.allMoves();
                 break;
             case PAWN:
                 System.out.println("pawn moves");

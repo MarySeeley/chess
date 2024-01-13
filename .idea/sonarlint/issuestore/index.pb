@@ -21,3 +21,9 @@ x
 Hsrc/test/java/passoffTests/chessTests/chessPieceTests/PawnMoveTests.java,7\4\74d39e18807bd4133eca21d9e39d9088150d34c4
 R
 "src/main/java/chess/ChessGame.java,7\3\73bf4fdc57c71c6f70f600b9fea515a646b27eef
+Q
+!src/main/java/chess/RookMove.java,9\a\9a05bb2d24a78d8575bd4abb5509bf7240ff11be
+x
+Hsrc/test/java/passoffTests/chessTests/chessPieceTests/RookMoveTests.java,a\4\a45cf581835840f850839ed0d7df199b1d0ed3a4
+Q
+!src/main/java/chess/KingMove.java,4\6\46be9cdbcda2e4ff97472b0dce87a64ca7f942d0

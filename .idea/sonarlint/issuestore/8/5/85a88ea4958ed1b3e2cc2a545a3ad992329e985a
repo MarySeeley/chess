@@ -1,10 +1,9 @@
 
-^
-java:S6208A"CMerge the previous cases into this one using comma-separated label.(ÀàÁ’ıÿÿÿÿ
-@	java:S106B"+Replace this use of System.out by a logger.(ŸéŸÌ
-@	java:S106I"+Replace this use of System.out by a logger.(ÒÆôí
-E	java:S106L"+Replace this use of System.out by a logger.(ÿû¦†ùÿÿÿÿ
-E	java:S106O"+Replace this use of System.out by a logger.(¨™ú‡şÿÿÿÿ
-E	java:S106R"+Replace this use of System.out by a logger.(Ã±Èıÿÿÿÿ
-F
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+e
+java:S6208A"CMerge the previous cases into this one using comma-separated label.(ÀàÁ’ıÿÿÿÿ8‡¢ç§Ğ1
+G	java:S106B"+Replace this use of System.out by a logger.(ŸéŸÌ8¦¢ç§Ğ1
+G	java:S106I"+Replace this use of System.out by a logger.(ÒÆôí8ª¢ç§Ğ1
+L	java:S106P"+Replace this use of System.out by a logger.(¨™ú‡şÿÿÿÿ8¬¢ç§Ğ1
+L	java:S106S"+Replace this use of System.out by a logger.(Ã±Èıÿÿÿÿ8¬¢ç§Ğ1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¬¢ç§Ğ1
