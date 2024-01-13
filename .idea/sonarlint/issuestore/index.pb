@@ -19,3 +19,7 @@ z
 Jsrc/test/java/passoffTests/chessTests/chessPieceTests/BishopMoveTests.java,9\f\9fb65546328f069cf6edf1e93fa07b7ce2352f4c
 R
 "src/main/java/chess/ChessGame.java,7\3\73bf4fdc57c71c6f70f600b9fea515a646b27eef
+]
+-src/main/java/chess/InvalidMoveException.java,7\4\74dbc6a85b1a58bc483c83143b099c250c60bd7d
+x
+Hsrc/test/java/passoffTests/chessTests/chessPieceTests/KingMoveTests.java,c\8\c8fdb66b0b2fbf354a13043e7235ba7f1b490c86

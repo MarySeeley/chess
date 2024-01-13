@@ -1,3 +1,8 @@
 
-Y
-java:S11727"<Remove these unused method parameters "board", "myPosition".(°å†8¬ş“Ğ1
+G	java:S106;"+Replace this use of System.out by a logger.(Ä÷ä8ŞˆåĞ1
+G	java:S106>"+Replace this use of System.out by a logger.(ŸéŸÌ8àˆåĞ1
+G	java:S106A"+Replace this use of System.out by a logger.(çÔ æ8áˆåĞ1
+G	java:S106D"+Replace this use of System.out by a logger.(ÒÆôí8âˆåĞ1
+L	java:S106G"+Replace this use of System.out by a logger.(ÿû¦†ùÿÿÿÿ8ãˆåĞ1
+L	java:S106J"+Replace this use of System.out by a logger.(¨™ú‡şÿÿÿÿ8äˆåĞ1
+L	java:S106M"+Replace this use of System.out by a logger.(Ã±Èıÿÿÿÿ8ÃÓóĞ1
