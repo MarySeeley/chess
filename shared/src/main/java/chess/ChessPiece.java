@@ -61,7 +61,10 @@ public class ChessPiece {
         ChessPiece piece = board.getPiece(myPosition);
         Collection<ChessMove> moves=null;
         switch (piece.type){
-            case KING: 
+            case KING:
+                KingMove king = new KingMove(board, myPosition, piece);
+                moves = king.allMoves();
+                break;
             case QUEEN:
                 System.out.println("queen moves");
                 break;

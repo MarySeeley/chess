@@ -27,3 +27,5 @@ x
 Hsrc/test/java/passoffTests/chessTests/chessPieceTests/RookMoveTests.java,a\4\a45cf581835840f850839ed0d7df199b1d0ed3a4
 Q
 !src/main/java/chess/KingMove.java,4\6\46be9cdbcda2e4ff97472b0dce87a64ca7f942d0
+x
+Hsrc/test/java/passoffTests/chessTests/chessPieceTests/KingMoveTests.java,c\8\c8fdb66b0b2fbf354a13043e7235ba7f1b490c86

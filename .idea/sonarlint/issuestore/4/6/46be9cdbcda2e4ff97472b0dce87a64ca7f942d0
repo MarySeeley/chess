@@ -1,3 +1,6 @@
 
-d
-java:S2094"BRemove this empty class, write its code or make it an "interface".(ò¶˜ğûÿÿÿÿ8™ªê§Ğ1
+u	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(· œ8‘ùä¨Ğ1
+s
+java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8’ùä¨Ğ1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Öíƒ8Çüä¨Ğ1
