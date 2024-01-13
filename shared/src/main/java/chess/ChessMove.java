@@ -33,6 +33,12 @@ public class ChessMove {
     public ChessPosition getEndPosition() {
         return this.end;
     }
+    public int getEndRow(){
+        return this.end.getRow();
+    }
+    public int getEndCol(){
+        return this.end.getColumn();
+    }
 
     @Override
     public String toString() {

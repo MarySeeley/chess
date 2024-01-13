@@ -59,7 +59,6 @@ public class ChessPiece {
      */
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         ChessPiece piece = board.getPiece(myPosition);
-        System.out.println(piece.type);
         Collection<ChessMove> moves=null;
         switch (piece.type){
             case KING: 
@@ -69,7 +68,6 @@ public class ChessPiece {
             case BISHOP:
                 BishopMove bishop = new BishopMove(board, myPosition, piece);
                 moves = bishop.allMoves();
-                System.out.println(moves);
                 break;
             case KNIGHT:
                 System.out.println("knight moves");

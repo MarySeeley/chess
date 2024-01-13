@@ -2,6 +2,8 @@ package chess;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class BishopMove {
   public final ChessPosition starting;
@@ -20,10 +22,8 @@ public class BishopMove {
     for(int i = startRow+1, j = startCol+1; i<=8 && j<=8 && i>=1 && j>=1; j++, i++){
       ChessPosition current = new ChessPosition(i, j);
       ChessMove currentMove = new ChessMove(starting, current, null);
-      System.out.println(board.getPiece(current));
       if(board.getPiece(current) == null){
         options.add(currentMove);
-        System.out.println(currentMove);
       }
       else if(board.getPiece(current).getTeamColor() == piece.getTeamColor()){
         break;
@@ -32,10 +32,7 @@ public class BishopMove {
         options.add(currentMove);
         break;
       }
-      System.out.println(options);
-
     }
-    System.out.println("test1");
     for(int i = startRow+1, j = startCol-1; i<=8 && j<=8 && i>=1 && j>=1; j--, i++){
       ChessPosition current = new ChessPosition(i, j);
       ChessMove currentMove = new ChessMove(starting, current, null);
@@ -78,8 +75,6 @@ public class BishopMove {
         break;
       }
     }
-    System.out.println("test");
-    System.out.println(options);
     return options;
   }
 }
