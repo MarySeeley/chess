@@ -1,0 +1,15 @@
+
+Q
+java:S10666"/Merge this if statement with the enclosing one.(¬£×Óûÿÿÿÿ8µæ‡°Ð1
+L
+java:S1066<"/Merge this if statement with the enclosing one.(ÂŸÏ8¹æ‡°Ð1
+Q
+java:S1066X"/Merge this if statement with the enclosing one.(·þüÿÿÿÿ8¹æ‡°Ð1
+Q
+java:S1066^"/Merge this if statement with the enclosing one.(éõôüÿÿÿÿ8ƒÛ‹°Ð1
+s
+java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8»æ‡°Ð1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 60 to the 15 allowed.(Öíƒ8Íé‡°Ð1
+ã
+java:S6541"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 80 to 64, Complexity from 30 to 14, Nesting Level from 4 to 2, Number of Variables from 13 to 6.(Öíƒ8ßé‡°Ð1

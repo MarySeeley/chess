@@ -37,3 +37,5 @@ S
 #src/main/java/chess/KnightMove.java,9\6\969e993de987fc42e2a6a688333ee8799660784f
 z
 Jsrc/test/java/passoffTests/chessTests/chessPieceTests/KnightMoveTests.java,5\b\5b890fb3c08f3eb6ee2e058f069a9db29dd22076
+Q
+!src/main/java/chess/PawnMove.java,b\d\bd5ff3c07583fd75816563c189e131d0e4d43a89

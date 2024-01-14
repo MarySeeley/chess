@@ -82,7 +82,8 @@ public class ChessPiece {
                 moves = rook.allMoves();
                 break;
             case PAWN:
-                System.out.println("pawn moves");
+                PawnMove pawn = new PawnMove(board, myPosition,piece);
+                moves = pawn.allMoves();
                 break;
             default:
                 System.out.println("invalid moves");

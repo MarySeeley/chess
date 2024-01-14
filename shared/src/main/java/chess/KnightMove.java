@@ -22,7 +22,6 @@ public class KnightMove {
     int[] dirColBelow = {startCol-1, startCol-2, startCol-2, startCol-1};
     for(int i = startRow-2; i <= startRow+3; i+=4){
       for(int j = startCol-1; j <= startCol+2; j+=2){
-        System.out.println(i+","+j);
         if(i<1||i>8||j<1||j>8){
           continue;
         }
@@ -39,7 +38,6 @@ public class KnightMove {
     }
     for(int i = startCol-2; i <= startCol+3; i+=4){
       for(int j = startRow-1; j<=startRow+2; j+=2){
-        System.out.println(j+","+i);
         if(i<1||i>8||j<1||j>8){
           continue;
         }

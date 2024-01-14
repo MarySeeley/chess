@@ -1,6 +1,6 @@
 
 z	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(°¶ï‚þÿÿÿÿ8º²´¬Ð1
-z	java:S135)"YReduce the total number of break and continue statements in this loop to use at most one.(’žÇöûÿÿÿÿ8»²´¬Ð1
+z	java:S135("YReduce the total number of break and continue statements in this loop to use at most one.(’žÇöûÿÿÿÿ8»²´¬Ð1
 s
 java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8½²´¬Ð1
 o
@@ -12,14 +12,12 @@ java:S1854"?Remove this useless assignment to local variable "dirColAbove".(£æ
 V
 java:S1854":Remove this useless assignment to local variable "dirRow".(‹ÐÆG8¤¸´¬Ð1
 8
-java:S3626""Remove this redundant jump.(ÉŠ©ƒ8¨¸´¬Ð1
+java:S3626!"Remove this redundant jump.(ÉŠ©ƒ8¨¸´¬Ð1
 8
-java:S36263"Remove this redundant jump.(ÉŠ©ƒ8ÓÎÚ¬Ð1
+java:S36261"Remove this redundant jump.(ÉŠ©ƒ8¤¿¬­Ð1
 G
 java:S1481"+Remove this unused "dirRow" local variable.(‹ÐÆG8¬¸´¬Ð1
 M
 java:S1481"0Remove this unused "dirColAbove" local variable.(£æ‘£8¬¸´¬Ð1
 R
 java:S1481"0Remove this unused "dirColBelow" local variable.(ß˜‰‘ùÿÿÿÿ8¬¸´¬Ð1
-G	java:S106"+Replace this use of System.out by a logger.(®ÄªÖ8°¸´¬Ð1
-G	java:S106*"+Replace this use of System.out by a logger.(Æº–Ã8ÝÎÚ¬Ð1
