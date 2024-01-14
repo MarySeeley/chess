@@ -74,7 +74,8 @@ public class ChessPiece {
                 moves = bishop.allMoves();
                 break;
             case KNIGHT:
-                System.out.println("knight moves");
+                KnightMove knight = new KnightMove(board, myPosition, piece);
+                moves = knight.allMoves();
                 break;
             case ROOK:
                 RookMove rook = new RookMove(board, myPosition, piece);

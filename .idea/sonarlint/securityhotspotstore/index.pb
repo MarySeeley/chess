@@ -33,3 +33,7 @@ R
 "src/main/java/chess/QueenMove.java,3\4\34a6a74434c19ae42a5a123d6468f3ed86b97e1f
 y
 Isrc/test/java/passoffTests/chessTests/chessPieceTests/QueenMoveTests.java,6\f\6fcaede35267e7775e58c69043350c168133442f
+S
+#src/main/java/chess/KnightMove.java,9\6\969e993de987fc42e2a6a688333ee8799660784f
+z
+Jsrc/test/java/passoffTests/chessTests/chessPieceTests/KnightMoveTests.java,5\b\5b890fb3c08f3eb6ee2e058f069a9db29dd22076
