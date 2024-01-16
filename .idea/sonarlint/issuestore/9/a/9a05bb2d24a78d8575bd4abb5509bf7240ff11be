@@ -1,9 +1,9 @@
 
-z	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(èâØ¹şÿÿÿÿ8°¥ê¦Ğ1
-u	java:S135""YReduce the total number of break and continue statements in this loop to use at most one.(§§8°¥ê¦Ğ1
-u	java:S1350"YReduce the total number of break and continue statements in this loop to use at most one.(ÅÌşË8±¥ê¦Ğ1
-t	java:S135>"YReduce the total number of break and continue statements in this loop to use at most one.(½üª.8Îõê¦Ğ1
-s
-java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8²¥ê¦Ğ1
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Öíƒ8Ø¨ê¦Ğ1
+s	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(èâØ¹şÿÿÿÿ
+n	java:S135""YReduce the total number of break and continue statements in this loop to use at most one.(§§
+n	java:S1350"YReduce the total number of break and continue statements in this loop to use at most one.(ÅÌşË
+m	java:S135>"YReduce the total number of break and continue statements in this loop to use at most one.(½üª.
+l
+java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Öíƒ

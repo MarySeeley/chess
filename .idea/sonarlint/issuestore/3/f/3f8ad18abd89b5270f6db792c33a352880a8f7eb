@@ -1,13 +1,0 @@
-
-s	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(Æå‘¤ûÿÿÿÿ
-s	java:S135$"YReduce the total number of break and continue statements in this loop to use at most one.(÷í€çûÿÿÿÿ
-n	java:S1352"YReduce the total number of break and continue statements in this loop to use at most one.(ù¿¥´
-s	java:S135@"YReduce the total number of break and continue statements in this loop to use at most one.(—üîıÿÿÿÿ
-l
-java:S1104"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ
-h
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Öíƒ
-M
-java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ
-G
-java:S1128"1Remove this unused import 'java.util.Comparator'.(î¹ó¹

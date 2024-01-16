@@ -1,15 +1,19 @@
 
 Q
-java:S10666"/Merge this if statement with the enclosing one.(¬£×Óûÿÿÿÿ8µæ‡°Ð1
+java:S1066D"/Merge this if statement with the enclosing one.(¬£×Óûÿÿÿÿ8Ÿ›ÅŸÑ1
 L
-java:S1066<"/Merge this if statement with the enclosing one.(ÂŸÏ8¹æ‡°Ð1
+java:S1066J"/Merge this if statement with the enclosing one.(ÂŸÏ8¡›ÅŸÑ1
 Q
-java:S1066X"/Merge this if statement with the enclosing one.(·þüÿÿÿÿ8¹æ‡°Ð1
+java:S1066t"/Merge this if statement with the enclosing one.(·þüÿÿÿÿ8¡›ÅŸÑ1
 Q
-java:S1066^"/Merge this if statement with the enclosing one.(éõôüÿÿÿÿ8ƒÛ‹°Ð1
+java:S1066z"/Merge this if statement with the enclosing one.(éõôüÿÿÿÿ8¢›ÅŸÑ1
 s
-java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8»æ‡°Ð1
+java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8¢›ÅŸÑ1
 o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 60 to the 15 allowed.(Öíƒ8Íé‡°Ð1
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 95 to the 15 allowed.(Öíƒ8ÄžÅŸÑ1
+]	java:S125!"<This block of commented-out lines of code should be removed.(×ñÎêúÿÿÿÿ8ØžÅŸÑ1
+]	java:S125*"<This block of commented-out lines of code should be removed.(¬âïüÿÿÿÿ8ÜžÅŸÑ1
+X	java:S1254"<This block of commented-out lines of code should be removed.(æ¼½„8ÞžÅŸÑ1
+X	java:S125Y"<This block of commented-out lines of code should be removed.(©¬þ…8êžÅŸÑ1
 ã
-java:S6541"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 80 to 64, Complexity from 30 to 14, Nesting Level from 4 to 2, Number of Variables from 13 to 6.(Öíƒ8ßé‡°Ð1
+java:S6541"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 93 to 64, Complexity from 44 to 14, Nesting Level from 5 to 2, Number of Variables from 22 to 6.(Öíƒ8øžÅŸÑ1
