@@ -2,6 +2,7 @@ package chess;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 public class PawnMove {
   public final ChessPosition starting;
@@ -124,6 +125,7 @@ public class PawnMove {
         }
       }
     }
-    return options;
+    HashSet<ChessMove> hashSetOptions = new HashSet<>(options);
+    return hashSetOptions;
   }
 }
