@@ -13,3 +13,5 @@ S
 #src/main/java/chess/ChessBoard.java,1\3\139d0d4bb2b8e11a4e03dbed5b694452387fb52a
 [
 +src/test/java/passoffTests/TestFactory.java,e\f\ef92c18298091d5f469cb3aa27c892701eb79258
+R
+"src/main/java/chess/QueenMove.java,3\4\34a6a74434c19ae42a5a123d6468f3ed86b97e1f

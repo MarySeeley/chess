@@ -1,22 +1,18 @@
 
 Q
-java:S1066E"/Merge this if statement with the enclosing one.(¬£×Óûÿÿÿÿ8‘±Æ Ñ1
+java:S10668"/Merge this if statement with the enclosing one.(¬£×Óûÿÿÿÿ8‘±Æ Ñ1
 L
-java:S1066K"/Merge this if statement with the enclosing one.(ÂŸÏ8“±Æ Ñ1
+java:S1066>"/Merge this if statement with the enclosing one.(ÂŸÏ8“±Æ Ñ1
 Q
-java:S1066u"/Merge this if statement with the enclosing one.(·şüÿÿÿÿ8“±Æ Ñ1
+java:S1066a"/Merge this if statement with the enclosing one.(·şüÿÿÿÿ8“±Æ Ñ1
 Q
-java:S1066{"/Merge this if statement with the enclosing one.(éõôüÿÿÿÿ8“±Æ Ñ1
-‰
-java:S1488€"fImmediately return this expression instead of assigning it to the temporary variable "hashSetOptions".(§òîòüÿÿÿÿ8ŠğÆ Ñ1
+java:S1066g"/Merge this if statement with the enclosing one.(éõôüÿÿÿÿ8“±Æ Ñ1
+ˆ
+java:S1488l"fImmediately return this expression instead of assigning it to the temporary variable "hashSetOptions".(§òîòüÿÿÿÿ8ŠğÆ Ñ1
 s
 java:S1104
 "QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8•±Æ Ñ1
 o
 java:S3776"RRefactor this method to reduce its Cognitive Complexity from 95 to the 15 allowed.(Öíƒ8µ´Æ Ñ1
-]	java:S125""<This block of commented-out lines of code should be removed.(×ñÎêúÿÿÿÿ8¾´Æ Ñ1
-]	java:S125+"<This block of commented-out lines of code should be removed.(¬âïüÿÿÿÿ8Á´Æ Ñ1
-X	java:S1255"<This block of commented-out lines of code should be removed.(æ¼½„8Ä´Æ Ñ1
-X	java:S125Z"<This block of commented-out lines of code should be removed.(©¬ş…8Ê´Æ Ñ1
 ã
 java:S6541"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 94 to 64, Complexity from 44 to 14, Nesting Level from 5 to 2, Number of Variables from 23 to 6.(Öíƒ8Ô´Æ Ñ1

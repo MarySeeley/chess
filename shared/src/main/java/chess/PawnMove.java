@@ -30,30 +30,17 @@ public class PawnMove {
           for(ChessPiece.PieceType n : promotionType){
             options.add(new ChessMove(starting, whiteForwardPos, n));
           }
-          //loop through each piece as an option to replace???
-//          options.add(new ChessMove(starting, whiteForwardPos, ChessPiece.PieceType.KNIGHT));
-//          options.add(new ChessMove(starting, whiteForwardPos, ChessPiece.PieceType.QUEEN));
-//          options.add(new ChessMove(starting, whiteForwardPos, ChessPiece.PieceType.ROOK));
-//          options.add(new ChessMove(starting, whiteForwardPos, ChessPiece.PieceType.BISHOP));
           ChessPosition rightDiagonalCapture=new ChessPosition(startRow + 1, startCol + 1);
           if (board.getPiece(rightDiagonalCapture) != null && board.getPiece(rightDiagonalCapture).getTeamColor() == ChessGame.TeamColor.BLACK) {
             for(ChessPiece.PieceType n : promotionType){
               options.add(new ChessMove(starting, rightDiagonalCapture, n));
             }
-//            options.add(new ChessMove(starting, rightDiagonalCapture, ChessPiece.PieceType.KNIGHT));
-//            options.add(new ChessMove(starting, rightDiagonalCapture, ChessPiece.PieceType.QUEEN));
-//            options.add(new ChessMove(starting, rightDiagonalCapture, ChessPiece.PieceType.ROOK));
-//            options.add(new ChessMove(starting, rightDiagonalCapture, ChessPiece.PieceType.BISHOP));
           }
           ChessPosition leftDiagonalCapture=new ChessPosition(startRow + 1, startCol - 1);
           if (board.getPiece(leftDiagonalCapture) != null && board.getPiece(leftDiagonalCapture).getTeamColor() == ChessGame.TeamColor.BLACK) {
             for(ChessPiece.PieceType n : promotionType){
               options.add(new ChessMove(starting, leftDiagonalCapture, n));
             }
-//            options.add(new ChessMove(starting, leftDiagonalCapture, ChessPiece.PieceType.KNIGHT));
-//            options.add(new ChessMove(starting, leftDiagonalCapture, ChessPiece.PieceType.QUEEN));
-//            options.add(new ChessMove(starting, leftDiagonalCapture, ChessPiece.PieceType.ROOK));
-//            options.add(new ChessMove(starting, leftDiagonalCapture, ChessPiece.PieceType.BISHOP));
           }
         }
         else {
@@ -76,8 +63,6 @@ public class PawnMove {
           options.add(new ChessMove(starting, leftDiagonal, null));
         }
       }
-
-
     }
     else{
       ChessPosition blackForwardPos = new ChessPosition(startRow-1, startCol);
@@ -86,11 +71,6 @@ public class PawnMove {
           for (ChessPiece.PieceType n : promotionType) {
             options.add(new ChessMove(starting, blackForwardPos, n));
           }
-          //loop through each piece as an option to replace???
-//          options.add(new ChessMove(starting, blackForwardPos, ChessPiece.PieceType.ROOK));
-//          options.add(new ChessMove(starting, blackForwardPos, ChessPiece.PieceType.QUEEN));
-//          options.add(new ChessMove(starting, blackForwardPos, ChessPiece.PieceType.BISHOP));
-//          options.add(new ChessMove(starting, blackForwardPos, ChessPiece.PieceType.KNIGHT));
           ChessPosition rightDiagonal=new ChessPosition(startRow - 1, startCol + 1);
           ChessPosition leftDiagonal=new ChessPosition(startRow - 1, startCol - 1);
           if (board.getPiece(rightDiagonal) != null && board.getPiece(rightDiagonal).getTeamColor() == ChessGame.TeamColor.WHITE) {
