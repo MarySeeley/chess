@@ -37,7 +37,11 @@ public class ChessBoard {
 
     @Override
     public String toString() {
-        return "ChessBoard{" + "squares=" + Arrays.toString(squares) + '}';
+        String print = "";
+         for(ChessPiece[] i : squares){
+             print += Arrays.toString(i)+"\n";
+         }
+        return "ChessBoard{" + "squares=" + print + '}';
     }
 
     @Override
@@ -45,12 +49,12 @@ public class ChessBoard {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ChessBoard that=(ChessBoard) o;
-        return Arrays.equals(squares, that.squares);
+        return Arrays.deepEquals(squares, that.squares);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(squares);
+        return Arrays.deepHashCode(squares);
     }
 
     /**
@@ -59,9 +63,9 @@ public class ChessBoard {
      */
     public void resetBoard() {
         ChessGame.TeamColor color;
-        for(int i = 1; i <= 8; i+=8){
+        for(int i = 1; i <= 8; i+=7){
 
-            if(i == 0){
+            if(i <= 2){
                 color = ChessGame.TeamColor.WHITE;
             }
             else{

@@ -9,3 +9,7 @@ S
 #src/main/java/chess/ChessPiece.java,8\5\85a88ea4958ed1b3e2cc2a545a3ad992329e985a
 Q
 !src/main/java/chess/KingMove.java,4\6\46be9cdbcda2e4ff97472b0dce87a64ca7f942d0
+S
+#src/main/java/chess/ChessBoard.java,1\3\139d0d4bb2b8e11a4e03dbed5b694452387fb52a
+[
++src/test/java/passoffTests/TestFactory.java,e\f\ef92c18298091d5f469cb3aa27c892701eb79258
