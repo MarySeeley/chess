@@ -13,7 +13,15 @@ public class ChessBoard {
     public ChessBoard() {
         
     }
-
+    public ChessBoard copy(){
+        ChessBoard cop = new ChessBoard();
+        for(int row = 1; row <= 8; row++) {
+            for (int col=1; col <= 8; col++){
+                cop.addPiece(new ChessPosition(row, col), this.getPiece(new ChessPosition(row, col)));
+            }
+        }
+        return cop;
+    }
     /**
      * Adds a chess piece to the chessboard
      *

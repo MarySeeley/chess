@@ -3,6 +3,7 @@ package chess;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * For a class that can manage a chess game, making moves on a board
@@ -16,7 +17,12 @@ public class ChessGame {
     public ChessGame() {
 
     }
-
+    public ChessGame copy(){
+        ChessGame cop = new ChessGame();
+        cop.color = this.color;
+        cop.squares = squares.copy();
+        return cop;
+    }
     /**
      * @return Which team's turn it is
      */
@@ -49,7 +55,26 @@ public class ChessGame {
      * startPosition
      */
     public Collection<ChessMove> validMoves(ChessPosition startPosition) {
-        throw new RuntimeException("Not implemented");
+        ChessPiece piece = squares.getPiece(startPosition);
+        if(piece == null){
+            return null;
+        }
+        Collection<ChessMove> moves = piece.pieceMoves(squares, startPosition);
+        Collection<ChessMove> actualMoves = new ArrayList<>();
+        for(ChessMove move: moves){
+            ChessGame copyGame = this.copy();
+            ChessBoard copyBoard = copyGame.squares;
+            copyBoard.addPiece(move.getEndPosition(), piece);
+            copyBoard.addPiece(startPosition, null);
+            System.out.println(copyBoard);
+            if(!copyGame.isInCheck(piece.getTeamColor())){
+                actualMoves.add(move);
+            }
+        }
+        System.out.println(actualMoves);
+
+        HashSet<ChessMove> hashMoves = new HashSet<>(actualMoves);
+        return hashMoves;
     }
 
     /**
@@ -59,9 +84,10 @@ public class ChessGame {
      * @throws InvalidMoveException if move is invalid
      */
     public void makeMove(ChessMove move) throws InvalidMoveException {
-        throw new RuntimeException("Not implemented");
-        //Set start to null
-        //Set end to piece or promotion piece
+        if(squares.getPiece(move.getStartPosition()).getTeamColor() != color){
+            
+        }
+
 
     }
 
@@ -128,6 +154,7 @@ public class ChessGame {
             ChessPosition kingPos = findKing(teamColor);
             ChessPiece king = squares.getPiece(kingPos);
             Collection<ChessMove> kingMoves = king.pieceMoves(squares, kingPos);
+            Boolean checkMate = true;
             for(int row = 1; row <= 8; row++) {
                 for (int col=1; col <= 8; col++) {
                     ChessPosition pos=new ChessPosition(row, col);
@@ -135,6 +162,7 @@ public class ChessGame {
                     if(piece != null && piece.getTeamColor() != teamColor){
                         Collection<ChessMove> moves = piece.pieceMoves(squares, pos);
                         for(ChessMove move: moves){
+                            //maybe need to change because it returns true if they go in a space the king could go
                             if(moves.contains(new ChessMove(pos, move.getEndPosition(), null))){
                                 return true;
                             }
