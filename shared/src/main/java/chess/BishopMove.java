@@ -19,6 +19,7 @@ public class BishopMove {
     int startRow=starting.getRow();
     int startCol=starting.getColumn();
     Collection<ChessMove> options = new ArrayList<>();
+    //Checking up and to the right of bishop
     for(int i = startRow+1, j = startCol+1; i<=8 && j<=8 && i>=1 && j>=1; j++, i++){
       ChessPosition current = new ChessPosition(i, j);
       ChessMove currentMove = new ChessMove(starting, current, null);
@@ -33,6 +34,7 @@ public class BishopMove {
         break;
       }
     }
+    //Checking up and to the left
     for(int i = startRow+1, j = startCol-1; i<=8 && j<=8 && i>=1 && j>=1; j--, i++){
       ChessPosition current = new ChessPosition(i, j);
       ChessMove currentMove = new ChessMove(starting, current, null);
@@ -47,6 +49,7 @@ public class BishopMove {
         break;
       }
     }
+    //Checking down and to the left
     for(int i = startRow-1, j = startCol-1; i<=8 && j<=8 && i>=1 && j>=1; j--, i--){
       ChessPosition current = new ChessPosition(i, j);
       ChessMove currentMove = new ChessMove(starting, current, null);
@@ -61,6 +64,7 @@ public class BishopMove {
         break;
       }
     }
+    //Checking down and to the right
     for(int i = startRow-1, j = startCol+1; i<=8 && j<=8 && i>=1 && j>=1; j++, i--){
       ChessPosition current = new ChessPosition(i, j);
       ChessMove currentMove = new ChessMove(starting, current, null);

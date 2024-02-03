@@ -1,5 +1,7 @@
 package chess;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -9,7 +11,8 @@ import java.util.Collection;
  * signature of the existing methods.
  */
 public class ChessGame {
-
+    private TeamColor color;
+    private ChessBoard squares = new ChessBoard();
     public ChessGame() {
 
     }
@@ -18,7 +21,7 @@ public class ChessGame {
      * @return Which team's turn it is
      */
     public TeamColor getTeamTurn() {
-        throw new RuntimeException("Not implemented");
+        return this.color;
     }
 
     /**
@@ -27,7 +30,7 @@ public class ChessGame {
      * @param team the team whose turn it is
      */
     public void setTeamTurn(TeamColor team) {
-        throw new RuntimeException("Not implemented");
+        this.color = team;
     }
 
     /**
@@ -59,6 +62,7 @@ public class ChessGame {
         throw new RuntimeException("Not implemented");
         //Set start to null
         //Set end to piece or promotion piece
+
     }
 
     /**
@@ -68,7 +72,44 @@ public class ChessGame {
      * @return True if the specified team is in check
      */
     public boolean isInCheck(TeamColor teamColor) {
-        throw new RuntimeException("Not implemented");
+        Collection<ChessPiece.PieceType> promotion = new ArrayList<>();
+        promotion.add(ChessPiece.PieceType.KNIGHT);
+        promotion.add(ChessPiece.PieceType.BISHOP);
+        promotion.add(ChessPiece.PieceType.ROOK);
+        promotion.add(ChessPiece.PieceType.QUEEN);
+        ChessPosition kingPos = findKing(teamColor);
+        for(int row = 1; row <= 8; row++) {
+            for (int col=1; col <= 8; col++) {
+                ChessPosition pos = new ChessPosition(row, col);
+                ChessPiece piece = squares.getPiece(pos);
+                if (piece != null && piece.getTeamColor() != teamColor){
+                    Collection<ChessMove> moves= piece.pieceMoves(squares, pos);
+                    if(moves.contains(new ChessMove(pos, kingPos, null))){
+                        return true;
+                    }
+                    if(piece.getPieceType()==ChessPiece.PieceType.PAWN) {
+                        for (ChessPiece.PieceType type : promotion) {
+                            if (moves.contains(new ChessMove(pos, kingPos, type))) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    public ChessPosition findKing(TeamColor teamColor){
+        for(int row = 1; row <= 8; row++){
+            for(int col = 1; col <=8; col ++){
+                ChessPosition pos = new ChessPosition(row,col);
+                ChessPiece piece = squares.getPiece(pos);
+                if (piece != null && piece.getPieceType() == ChessPiece.PieceType.KING && piece.getTeamColor() == teamColor){
+                    return pos;
+                }
+            }
+        }
+        return null;
     }
 
     /**
@@ -78,7 +119,40 @@ public class ChessGame {
      * @return True if the specified team is in checkmate
      */
     public boolean isInCheckmate(TeamColor teamColor) {
-        throw new RuntimeException("Not implemented");
+        Collection<ChessPiece.PieceType> promotion = new ArrayList<>();
+        promotion.add(ChessPiece.PieceType.KNIGHT);
+        promotion.add(ChessPiece.PieceType.BISHOP);
+        promotion.add(ChessPiece.PieceType.ROOK);
+        promotion.add(ChessPiece.PieceType.QUEEN);
+        if(isInCheck(teamColor)){
+            ChessPosition kingPos = findKing(teamColor);
+            ChessPiece king = squares.getPiece(kingPos);
+            Collection<ChessMove> kingMoves = king.pieceMoves(squares, kingPos);
+            for(int row = 1; row <= 8; row++) {
+                for (int col=1; col <= 8; col++) {
+                    ChessPosition pos=new ChessPosition(row, col);
+                    ChessPiece piece=squares.getPiece(pos);
+                    if(piece != null && piece.getTeamColor() != teamColor){
+                        Collection<ChessMove> moves = piece.pieceMoves(squares, pos);
+                        for(ChessMove move: moves){
+                            if(moves.contains(new ChessMove(pos, move.getEndPosition(), null))){
+                                return true;
+                            }
+                            if(piece.getPieceType()==ChessPiece.PieceType.PAWN) {
+                                for (ChessPiece.PieceType type : promotion) {
+                                    if (moves.contains(new ChessMove(pos, move.getEndPosition(), type))) {
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+        }
+        return false;
     }
 
     /**
@@ -98,7 +172,7 @@ public class ChessGame {
      * @param board the new board to use
      */
     public void setBoard(ChessBoard board) {
-        throw new RuntimeException("Not implemented");
+        this.squares = board;
     }
 
     /**
@@ -107,6 +181,6 @@ public class ChessGame {
      * @return the chessboard
      */
     public ChessBoard getBoard() {
-        throw new RuntimeException("Not implemented");
+        return this.squares;
     }
 }

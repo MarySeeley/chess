@@ -18,18 +18,23 @@ public class PawnMove {
     int startRow = starting.getRow();
     int startCol = starting.getColumn();
     Collection<ChessMove> options=new ArrayList<>();
+    //Array full of different promotion types
     Collection<ChessPiece.PieceType> promotionType = new ArrayList<>();
     promotionType.add(ChessPiece.PieceType.QUEEN);
     promotionType.add(ChessPiece.PieceType.ROOK);
     promotionType.add(ChessPiece.PieceType.KNIGHT);
     promotionType.add(ChessPiece.PieceType.BISHOP);
+    //moving forward for white
     if(piece.getTeamColor() == ChessGame.TeamColor.WHITE){
       ChessPosition whiteForwardPos = new ChessPosition(startRow+1, startCol);
+      //move right in front is clear
       if(board.getPiece(whiteForwardPos)==null){
+        //if it's hit the end of the board (add promotion)
         if(startRow+1 == 8) {
           for(ChessPiece.PieceType n : promotionType){
             options.add(new ChessMove(starting, whiteForwardPos, n));
           }
+          //Check if you can capture and get a promotion
           ChessPosition rightDiagonalCapture=new ChessPosition(startRow + 1, startCol + 1);
           if (board.getPiece(rightDiagonalCapture) != null && board.getPiece(rightDiagonalCapture).getTeamColor() == ChessGame.TeamColor.BLACK) {
             for(ChessPiece.PieceType n : promotionType){
@@ -43,14 +48,17 @@ public class PawnMove {
             }
           }
         }
+        //add if it's not a promotion
         else {
           options.add(new ChessMove(starting, whiteForwardPos, null));
         }
+        //If it's first move then add double move
         ChessPosition doubleMove = new ChessPosition(startRow+2, startCol);
         if(startRow == 2 &&  board.getPiece(doubleMove) == null){
           options.add(new ChessMove(starting, doubleMove, null));
         }
       }
+      //Checking to capture sides (add promotion check here)
       ChessPosition rightDiagonal = new ChessPosition(startRow+1, startCol+1);
       if(startRow+1 <=8 && startCol+1 <=8&& startRow+1 !=8){
         if(board.getPiece(rightDiagonal) != null && board.getPiece(rightDiagonal).getTeamColor() == ChessGame.TeamColor.BLACK){
@@ -64,6 +72,7 @@ public class PawnMove {
         }
       }
     }
+    //Same as above, just for black
     else{
       ChessPosition blackForwardPos = new ChessPosition(startRow-1, startCol);
       if(board.getPiece(blackForwardPos)==null){

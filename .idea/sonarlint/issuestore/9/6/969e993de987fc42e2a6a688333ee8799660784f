@@ -1,0 +1,23 @@
+
+s	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(°¶ï‚şÿÿÿÿ
+s	java:S135,"YReduce the total number of break and continue statements in this loop to use at most one.(’Çöûÿÿÿÿ
+l
+java:S1104	"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Öíƒ
+Z
+java:S1854"?Remove this useless assignment to local variable "dirColBelow".(ß˜‰‘ùÿÿÿÿ
+U
+java:S1854"?Remove this useless assignment to local variable "dirColAbove".(£æ‘£
+O
+java:S1854":Remove this useless assignment to local variable "dirRow".(‹ĞÆG
+1
+java:S3626#"Remove this redundant jump.(ÉŠ©ƒ
+1
+java:S36265"Remove this redundant jump.(ÉŠ©ƒ
+@
+java:S1481"+Remove this unused "dirRow" local variable.(‹ĞÆG
+F
+java:S1481"0Remove this unused "dirColAbove" local variable.(£æ‘£
+K
+java:S1481"0Remove this unused "dirColBelow" local variable.(ß˜‰‘ùÿÿÿÿ

@@ -17,6 +17,7 @@ public class RookMove {
     int startRow=starting.getRow();
     int startCol=starting.getColumn();
     Collection<ChessMove> options=new ArrayList<>();
+    //Checking forward open moves
     for(int i = startRow+1; i<=8 && i>=1; i++){
       ChessPosition current = new ChessPosition(i, startCol);
       ChessMove currentMove = new ChessMove(starting, current, null);
@@ -31,6 +32,7 @@ public class RookMove {
         break;
       }
     }
+    //Checking back open moves
     for(int i = startRow-1; i<=8 && i>=1; i--){
       ChessPosition current = new ChessPosition(i, startCol);
       ChessMove currentMove = new ChessMove(starting, current, null);
@@ -45,6 +47,7 @@ public class RookMove {
         break;
       }
     }
+    //Check right moves
     for(int i = startCol+1; i<=8 && i>=1; i++){
       ChessPosition current = new ChessPosition(startRow, i);
       ChessMove currentMove = new ChessMove(starting, current, null);
@@ -59,6 +62,7 @@ public class RookMove {
         break;
       }
     }
+    //Checking left moves
     for(int i = startCol-1; i<=8 && i>=1; i--){
       ChessPosition current = new ChessPosition(startRow, i);
       ChessMove currentMove = new ChessMove(starting, current, null);
