@@ -1,19 +1,20 @@
 
 ~
-java:S1488J"aImmediately return this expression instead of assigning it to the temporary variable "hashMoves".(¹µ„8×å¡×1
+java:S1488J"aImmediately return this expression instead of assigning it to the temporary variable "hashMoves".(¹µ„8İ‹Ô×1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÚïÖÆûÿÿÿÿ8çç¡×1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÚïÖÆûÿÿÿÿ8£Ô×1
 H
-java:S1168<"+Return an empty collection instead of null.(¥¹ï8íç¡×1
+java:S1168<"+Return an empty collection instead of null.(¥¹ï8²Ô×1
 o
-java:S3776v"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(„İÊ8„è¡×1
+java:S3776v"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(„İÊ8ÌÔ×1
 p
-java:S3776¥"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ÅÍ†õ8‹è¡×1
+java:S3776¥"RRefactor this method to reduce its Cognitive Complexity from 50 to the 15 allowed.(ÅÍ†õ8îÔ×1
 `
-java:S1854®"=Remove this useless assignment to local variable "kingMoves".(ˆÉ¥•øÿÿÿÿ8Œè¡×1
+java:S1854®"=Remove this useless assignment to local variable "kingMoves".(ˆÉ¥•øÿÿÿÿ8ñÔ×1
 Q
-java:S1481®".Remove this unused "kingMoves" local variable.(ˆÉ¥•øÿÿÿÿ8è¡×1
+java:S1481®".Remove this unused "kingMoves" local variable.(ˆÉ¥•øÿÿÿÿ8øÔ×1
 L
-java:S1481¯".Remove this unused "checkMate" local variable.(Ë×§º8è¡×1
+java:S1481¯".Remove this unused "checkMate" local variable.(Ë×§º8øÔ×1
+^	java:S125¹"<This block of commented-out lines of code should be removed.(ùÕƒÜùÿÿÿÿ8ûÔ×1
 O
-java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8”è¡×1
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8ˆ‘Ô×1
