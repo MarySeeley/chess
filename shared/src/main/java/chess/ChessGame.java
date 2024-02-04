@@ -83,6 +83,9 @@ public class ChessGame {
      */
     public void makeMove(ChessMove move) throws InvalidMoveException {
         ChessPiece piece = squares.getPiece(move.getStartPosition());
+        if(piece == null){
+            throw new InvalidMoveException("There is no piece in the starting position");
+        }
         if(piece.getTeamColor() != color){
             throw new InvalidMoveException("Not teams turn");
         }
@@ -90,14 +93,14 @@ public class ChessGame {
         if(!moves.contains(move)){
             throw new InvalidMoveException("Not a valid move");
         }
-        if(piece.getPieceType()== ChessPiece.PieceType.PAWN){
+        if(move.getPromotionPiece() != null ){
             squares.addPiece(move.getEndPosition(), new ChessPiece(piece.getTeamColor(), move.promotion));
+            squares.addPiece(move.getStartPosition(), null);
         }
         else{
             squares.addPiece(move.getEndPosition(), piece);
-
+            squares.addPiece(move.getStartPosition(), null);
         }
-        squares.addPiece(move.getStartPosition(), null);
         if(piece.getTeamColor() == TeamColor.BLACK){
             setTeamTurn(TeamColor.WHITE);
         }
