@@ -66,12 +66,10 @@ public class ChessGame {
             ChessBoard copyBoard = copyGame.squares;
             copyBoard.addPiece(move.getEndPosition(), piece);
             copyBoard.addPiece(startPosition, null);
-            System.out.println(copyBoard);
             if(!copyGame.isInCheck(piece.getTeamColor())){
                 actualMoves.add(move);
             }
         }
-        System.out.println(actualMoves);
 
         HashSet<ChessMove> hashMoves = new HashSet<>(actualMoves);
         return hashMoves;
@@ -88,13 +86,24 @@ public class ChessGame {
         if(piece.getTeamColor() != color){
             throw new InvalidMoveException("Not teams turn");
         }
-        Collection<ChessMove> moves = piece.pieceMoves(squares, move.getStartPosition());
+        Collection<ChessMove> moves = validMoves(move.getStartPosition());
         if(!moves.contains(move)){
             throw new InvalidMoveException("Not a valid move");
         }
+        if(piece.getPieceType()== ChessPiece.PieceType.PAWN){
+            squares.addPiece(move.getEndPosition(), new ChessPiece(piece.getTeamColor(), move.promotion));
+        }
+        else{
+            squares.addPiece(move.getEndPosition(), piece);
 
-
-
+        }
+        squares.addPiece(move.getStartPosition(), null);
+        if(piece.getTeamColor() == TeamColor.BLACK){
+            setTeamTurn(TeamColor.WHITE);
+        }
+        else{
+            setTeamTurn(TeamColor.BLACK);
+        }
     }
 
     /**
