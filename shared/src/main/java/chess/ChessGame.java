@@ -1,7 +1,6 @@
 package chess;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -169,10 +168,6 @@ public class ChessGame {
         promotion.add(ChessPiece.PieceType.ROOK);
         promotion.add(ChessPiece.PieceType.QUEEN);
         if(isInCheck(teamColor)){
-            ChessPosition kingPos = findKing(teamColor);
-            ChessPiece king = squares.getPiece(kingPos);
-            Collection<ChessMove> kingMoves = king.pieceMoves(squares, kingPos);
-            Boolean checkMate = true;
             for(int row = 1; row <= 8; row++) {
                 for (int col=1; col <= 8; col++) {
                     ChessPosition pos=new ChessPosition(row, col);
@@ -180,8 +175,6 @@ public class ChessGame {
                     if(piece != null && piece.getTeamColor() != teamColor){
                         Collection<ChessMove> moves = piece.pieceMoves(squares, pos);
                         for(ChessMove move: moves){
-                            //maybe need to change because it returns true if they go in a space the king could go
-
                             if(moves.contains(new ChessMove(pos, move.getEndPosition(), null))){
                                 return true;
                             }

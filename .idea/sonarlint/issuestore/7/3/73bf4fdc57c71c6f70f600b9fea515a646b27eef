@@ -1,19 +1,11 @@
 
 ~
-java:S1488J"aImmediately return this expression instead of assigning it to the temporary variable "hashMoves".(¹µ„8œ€”×1
+java:S1488I"aImmediately return this expression instead of assigning it to the temporary variable "hashMoves".(¹µ„8œ€”×1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÚïÖÆûÿÿÿÿ8ªŸ€”×1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÚïÖÆûÿÿÿÿ8ªŸ€”×1
 H
-java:S1168<"+Return an empty collection instead of null.(¥¹ï8¸Ÿ€”×1
+java:S1168;"+Return an empty collection instead of null.(¥¹ï8¸Ÿ€”×1
 o
-java:S3776v"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(„İÊ8ÔŸ€”×1
+java:S3776u"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(„İÊ8ÔŸ€”×1
 p
-java:S3776¥"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ÅÍ†õ8î°Š”×1
-`
-java:S1854®"=Remove this useless assignment to local variable "kingMoves".(ˆÉ¥•øÿÿÿÿ8ÚŸ€”×1
-Q
-java:S1481®".Remove this unused "kingMoves" local variable.(ˆÉ¥•øÿÿÿÿ8ŞŸ€”×1
-L
-java:S1481¯".Remove this unused "checkMate" local variable.(Ë×§º8ŞŸ€”×1
-O
-java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8çŸ€”×1
+java:S3776¤"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ÅÍ†õ8î°Š”×1
