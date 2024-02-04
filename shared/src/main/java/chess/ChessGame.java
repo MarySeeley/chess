@@ -182,23 +182,8 @@ public class ChessGame {
                         for(ChessMove move: moves){
                             //maybe need to change because it returns true if they go in a space the king could go
 
-//                            if(moves.contains(new ChessMove(pos, move.getEndPosition(), null))){
-//                                return true;
-//                            }
-                            ChessGame copyGame = this.copy();
-                            ChessBoard copyBoard = copyGame.squares;
-                            if(move.getPromotionPiece() != null){
-                                copyBoard.addPiece(move.getEndPosition(), new ChessPiece(teamColor, move.getPromotionPiece()));
-                                copyBoard.addPiece(pos, null);
-                            }
-                            else{
-                                copyBoard.addPiece(move.getEndPosition(), piece);
-                                copyBoard.addPiece(pos, null);
-                            }
-                            copyBoard.addPiece(move.getEndPosition(), piece);
-                            copyBoard.addPiece(pos, null);
-                            if(!copyGame.isInCheck(piece.getTeamColor())){
-                                return false;
+                            if(moves.contains(new ChessMove(pos, move.getEndPosition(), null))){
+                                return true;
                             }
                             if(piece.getPieceType()==ChessPiece.PieceType.PAWN) {
                                 for (ChessPiece.PieceType type : promotion) {
