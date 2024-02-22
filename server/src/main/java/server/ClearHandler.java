@@ -11,20 +11,14 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
-public class ClearHandler implements Route {
-  private final UserDAO userDAO;
-  private final AuthDAO authDAO;
-  private final GameDAO gameDAO;
-
+public class ClearHandler extends Handler {
   public ClearHandler(UserDAO userDAO, AuthDAO authDAO, GameDAO gameDAO){
-    this.userDAO = userDAO;
-    this.authDAO = authDAO;
-    this.gameDAO = gameDAO;
+    super(userDAO, authDAO, gameDAO);
   }
   @Override
-  public Object handle(Request request, Response response) throws DataAccessException {
+  public Object handle(Request request, Response response) {
     try {
-      ClearService service=new ClearService(userDAO, authDAO, gameDAO);
+      ClearService service=new ClearService(super.userDAO, authDAO, gameDAO);
       service.clearDB();
       return "{}";
     }catch(DataAccessException e){

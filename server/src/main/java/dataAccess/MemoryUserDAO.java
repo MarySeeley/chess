@@ -8,10 +8,10 @@ import java.util.Collection;
 public class MemoryUserDAO implements UserDAO{
   final private Collection<UserData> users = new ArrayList<>();
   public UserData getUser(UserData user) throws DataAccessException{
-    if (!users.contains(user)){
-      return null;
+    if (users.contains(user)){
+      throw new DataAccessException(403, "Error: User already registered");
     }
-    return user;
+    return null;
   }
 
   public void createUser(UserData user)  throws DataAccessException{

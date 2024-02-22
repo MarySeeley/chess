@@ -2,6 +2,7 @@ package server;
 
 import com.google.gson.Gson;
 import dataAccess.*;
+import exception.ResponseException;
 import model.AuthData;
 import model.UserData;
 import spark.Spark;
@@ -23,6 +24,8 @@ public class Server {
         // Register
         Spark.post("/user", new RegisterHandler(userDAO, authDAO));
         Spark.delete("/db", new ClearHandler(userDAO, authDAO, gameDAO));
+        Spark.post("/session", new LoginHandler(userDAO, authDAO));
+        Spark.exception(Exception.class, new ExceptionHandler());
         Spark.awaitInitialization();
         return Spark.port();
     }
