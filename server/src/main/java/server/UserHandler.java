@@ -17,6 +17,7 @@ public class UserHandler implements Route {
     this.userDAO = userDAO;
     this.authDAO = authDAO;
     this.userService = new UserService(userDAO, authDAO);
+
   }
   @Override
   public Object handle(Request request, Response response) throws Exception {

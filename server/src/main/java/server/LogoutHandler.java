@@ -10,19 +10,19 @@ import model.ExceptionData;
 import model.UserData;
 import spark.Request;
 import spark.Response;
-import spark.Route;
 
-public class LoginHandler extends UserHandler{
-  public LoginHandler(UserDAO userDAO, AuthDAO authDAO) {
+public class LogoutHandler extends UserHandler{
+
+  public LogoutHandler(UserDAO userDAO, AuthDAO authDAO) {
     super(userDAO, authDAO);
   }
-
-  @Override
   public Object handle(Request request, Response response) throws Exception {
     try {
-      UserData user=new Gson().fromJson(request.body(), UserData.class);
-      AuthData auth=userService.login(user);
-      return new Gson().toJson(auth);
+      String authToken = request.headers("Authorization");
+//      AuthData auth=new Gson().fromJson(request.headers("Authorization"), AuthData.class);
+//      System.out.println(authToken);
+      userService.logout(authToken);
+      return "{}";
     }catch(DataAccessException e){
       response.status(e.getStatusCode());
       ExceptionData exception = new ExceptionData(e.getMessage());
