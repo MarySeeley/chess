@@ -1,4 +1,4 @@
-package server;
+package userHandler;
 
 import Service.UserService;
 import dataAccess.AuthDAO;
@@ -11,7 +11,7 @@ import spark.Route;
 public class UserHandler implements Route {
   final UserDAO userDAO;
   final AuthDAO authDAO;
-  final UserService userService;
+  public final UserService userService;
 
   public UserHandler(UserDAO userDAO, AuthDAO authDAO){
     this.userDAO = userDAO;

@@ -1,11 +1,9 @@
 package server;
 
-import com.google.gson.Gson;
 import dataAccess.*;
-import exception.ResponseException;
-import model.AuthData;
-import model.UserData;
 import spark.Spark;
+import userHandler.LogoutHandler;
+import userHandler.RegisterHandler;
 
 public class Server {
 
@@ -26,6 +24,9 @@ public class Server {
         Spark.delete("/db", new ClearHandler(userDAO, authDAO, gameDAO));
         Spark.post("/session", new LoginHandler(userDAO, authDAO));
         Spark.delete("/session", new LogoutHandler(userDAO, authDAO));
+        Spark.get("/game", new ListGamesHandler(gameDAO, authDAO));
+        Spark.post("/game", new CreateGameHandler(gameDAO, authDAO));
+        Spark.put("/game", new JoinGameHandler(gameDAO, authDAO));
         Spark.exception(Exception.class, new ExceptionHandler());
         Spark.awaitInitialization();
         return Spark.port();

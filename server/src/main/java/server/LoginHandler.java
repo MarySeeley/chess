@@ -3,16 +3,17 @@ package server;
 import com.google.gson.Gson;
 import dataAccess.AuthDAO;
 import dataAccess.DataAccessException;
-import dataAccess.GameDAO;
 import dataAccess.UserDAO;
 import model.AuthData;
 import model.ExceptionData;
 import model.UserData;
 import spark.Request;
 import spark.Response;
-import spark.Route;
+import userHandler.UserHandler;
 
-public class LoginHandler extends UserHandler{
+import java.security.AuthProvider;
+
+public class LoginHandler extends UserHandler {
   public LoginHandler(UserDAO userDAO, AuthDAO authDAO) {
     super(userDAO, authDAO);
   }
