@@ -42,4 +42,67 @@ public class MemoryGameDAO implements GameDAO{
     games.add(game);
     return game;
   }
+
+  public void checkColor(String playerColor, int gameID)throws DataAccessException{
+    GameData game = null;
+    boolean found = false;
+    for(GameData i : games){
+      if(gameID==i.gameID()){
+        game = i;
+        found = true;
+        break;
+      }
+    }
+    if(!found){
+      throw new DataAccessException(400, "Error: invalid gameID");
+    }
+
+    if(playerColor.equals("WHITE")){
+      System.out.println("white");
+      if(game.whiteUsername()!=null){
+        throw new DataAccessException(403, "Error: white already taken");
+      }
+    }
+    else if(playerColor.equals("BLACK")){
+      System.out.println("black");
+      if(game.blackUsername()!= null){
+        throw new DataAccessException(403, "Error: black already taken");
+      }
+    }
+  }
+  public void updateGame(int gameID, String clientColor, String username) throws DataAccessException{
+    GameData game = null;
+    boolean found = false;
+    for(GameData i : games){
+      if(gameID==i.gameID()){
+        game = i;
+        found = true;
+        games.remove(i);
+        break;
+      }
+    }
+    if(!found){
+      throw new DataAccessException(400, "Error: invalid gameID");
+    }
+    if(clientColor.equals("WHITE")){
+      GameData newGame = new GameData(game.gameID(), username, game.blackUsername(), game.gameName(), game.game());
+      games.add(newGame);
+    }
+    if(clientColor.equals("BLACK")){
+      GameData newGame = new GameData(game.gameID(), game.whiteUsername(), username, game.gameName(), game.game());
+      games.add(newGame);
+    }
+  }
+  public void checkGame(int gameID) throws DataAccessException{
+    boolean found = false;
+    for(GameData i : games){
+      if(gameID==i.gameID()){
+        found = true;
+        break;
+      }
+    }
+    if(!found){
+      throw new DataAccessException(400, "Error: invalid gameID");
+    }
+  }
 }

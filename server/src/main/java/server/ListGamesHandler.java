@@ -6,11 +6,14 @@ import dataAccess.DataAccessException;
 import dataAccess.GameDAO;
 import model.ExceptionData;
 import model.GameData;
+import model.ListData;
 import spark.Request;
 import spark.Response;
 import spark.Route;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class ListGamesHandler extends GameHandler {
   public ListGamesHandler(GameDAO gameDAO, AuthDAO authDAO) {
@@ -20,7 +23,9 @@ public class ListGamesHandler extends GameHandler {
   public Object handle(Request request, Response response) throws Exception {
     try {
       String authToken = request.headers("Authorization");
-      Collection<GameData> games = gameService.getGames(authToken);
+      Collection<GameData> gameCollection = gameService.getGames(authToken);
+      List<GameData> gamesList = new ArrayList<>(gameCollection);
+      ListData games = new ListData(gamesList);
       return new Gson().toJson(games);
     }catch(DataAccessException e){
       response.status(e.getStatusCode());
@@ -28,6 +33,7 @@ public class ListGamesHandler extends GameHandler {
       return new Gson().toJson(exception);
     }catch(Exception e){
       response.status(500);
+      System.out.println(e.getMessage());
       ExceptionData exception = new ExceptionData(e.getMessage());
       return new Gson().toJson(exception);
     }

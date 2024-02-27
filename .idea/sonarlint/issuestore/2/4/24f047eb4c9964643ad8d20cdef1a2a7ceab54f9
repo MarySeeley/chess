@@ -1,6 +1,6 @@
 
-À
-java:S1598"¢This file "RegisterHandler.java" should be located in "userHandler" directory, not in "C:\Users\marys\OneDrive\Documents\CS240\chess\server\src\main\java\server".(ª¨¼ø8èŒ€íİ1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ª¨¼ø8ëŒ€íİ1
-q
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(îËúµ8¯€íİ1
+¹
+java:S1598"¢This file "RegisterHandler.java" should be located in "userHandler" directory, not in "C:\Users\marys\OneDrive\Documents\CS240\chess\server\src\main\java\server".(ª¨¼ø
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ª¨¼ø
+j
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(îËúµ
