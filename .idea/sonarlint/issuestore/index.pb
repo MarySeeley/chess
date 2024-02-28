@@ -43,3 +43,7 @@ W
 'src/main/java/Service/ClearService.java,7\8\78fc421b8d30c418affcc572aafb2778efdd946f
 [
 +src/test/java/Service/ClearServiceTest.java,0\1\01150f593ad8d1e3a102258765e404fbd7a44408
+U
+%src/main/java/dataAccess/UserDAO.java,0\d\0d218636cae875220bfdc56c1352c6e1152f3484
+Z
+*src/main/java/server/ExceptionHandler.java,5\b\5b1e8c669cb5d7767d451fdd65de826517f43806

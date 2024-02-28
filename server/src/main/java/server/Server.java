@@ -27,7 +27,7 @@ public class Server {
         Spark.get("/game", new ListGamesHandler(gameDAO, authDAO));
         Spark.post("/game", new CreateGameHandler(gameDAO, authDAO));
         Spark.put("/game", new JoinGameHandler(gameDAO, authDAO));
-        Spark.exception(Exception.class, new ExceptionHandler());
+//        Spark.exception(Exception.class, new ExceptionHandler());
         Spark.awaitInitialization();
         return Spark.port();
     }
