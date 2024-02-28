@@ -1,40 +1,36 @@
 package chess;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-
 public class PawnMove {
   public final ChessPosition starting;
   public final ChessPiece piece;
   public ChessBoard board;
+  public final Collection<ChessPiece.PieceType> promotionType;
   public PawnMove(ChessBoard board, ChessPosition starting, ChessPiece piece){
     //Create an array of available moves for the pawn?
     this.starting = starting;
     this.piece = piece;
     this.board = board;
+    this.promotionType = new ArrayList<>();
+    promotionType.add(ChessPiece.PieceType.QUEEN);
+    promotionType.add(ChessPiece.PieceType.ROOK);
+    promotionType.add(ChessPiece.PieceType.KNIGHT);
+    promotionType.add(ChessPiece.PieceType.BISHOP);
   }
   public Collection<ChessMove> allMoves(){
     int startRow = starting.getRow();
     int startCol = starting.getColumn();
     Collection<ChessMove> options=new ArrayList<>();
     //Array full of different promotion types
-    Collection<ChessPiece.PieceType> promotionType = new ArrayList<>();
-    promotionType.add(ChessPiece.PieceType.QUEEN);
-    promotionType.add(ChessPiece.PieceType.ROOK);
-    promotionType.add(ChessPiece.PieceType.KNIGHT);
-    promotionType.add(ChessPiece.PieceType.BISHOP);
-    //moving forward for white
+
     if(piece.getTeamColor() == ChessGame.TeamColor.WHITE){
       ChessPosition whiteForwardPos = new ChessPosition(startRow+1, startCol);
-      //move right in front is clear
       if(board.getPiece(whiteForwardPos)==null){
-        //if it's hit the end of the board (add promotion)
         if(startRow+1 == 8) {
           for(ChessPiece.PieceType n : promotionType){
             options.add(new ChessMove(starting, whiteForwardPos, n));
           }
-          //Check if you can capture and get a promotion
           ChessPosition rightDiagonalCapture=new ChessPosition(startRow + 1, startCol + 1);
           if (board.getPiece(rightDiagonalCapture) != null && board.getPiece(rightDiagonalCapture).getTeamColor() == ChessGame.TeamColor.BLACK) {
             for(ChessPiece.PieceType n : promotionType){
@@ -48,7 +44,6 @@ public class PawnMove {
             }
           }
         }
-        //add if it's not a promotion
         else {
           options.add(new ChessMove(starting, whiteForwardPos, null));
         }
@@ -72,7 +67,6 @@ public class PawnMove {
         }
       }
     }
-    //Same as above, just for black
     else{
       ChessPosition blackForwardPos = new ChessPosition(startRow-1, startCol);
       if(board.getPiece(blackForwardPos)==null){

@@ -51,3 +51,13 @@ Q
 !src/main/java/server/Handler.java,f\2\f2e8e0d4e5e0015a34319615f1db5571426878de
 V
 &src/main/java/server/ClearHandler.java,7\7\77de0bde8b007905fe4c58a87940f234af85905b
+S
+#src/main/java/chess/BishopMove.java,3\f\3f8ad18abd89b5270f6db792c33a352880a8f7eb
+S
+#src/main/java/chess/ChessPiece.java,8\5\85a88ea4958ed1b3e2cc2a545a3ad992329e985a
+R
+"src/main/java/chess/QueenMove.java,3\4\34a6a74434c19ae42a5a123d6468f3ed86b97e1f
+x
+Hsrc/test/java/passoffTests/chessTests/chessPieceTests/PawnMoveTests.java,7\4\74d39e18807bd4133eca21d9e39d9088150d34c4
+Q
+!src/main/java/chess/PawnMove.java,b\d\bd5ff3c07583fd75816563c189e131d0e4d43a89

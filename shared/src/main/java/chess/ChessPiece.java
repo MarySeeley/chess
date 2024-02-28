@@ -80,7 +80,7 @@ public class ChessPiece {
                 moves = king.allMoves();
                 break;
             case QUEEN:
-                QueenMove queen = new QueenMove(board, myPosition, piece);
+                QueenMove queen = new QueenMove(piece, board, myPosition);
                 moves = queen.allMoves();
                 break;
             case BISHOP:
