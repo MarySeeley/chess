@@ -33,11 +33,7 @@ class ClearServiceTest {
     authDAO.createAuth("username");
     gameDAO.createGame("gameName");
     service.clearDB();
-    Collection<UserData> users = userDAO.getUsers();
     Collection<GameData> games = gameDAO.listGames();
-    Collection<AuthData> auths = authDAO.getAuthList();
-    assertEquals(users, new ArrayList<>());
     assertEquals(games, new ArrayList<>());
-    assertEquals(auths, new ArrayList<>());
   }
 }

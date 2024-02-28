@@ -8,9 +8,6 @@ import java.util.Collection;
 public class MemoryUserDAO implements UserDAO{
   final private Collection<UserData> users = new ArrayList<>();
   public UserData checkUser(UserData user) throws DataAccessException{
-//    if (users.contains(user)){
-//      throw new DataAccessException(403, "Error: User already registered");
-//    }
     for(UserData i : users){
       String checkUser = i.username();
       if(checkUser.equals(user.username())){
@@ -36,7 +33,5 @@ public class MemoryUserDAO implements UserDAO{
   public void clearUsers() throws DataAccessException{
     users.clear();
   }
-  public Collection<UserData> getUsers(){
-    return users;
-  }
+
 }

@@ -1,18 +1,17 @@
 
-J
-java:S1066@"/Merge this if statement with the enclosing one.(¬£×Óûÿÿÿÿ
-E
-java:S1066F"/Merge this if statement with the enclosing one.(ÂŸÏ
-J
-java:S1066j"/Merge this if statement with the enclosing one.(·şüÿÿÿÿ
-J
-java:S1066p"/Merge this if statement with the enclosing one.(éõôüÿÿÿÿ
-
-java:S1488u"fImmediately return this expression instead of assigning it to the temporary variable "hashSetOptions".(§òîòüÿÿÿÿ
-l
-java:S1104
-"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ
-h
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 95 to the 15 allowed.(Öíƒ
-Ü
-java:S6541"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 94 to 64, Complexity from 44 to 14, Nesting Level from 5 to 2, Number of Variables from 23 to 6.(Öíƒ
+Q
+java:S1066;"/Merge this if statement with the enclosing one.(¬£×Óûÿÿÿÿ8‘‡¼ïŞ1
+L
+java:S1066A"/Merge this if statement with the enclosing one.(ÂŸÏ8’‡¼ïŞ1
+Q
+java:S1066d"/Merge this if statement with the enclosing one.(·şüÿÿÿÿ8’‡¼ïŞ1
+Q
+java:S1066j"/Merge this if statement with the enclosing one.(éõôüÿÿÿÿ8’‡¼ïŞ1
+ˆ
+java:S1488o"fImmediately return this expression instead of assigning it to the temporary variable "hashSetOptions".(§òîòüÿÿÿÿ8“‡¼ïŞ1
+s
+java:S1104"QMake board a static final constant or non-public and provide accessors if needed.(±Û‡“üÿÿÿÿ8“‡¼ïŞ1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 95 to the 15 allowed.(Öíƒ8†‹¼ïŞ1
+ã
+java:S6541"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 89 to 64, Complexity from 44 to 14, Nesting Level from 5 to 2, Number of Variables from 22 to 6.(Öíƒ8š‹¼ïŞ1

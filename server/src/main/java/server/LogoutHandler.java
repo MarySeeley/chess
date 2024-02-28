@@ -14,6 +14,7 @@ public class LogoutHandler extends UserHandler {
   public LogoutHandler(UserDAO userDAO, AuthDAO authDAO) {
     super(userDAO, authDAO);
   }
+  @Override
   public Object handle(Request request, Response response) throws Exception {
     try {
       String authToken = request.headers("Authorization");
