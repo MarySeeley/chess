@@ -84,7 +84,7 @@ public class ChessPiece {
                 moves = queen.allMoves();
                 break;
             case BISHOP:
-                BishopMove bishop = new BishopMove(board, myPosition, piece);
+                BishopMove bishop = new BishopMove(piece, myPosition, piece.pieceColor, board);
                 moves = bishop.allMoves();
                 break;
             case KNIGHT:
