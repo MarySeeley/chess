@@ -47,3 +47,7 @@ U
 %src/main/java/dataAccess/UserDAO.java,0\d\0d218636cae875220bfdc56c1352c6e1152f3484
 Z
 *src/main/java/server/ExceptionHandler.java,5\b\5b1e8c669cb5d7767d451fdd65de826517f43806
+Q
+!src/main/java/server/Handler.java,f\2\f2e8e0d4e5e0015a34319615f1db5571426878de
+V
+&src/main/java/server/ClearHandler.java,7\7\77de0bde8b007905fe4c58a87940f234af85905b
