@@ -55,14 +55,42 @@ class GameServiceTest {
 
 
   @Test
-  @DisplayName("Join Game Worked Tests")
-  void joinGameWorked() {
+  @DisplayName("Join Game White Tests")
+  void joinGameWhite() throws DataAccessException{
+    GameData game = gameDAO.createGame("join test");
+    service.joinGame(auth.authToken(), new JoinData("WHITE", game.gameID()));
+    game = gameDAO.getGame(game.gameID());
+    assertEquals(auth.username(), game.whiteUsername());
+  }
 
+  @Test
+  @DisplayName("Join Game Black Tests")
+  void joinGameBlack() throws DataAccessException{
+    GameData game = gameDAO.createGame("join test");
+    service.joinGame(auth.authToken(), new JoinData("BLACK", game.gameID()));
+    game = gameDAO.getGame(game.gameID());
+    assertEquals(auth.username(), game.blackUsername());
+  }
+
+  @Test
+  @DisplayName("Join Game Watch Test")
+  void joinGameWatch()throws DataAccessException{
+    GameData game = gameDAO.createGame("join test");
+    service.joinGame(auth.authToken(), new JoinData(null, game.gameID()));
+    game = gameDAO.getGame(game.gameID());
+    assertEquals(null, game.blackUsername());
   }
 
   @Test
   @DisplayName("Join Game Error Tests")
-  void joinGameError(){
-    assertThrows(DataAccessException.class, ()->{service.joinGame("auth", new JoinData(null, 1234));});
+  void joinGameError() throws DataAccessException{
+    GameData game = gameDAO.createGame("join test");
+    service.joinGame(auth.authToken(), new JoinData("WHITE", game.gameID()));
+    game = gameDAO.getGame(game.gameID());
+    GameData finalGame=game;
+    assertThrows(DataAccessException.class, ()->{service.joinGame(auth.authToken(), new JoinData("WHITE", finalGame.gameID()));});
+    assertThrows(DataAccessException.class, ()->{service.joinGame("auth", new JoinData("WHITE", finalGame.gameID()));});
+    assertThrows(DataAccessException.class, ()->{    service.joinGame(auth.authToken(), new JoinData("WHITE", 1234));});
   }
+
 }
