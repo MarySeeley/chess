@@ -45,4 +45,7 @@ public class MemoryAuthDAO implements AuthDAO{
     }
     throw new DataAccessException(401, "Error: no matching authToken");
   }
+  public Collection<AuthData> getAuthList(){
+    return auth;
+  }
 }

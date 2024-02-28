@@ -38,6 +38,7 @@ public class StandardAPITests {
 
 
     @BeforeAll
+
     public static void init() {
         server = new Server();
         var port = server.run(0);
