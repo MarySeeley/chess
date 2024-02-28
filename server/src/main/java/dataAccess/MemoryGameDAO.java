@@ -105,12 +105,4 @@ public class MemoryGameDAO implements GameDAO{
       throw new DataAccessException(400, "Error: invalid gameID");
     }
   }
-  public GameData getGame(int gameID) throws DataAccessException{
-    for(GameData i : games){
-      if(gameID==i.gameID()){
-        return i;
-      }
-    }
-    throw new DataAccessException(400, "Error: invalid gameID");
-  }
 }

@@ -59,7 +59,12 @@ class GameServiceTest {
   void joinGameWhite() throws DataAccessException{
     GameData game = gameDAO.createGame("join test");
     service.joinGame(auth.authToken(), new JoinData("WHITE", game.gameID()));
-    game = gameDAO.getGame(game.gameID());
+    Collection<GameData> games = gameDAO.listGames();
+    for(GameData i : games){
+      if(game.gameID() == i.gameID()){
+        game = i;
+      }
+    }
     assertEquals(auth.username(), game.whiteUsername());
   }
 
@@ -68,7 +73,12 @@ class GameServiceTest {
   void joinGameBlack() throws DataAccessException{
     GameData game = gameDAO.createGame("join test");
     service.joinGame(auth.authToken(), new JoinData("BLACK", game.gameID()));
-    game = gameDAO.getGame(game.gameID());
+    Collection<GameData> games = gameDAO.listGames();
+    for(GameData i : games){
+      if(game.gameID() == i.gameID()){
+        game = i;
+      }
+    }
     assertEquals(auth.username(), game.blackUsername());
   }
 
@@ -77,7 +87,12 @@ class GameServiceTest {
   void joinGameWatch()throws DataAccessException{
     GameData game = gameDAO.createGame("join test");
     service.joinGame(auth.authToken(), new JoinData(null, game.gameID()));
-    game = gameDAO.getGame(game.gameID());
+    Collection<GameData> games = gameDAO.listGames();
+    for(GameData i : games){
+      if(game.gameID() == i.gameID()){
+        game = i;
+      }
+    }
     assertEquals(null, game.blackUsername());
   }
 
@@ -86,7 +101,12 @@ class GameServiceTest {
   void joinGameError() throws DataAccessException{
     GameData game = gameDAO.createGame("join test");
     service.joinGame(auth.authToken(), new JoinData("WHITE", game.gameID()));
-    game = gameDAO.getGame(game.gameID());
+    Collection<GameData> games = gameDAO.listGames();
+    for(GameData i : games){
+      if(game.gameID() == i.gameID()){
+        game = i;
+      }
+    }
     GameData finalGame=game;
     assertThrows(DataAccessException.class, ()->{service.joinGame(auth.authToken(), new JoinData("WHITE", finalGame.gameID()));});
     assertThrows(DataAccessException.class, ()->{service.joinGame("auth", new JoinData("WHITE", finalGame.gameID()));});
