@@ -70,7 +70,7 @@ class UserServiceTest {
   void logoutWorked() throws DataAccessException{
     AuthData authLogout = service.register(user);
     service.logout(authLogout.authToken());
-    assertFalse(authDAO.getAuthList().contains(authLogout));
+    assertThrows(DataAccessException.class, ()->{authDAO.getUser(authLogout.authToken());});
   }
 
   @Test
