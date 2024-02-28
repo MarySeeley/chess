@@ -61,3 +61,9 @@ x
 Hsrc/test/java/passoffTests/chessTests/chessPieceTests/PawnMoveTests.java,7\4\74d39e18807bd4133eca21d9e39d9088150d34c4
 Q
 !src/main/java/chess/PawnMove.java,b\d\bd5ff3c07583fd75816563c189e131d0e4d43a89
+R
+"src/main/java/chess/ChessMove.java,4\2\429c55da8253d8ee02138d80d1951c5e7d4a468c
+W
+'src/main/java/server/LogoutHandler.java,2\3\23a5e167c07450fa012924c6ed9622d02af72d93
+a
+1src/main/java/dataAccess/DataAccessException.java,6\e\6eb5d3ed21c9df98a86e3c1b8de2bcdc464b3e0e
