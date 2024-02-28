@@ -1,0 +1,12 @@
+
+(
+java:S2176
+"Rename this class.(óêø³
+G
+java:S1128"1Remove this unused import 'com.google.gson.Gson'.(–§
+N
+java:S1128"8Remove this unused import 'exception.ResponseException'.(‘ýïë
+K
+java:S1128"0Remove this unused import 'model.ExceptionData'.(“Ë”Óúÿÿÿÿ
+>
+java:S1128"(Remove this unused import 'spark.Route'.(Ã‚ÿ‡
