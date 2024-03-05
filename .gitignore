@@ -6,8 +6,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-server/src/main/resources/db.properties
-
+C:\Users\marys\OneDrive\Documents\CS240\chess\server\src\main\resources\db.properties
 
 ### Mac OS ###
 .DS_Store
