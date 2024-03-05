@@ -6,5 +6,8 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+dp.properties
+
+
 ### Mac OS ###
 .DS_Store

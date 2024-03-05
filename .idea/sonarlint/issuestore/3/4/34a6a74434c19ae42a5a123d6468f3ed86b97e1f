@@ -1,7 +1,7 @@
 
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8°”ÀïŞ1
-E
-java:S1068	"(Remove this unused "type" private field.(˜ú…Ï8Ñá§ïŞ1
-K
-java:S1068")Remove this unused "color" private field.(Áüİôıÿÿÿÿ8Ñá§ïŞ1
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+>
+java:S1068	"(Remove this unused "type" private field.(˜ú…Ï
+D
+java:S1068")Remove this unused "color" private field.(Áüİôıÿÿÿÿ

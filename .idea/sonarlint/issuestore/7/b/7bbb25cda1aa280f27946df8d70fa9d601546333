@@ -1,8 +1,0 @@
-
-r
-java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "auth".(ãàìĞ
-r
-java:S1488#"\Immediately return this expression instead of assigning it to the temporary variable "auth".(ãàìĞ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ï¹ÈÔûÿÿÿÿ
-M
-java:S1128	"2Remove this unused import 'javax.xml.crypto.Data'.(¦¿çˆıÿÿÿÿ

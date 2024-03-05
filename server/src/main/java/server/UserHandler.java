@@ -1,8 +1,7 @@
 package userHandler;
 
-import Service.UserService;
+import serverTests.UserService;
 import dataAccess.AuthDAO;
-import dataAccess.GameDAO;
 import dataAccess.UserDAO;
 import spark.Request;
 import spark.Response;

@@ -1,6 +1,6 @@
 package server;
 
-import Service.ClearService;
+import serverTests.ClearService;
 import com.google.gson.Gson;
 import dataAccess.AuthDAO;
 import dataAccess.DataAccessException;

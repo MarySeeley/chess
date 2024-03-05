@@ -1,19 +1,19 @@
 
-s
-java:S11929"VDefine a constant instead of duplicating this literal "Error: invalid gameID" 4 times.(ªß«8Íğ¯îŞ1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šäåó8Ñğ¯îŞ1
-s
+l
+java:S11929"VDefine a constant instead of duplicating this literal "Error: invalid gameID" 3 times.(ªß«
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šäåó
+l
 java:S1128
-"QRemove this unnecessary import: java.lang classes are always implicitly imported.(šÆ¿ˆıÿÿÿÿ8£ñ¯îŞ1
-b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¢áå˜8¨ñ¯îŞ1
-:
-java:S2119"Save and re-use this "Random".(¼İÅf8¯ñ¯îŞ1
-<
-java:S2676"Use the original value instead.(Çœ„Ş8±ñ¯îŞ1
-<
-java:S2676&"Use the original value instead.(Ùâ¢ÿ8³ñ¯îŞ1
-G	java:S106="+Replace this use of System.out by a logger.(°çã8½ñ¯îŞ1
-L	java:S106C"+Replace this use of System.out by a logger.(´¼§œúÿÿÿÿ8Åñ¯îŞ1
-M
-java:S1128"+Remove this unused import 'model.AuthData'.(î‡„Ãÿÿÿÿÿ8Ùñ¯îŞ1
+"QRemove this unnecessary import: java.lang classes are always implicitly imported.(šÆ¿ˆıÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¢áå˜
+3
+java:S2119"Save and re-use this "Random".(¼İÅf
+5
+java:S2676"Use the original value instead.(Çœ„Ş
+5
+java:S2676&"Use the original value instead.(Ùâ¢ÿ
+@	java:S106="+Replace this use of System.out by a logger.(°çã
+E	java:S106C"+Replace this use of System.out by a logger.(´¼§œúÿÿÿÿ
+F
+java:S1128"+Remove this unused import 'model.AuthData'.(î‡„Ãÿÿÿÿÿ

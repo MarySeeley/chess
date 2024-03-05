@@ -1,6 +1,6 @@
 package server;
 
-import Service.GameService;
+import serverTests.GameService;
 import dataAccess.AuthDAO;
 import dataAccess.GameDAO;
 import spark.Request;
