@@ -43,3 +43,5 @@ _
 -src/main/java/dataAccess/DatabaseManager.java,c\a\ca8e537e22592e882e6b882e3dc07228f03d6960
 V
 &src/main/java/server/ClearHandler.java,7\7\77de0bde8b007905fe4c58a87940f234af85905b
+X
+(src/main/java/dataAccess/SQLAuthDAO.java,1\3\13073638096d57593660228f2e0f6701d7ae4545
