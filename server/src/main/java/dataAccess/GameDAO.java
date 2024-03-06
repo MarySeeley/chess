@@ -11,4 +11,5 @@ public interface GameDAO {
   void checkColor(String playerColor, int gameID) throws DataAccessException;
   void updateGame(int gameID, String clientColor, String username) throws DataAccessException;
   void checkGame(int gameID) throws DataAccessException;
+  //hello world
 }
