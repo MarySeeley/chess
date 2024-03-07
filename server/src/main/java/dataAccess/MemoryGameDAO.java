@@ -58,13 +58,11 @@ public class MemoryGameDAO implements GameDAO{
     }
 
     if(playerColor.equals("WHITE")){
-      System.out.println("white");
       if(game.whiteUsername()!=null){
         throw new DataAccessException(403, "Error: white already taken");
       }
     }
     else if(playerColor.equals("BLACK")){
-      System.out.println("black");
       if(game.blackUsername()!= null){
         throw new DataAccessException(403, "Error: black already taken");
       }

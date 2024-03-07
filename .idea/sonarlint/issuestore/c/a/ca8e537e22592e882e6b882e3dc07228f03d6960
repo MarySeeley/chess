@@ -1,13 +1,18 @@
 
-[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(äª ø
-`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ëêßûÿÿÿÿ
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(äª ø
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ëêßûÿÿÿÿ
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šäåó
-d
-java:S2095?"HUse try-with-resources or close this "Connection" in a "finally" clause.(’™İn8•Ï …á1
-o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ùüğ
-o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(À—£´
-o	java:S115	"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(…œìé
+]
+java:S2095B"HUse try-with-resources or close this "Connection" in a "finally" clause.(’™İn
+o	java:S115	"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ùüğ
 o	java:S115
-"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Æ§Ïï
+"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(À—£´
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(…œìé
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Æ§Ïï
 U
-java:S1118":Add a private constructor to hide the implicit public one.( ùÓ‹ÿÿÿÿÿ
+java:S1118":Add a private constructor to hide the implicit public one.( ùÓ‹ÿÿÿÿÿ
+E	java:S106."+Replace this use of System.out by a logger.(­Şıóÿÿÿÿÿ
+V	java:S125I"<This block of commented-out lines of code should be removed.(­¯¯Ôÿÿÿÿÿ
+V	java:S125V"<This block of commented-out lines of code should be removed.(ûïïëúÿÿÿÿ
+N
+java:S1128"8Remove this unused import 'exception.ResponseException'.(‘ıïë

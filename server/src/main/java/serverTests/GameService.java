@@ -23,6 +23,7 @@ public class GameService {
 
   public GameData createGame(String authToken, String gameName) throws DataAccessException{
     authDAO.checkAuth(authToken);
+
     GameData game = gameDAO.createGame(gameName);
     return game;
   }

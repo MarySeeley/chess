@@ -29,6 +29,7 @@ public class LoginHandler extends UserHandler {
       ExceptionData exception = new ExceptionData(e.getMessage());
       return new Gson().toJson(exception);
     }catch(Exception e){
+      e.printStackTrace();
       response.status(500);
       ExceptionData exception = new ExceptionData(e.getMessage());
       return new Gson().toJson(exception);

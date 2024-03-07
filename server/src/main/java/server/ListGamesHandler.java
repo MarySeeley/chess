@@ -33,7 +33,7 @@ public class ListGamesHandler extends GameHandler {
       return new Gson().toJson(exception);
     }catch(Exception e){
       response.status(500);
-      System.out.println(e.getMessage());
+      e.printStackTrace();
       ExceptionData exception = new ExceptionData(e.getMessage());
       return new Gson().toJson(exception);
     }

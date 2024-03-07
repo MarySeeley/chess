@@ -31,6 +31,7 @@ public class UserService {
     UserData grabbedUser = userDAO.getUser(user.username());
     if(grabbedUser.password().equals(user.password())){
       AuthData auth = authDAO.createAuth(user.username());
+
       return auth;
     }
     else{
@@ -39,6 +40,7 @@ public class UserService {
   }
 
   public void logout(String auth) throws DataAccessException{
+    authDAO.checkAuth(auth);
     authDAO.deleteAuth(auth);
   }
 }
