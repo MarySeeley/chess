@@ -1,8 +1,8 @@
 package serverTests;
 
-import dataAccess.AuthDAO;
-import dataAccess.DataAccessException;
-import dataAccess.UserDAO;
+import dataAccessTests.AuthDAO;
+import dataAccessTests.DataAccessException;
+import dataAccessTests.UserDAO;
 import model.AuthData;
 import model.UserData;
 

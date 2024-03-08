@@ -1,7 +1,7 @@
 package serverTests;
 
 import chess.ChessGame;
-import dataAccess.*;
+import dataAccessTests.*;
 import model.AuthData;
 import model.GameData;
 import model.JoinData;

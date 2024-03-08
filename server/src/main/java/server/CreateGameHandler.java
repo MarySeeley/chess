@@ -2,16 +2,13 @@ package server;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import dataAccess.AuthDAO;
-import dataAccess.DataAccessException;
-import dataAccess.GameDAO;
+import dataAccessTests.AuthDAO;
+import dataAccessTests.DataAccessException;
+import dataAccessTests.GameDAO;
 import model.ExceptionData;
 import model.GameData;
-import model.UserData;
 import spark.Request;
 import spark.Response;
-
-import java.util.Collection;
 
 public class CreateGameHandler extends GameHandler{
   public CreateGameHandler(GameDAO gameDAO, AuthDAO authDAO) {

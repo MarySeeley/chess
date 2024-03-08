@@ -1,9 +1,6 @@
-package dataAccess;
+package dataAccessTests;
 
-import model.AuthData;
 import model.UserData;
-
-import java.util.Collection;
 
 public interface UserDAO {
   UserData checkUser(UserData user) throws DataAccessException;

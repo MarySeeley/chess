@@ -1,6 +1,4 @@
-package dataAccess;
-
-import exception.ResponseException;
+package dataAccessTests;
 
 import java.sql.*;
 import java.util.Properties;

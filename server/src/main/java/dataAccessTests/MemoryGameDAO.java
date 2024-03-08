@@ -1,13 +1,11 @@
-package dataAccess;
+package dataAccessTests;
 
 import chess.ChessGame;
-import model.AuthData;
 import model.GameData;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
-import java.lang.Integer;
 
 
 public class MemoryGameDAO implements GameDAO{

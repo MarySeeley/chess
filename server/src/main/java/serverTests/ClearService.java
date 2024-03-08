@@ -1,9 +1,9 @@
 package serverTests;
 
-import dataAccess.AuthDAO;
-import dataAccess.DataAccessException;
-import dataAccess.GameDAO;
-import dataAccess.UserDAO;
+import dataAccessTests.AuthDAO;
+import dataAccessTests.DataAccessException;
+import dataAccessTests.GameDAO;
+import dataAccessTests.UserDAO;
 
 public class ClearService {
   private final UserDAO userDAO;

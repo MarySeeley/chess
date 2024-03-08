@@ -1,13 +1,11 @@
-package dataAccess;
+package dataAccessTests;
 
 import exception.ResponseException;
 import model.UserData;
-import org.eclipse.jetty.server.Authentication;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import serverTests.UserService;
 
 import static org.junit.jupiter.api.Assertions.*;
 

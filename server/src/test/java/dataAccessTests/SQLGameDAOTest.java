@@ -1,4 +1,4 @@
-package dataAccess;
+package dataAccessTests;
 
 import chess.ChessGame;
 import exception.ResponseException;
@@ -7,7 +7,6 @@ import model.GameData;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import serverTests.GameService;
 
 import java.util.Collection;
 

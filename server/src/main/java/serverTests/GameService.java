@@ -1,8 +1,8 @@
 package serverTests;
 
-import dataAccess.AuthDAO;
-import dataAccess.DataAccessException;
-import dataAccess.GameDAO;
+import dataAccessTests.AuthDAO;
+import dataAccessTests.DataAccessException;
+import dataAccessTests.GameDAO;
 import model.GameData;
 import model.JoinData;
 

@@ -1,10 +1,9 @@
-package dataAccess;
+package dataAccessTests;
 
 import chess.ChessGame;
 import com.google.gson.Gson;
 import exception.ResponseException;
 import model.GameData;
-import model.UserData;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

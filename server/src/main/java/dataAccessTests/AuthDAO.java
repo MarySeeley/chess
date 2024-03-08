@@ -1,8 +1,6 @@
-package dataAccess;
+package dataAccessTests;
 
 import model.AuthData;
-
-import java.util.Collection;
 
 public interface AuthDAO {
   AuthData createAuth(String username) throws DataAccessException;

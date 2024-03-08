@@ -2,10 +2,10 @@ package server;
 
 import serverTests.ClearService;
 import com.google.gson.Gson;
-import dataAccess.AuthDAO;
-import dataAccess.DataAccessException;
-import dataAccess.GameDAO;
-import dataAccess.UserDAO;
+import dataAccessTests.AuthDAO;
+import dataAccessTests.DataAccessException;
+import dataAccessTests.GameDAO;
+import dataAccessTests.UserDAO;
 import model.ExceptionData;
 import spark.Request;
 import spark.Response;

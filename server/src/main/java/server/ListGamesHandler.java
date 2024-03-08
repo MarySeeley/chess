@@ -1,15 +1,14 @@
 package server;
 
 import com.google.gson.Gson;
-import dataAccess.AuthDAO;
-import dataAccess.DataAccessException;
-import dataAccess.GameDAO;
+import dataAccessTests.AuthDAO;
+import dataAccessTests.DataAccessException;
+import dataAccessTests.GameDAO;
 import model.ExceptionData;
 import model.GameData;
 import model.ListData;
 import spark.Request;
 import spark.Response;
-import spark.Route;
 
 import java.util.ArrayList;
 import java.util.Collection;

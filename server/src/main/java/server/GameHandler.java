@@ -1,8 +1,8 @@
 package server;
 
 import serverTests.GameService;
-import dataAccess.AuthDAO;
-import dataAccess.GameDAO;
+import dataAccessTests.AuthDAO;
+import dataAccessTests.GameDAO;
 import spark.Request;
 import spark.Response;
 import spark.Route;

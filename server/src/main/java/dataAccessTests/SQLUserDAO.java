@@ -1,11 +1,9 @@
-package dataAccess;
+package dataAccessTests;
 
 import exception.ResponseException;
-import model.AuthData;
 import model.UserData;
 
 import java.sql.SQLException;
-import java.util.UUID;
 
 public class SQLUserDAO implements UserDAO{
   public SQLUserDAO() throws DataAccessException, ResponseException {

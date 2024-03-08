@@ -1,12 +1,9 @@
 package server;
 
-import dataAccess.*;
-import exception.ResponseException;
+import dataAccessTests.*;
 import spark.Spark;
 import userHandler.LogoutHandler;
 import userHandler.RegisterHandler;
-
-import javax.xml.crypto.Data;
 
 public class Server {
 
