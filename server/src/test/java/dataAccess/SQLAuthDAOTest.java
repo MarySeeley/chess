@@ -66,14 +66,19 @@ class SQLAuthDAOTest {
   @Test
   @Order(7)
   void deleteAuthFails(){
-    assertThrows(DataAccessException.class, ()->{authDAO.deleteAuth("fail");});
+    assertThrows(DataAccessException.class, ()->{authDAO.deleteAuth(null);});
   }
 
   @Test
   @Order(8)
   void checkAuthWorks() throws DataAccessException {
     AuthData auth = authDAO.createAuth(username);
-    Ass
+    authDAO.checkAuth(auth.authToken());
+  }
+  @Test
+  @Order(9)
+  void checkAuthFails(){
+    assertThrows(DataAccessException.class, ()->{authDAO.checkAuth(username);});
   }
 
   @Test
