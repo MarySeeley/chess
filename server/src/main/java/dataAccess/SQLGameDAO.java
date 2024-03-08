@@ -22,7 +22,7 @@ public class SQLGameDAO implements GameDAO{
               `gameID` int AUTO_INCREMENT,
               `whiteUsername` varchar(256),
               `blackUsername` varchar(256),       
-              `gameName` varchar(256) ,
+              `gameName` varchar(256) NOT NULL,
               `chessGame` blob,                   
               PRIMARY KEY (`gameID`)
             ) 
@@ -151,7 +151,7 @@ public class SQLGameDAO implements GameDAO{
           preparedStatement.executeUpdate();
         }
       }
-      if(clientColor.equals("BLACK")){
+      else if(clientColor.equals("BLACK")){
         try (var preparedStatement=conn.prepareStatement("UPDATE game SET blackUsername=? WHERE gameID=?")) {
           preparedStatement.setString(1, username);
           preparedStatement.setInt(2, gameID);
@@ -159,9 +159,12 @@ public class SQLGameDAO implements GameDAO{
           preparedStatement.executeUpdate();
         }
       }
+      else{
+        throw new DataAccessException(500, "Error: invalid clientColor");
+      }
     }catch (SQLException e) {
       e.printStackTrace();
-      throw new RuntimeException(e);
+      throw new DataAccessException(500, "Error: SQL error");
     }
   }
 
