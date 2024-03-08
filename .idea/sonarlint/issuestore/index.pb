@@ -37,3 +37,21 @@ server.iml,8\2\8223cc95a68355bfb31e8c65de12cb67ce74a18a
 :
 
 client.iml,8\1\81276a78d81379d1349e1ff0f16babcbe4db95cc
+[
++src/test/java/serverTests/SQLAuthTests.java,2\e\2ee42da2874de8b2463a3a54c0b7e868a0790153
+_
+/src/test/java/serverTests/PersistenceTests.java,4\a\4a5831de6b7a43c954855cdca99d86e6f0ec387b
+^
+.src/test/java/serverTests/GameServiceTest.java,9\0\90457a54ab8a3b3b43f3e96a9ee1971175e1603f
+^
+.src/test/java/serverTests/UserServiceTest.java,f\6\f641e5b9cb9d293d8bec6668d2a4855cbc80ec8e
+[
++src/main/java/dataAccess/MemoryAuthDAO.java,e\e\ee6928ed59971299a81245818f47e468905f12f6
+\
+,src/test/java/dataAccess/SQLAuthDAOTest.java,e\a\ea9e1a5750c2a486d9b50c0527b601bb1fe18ae4
+\
+,src/test/java/dataAccess/SQLGameDAOTest.java,c\a\ca6cde6aed4f8db588ba7a6fbde01ee8ed29054d
+\
+,src/test/java/dataAccess/SQLUserDAOTest.java,2\b\2b6614d70b8608631d95d9b8ae1790293433eeae
+_
+/src/test/java/serverTests/ClearServiceTest.java,1\3\136e8419f06d60bb336f581c0352f3efa01053ee

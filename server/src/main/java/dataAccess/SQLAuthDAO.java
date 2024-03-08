@@ -2,12 +2,9 @@ package dataAccess;
 
 import exception.ResponseException;
 import model.AuthData;
-import model.UserData;
 
 import java.sql.SQLException;
 import java.util.UUID;
-
-import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
 public class SQLAuthDAO implements AuthDAO {
   public SQLAuthDAO() throws DataAccessException, ResponseException {
