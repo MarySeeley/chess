@@ -1,4 +1,4 @@
-package serverTests;
+package passoffTests.serverTests;
 
 import chess.ChessGame;
 import org.junit.jupiter.api.*;
@@ -92,7 +92,7 @@ public class PersistenceTests {
     private int getDatabaseRows() {
         int rows = 0;
         try {
-            Class<?> clazz = Class.forName("dataAccessTests.DatabaseManager");
+            Class<?> clazz = Class.forName("dataAccess.DatabaseManager");
             Method getConnectionMethod = clazz.getDeclaredMethod("getConnection");
             getConnectionMethod.setAccessible(true);
 
