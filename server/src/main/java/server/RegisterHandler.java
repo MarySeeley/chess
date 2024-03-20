@@ -10,7 +10,7 @@ import model.UserData;
 import spark.Request;
 import spark.Response;
 
-public class RegisterHandler extends UserHandler {
+public class RegisterHandler extends userHandler.UserHandler {
 
   public RegisterHandler(UserDAO userDAO, AuthDAO authDAO){
     super(userDAO, authDAO);

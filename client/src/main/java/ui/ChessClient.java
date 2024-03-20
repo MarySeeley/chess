@@ -1,5 +1,10 @@
 package ui;
 
+import exception.ResponseException;
+import model.AuthData;
+import model.GameData;
+
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -15,9 +20,9 @@ public class ChessClient {
   }
   public void run(){
     System.out.println("Welcome to Chess. Enter the number correlated to the action you want to take.");
-    System.out.println(commandUI());
     String result =(commandUI());
     while(result != null && !result.equals("quit")){
+      System.out.println(commandUI());
       printPrompt();
       String line = scanner.nextLine();
       try{
@@ -27,6 +32,7 @@ public class ChessClient {
         System.out.println(e.toString());
       }
     }
+    System.out.println("Thank you for playing!");
   }
 
   private String commandUI() {
@@ -76,11 +82,12 @@ public class ChessClient {
     }catch(NumberFormatException e){
       System.out.println("It seems you didn't type a number. Please type the number that correlates with the action you wish to take.");
       System.out.println(help());
-      return null;
+      return "try again";
+    } catch (ResponseException e) {
+      throw new RuntimeException(e);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
-  }
-
-  private void quit() {
   }
 
   public String help(){
@@ -109,26 +116,38 @@ public class ChessClient {
     var tokens = line.toLowerCase().split(" ");
     return Arrays.copyOfRange(tokens, 0, tokens.length);
   }
-  public String register(){
+  public String register() throws ResponseException {
     System.out.println("To register please type: <username> <password> <email>");
     printPrompt();
     String[] params = getInput();
-    server.register(params[0], params[1], params[2]);
-    return null;
+    try {
+      AuthData auth = server.register(params[0], params[1], params[2]);
+      loggedIn = true;
+      System.out.println("You have successfully registered!"+"\n");
+    }catch(ResponseException e){
+      System.out.println(e.getMessage());
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+    return "registered";
   }
-  public String login(){
+  public String login() throws IOException {
     System.out.println("To login type: <username> <password>");
     printPrompt();
     String[] params = getInput();
-    server.login(params[0], params[1]);
-    return null;
+    AuthData auth = server.login(params[0], params[1]);
+    System.out.println("You have successfully logged in!"+"\n");
+    loggedIn = true;
+    return "logged in";
   }
-  public String create(){
+  public String create() throws IOException {
     System.out.println("To create a game enter the games name: <gameName>");
     printPrompt();
     String[] params = getInput();
-    server.create(params[0]);
-    return null;
+//    GameData game = server.create(params[0]);
+    int gameID = server.create(params[0]);
+    System.out.println("Created the game "+gameID);
+    return "created";
   }
   public String list(){
     server.list();
