@@ -173,10 +173,11 @@ public class ChessClient {
     server.observe(gameID);
     return null;
   }
-  public String logout(){
-    System.out.println("Thanks for playing");
+  public String logout() throws IOException {
+    System.out.println("Your logged out! Thanks for playing");
     server.logout();
-    return null;
+    loggedIn = false;
+    return "logged out";
   }
   public void printPrompt(){
     System.out.print("\n" + ">>>");

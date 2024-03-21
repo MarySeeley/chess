@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.ProtocolException;
 import java.net.URL;
 
 public class ClientCommunicator {
@@ -64,5 +65,20 @@ public class ClientCommunicator {
       response = new Gson().fromJson(reader, responseClass);
     }
     return response;
+  }
+
+  public void delete(String urlString, String headerName, String headerValue) throws IOException{
+    URL url = new URL(urlString);
+    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    connection.setRequestMethod("DELETE");
+    if(headerName != null && headerValue != null){
+      connection.setRequestProperty(headerName, headerValue);
+    }
+    connection.connect();
+
+    int responseCode = connection.getResponseCode();
+    if (responseCode != HttpURLConnection.HTTP_OK && responseCode != HttpURLConnection.HTTP_NO_CONTENT) {
+      throw new IOException("Unexpected response code: " + responseCode);
+    }
   }
 }

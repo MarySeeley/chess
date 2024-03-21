@@ -55,8 +55,10 @@ public class ServerFacade {
   public void observe(int gameID){
 
   }
-  public void logout(){
-
+  public void logout() throws IOException {
+    String temp = serverUrl + "/session";
+    clientComm.delete(temp, "Authorization", auth.authToken());
+    auth = null;
   }
 
   private <T> T makeRequest(String method, String path, Object request, Class<T> responseClass) throws ResponseException {
