@@ -77,8 +77,24 @@ public class ClientCommunicator {
     connection.connect();
 
     int responseCode = connection.getResponseCode();
-    if (responseCode != HttpURLConnection.HTTP_OK && responseCode != HttpURLConnection.HTTP_NO_CONTENT) {
-      throw new IOException("Unexpected response code: " + responseCode);
+    if (responseCode != HttpURLConnection.HTTP_OK) {
+      throw new IOException("Unexpected response code: " + responseCode +"\n"+"Error: " + connection.getInputStream());
+    }
+  }
+
+  public void put(String urlString, Object request, String headerName, String headerValue) throws IOException{
+    URL url = new URL(urlString);
+    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    connection.setReadTimeout(5000);
+    connection.setRequestMethod("POST");
+    connection.setDoOutput(true);
+    if(headerName != null && headerValue != null){
+      connection.setRequestProperty(headerName, headerValue);
+    }
+    connection.connect();
+    int responseCode = connection.getResponseCode();
+    if (responseCode != HttpURLConnection.HTTP_OK) {
+      throw new IOException("Unexpected response code: " + responseCode+"\n"+"Error: " + connection.getInputStream());
     }
   }
 }

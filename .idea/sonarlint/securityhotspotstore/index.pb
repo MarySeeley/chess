@@ -31,3 +31,5 @@ Z
 *src/main/java/server/ListGamesHandler.java,e\8\e82f6eef6bc7cdb452638642ab2d18387776046b
 Q
 !src/main/java/model/ListData.java,7\5\7580947d3e1f57b1091bb6bda707634078b409c5
+Q
+!src/main/java/model/JoinData.java,0\a\0ace3a3e1f87f642bf664686a7961e6d3c3f016b

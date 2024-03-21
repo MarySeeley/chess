@@ -157,7 +157,7 @@ public class ChessClient {
     System.out.println(games);
     return "listed";
   }
-  public String join(){
+  public String join() throws IOException {
     System.out.println("To join a game type the ID and what player color you want to be: <gameID> [WHITE|BLACK|<empty>]");
     printPrompt();
     String[] params = getInput();
@@ -165,7 +165,7 @@ public class ChessClient {
     server.join(gameID, params[1]);
     return null;
   }
-  public String observe(){
+  public String observe() throws IOException {
     System.out.println("To observe a game type the ID: <gameID>");
     printPrompt();
     String[] params = getInput();

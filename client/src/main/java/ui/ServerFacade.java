@@ -2,10 +2,7 @@ package ui;
 
 import com.google.gson.Gson;
 import exception.ResponseException;
-import model.AuthData;
-import model.GameData;
-import model.ListData;
-import model.UserData;
+import model.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,11 +46,15 @@ public class ServerFacade {
     var list = clientComm.get(temp, ListData.class, "Authorization", auth.authToken());
     return list.games();
   }
-  public void join(int gameID, String player){
-
+  public void join(int gameID, String player) throws IOException {
+    String temp = serverUrl + "/game";
+    JoinData join = new JoinData(player, gameID);
+    clientComm.put(temp, join, "Authorization", auth.authToken());
   }
-  public void observe(int gameID){
-
+  public void observe(int gameID) throws IOException {
+    String temp = serverUrl + "/game";
+    JoinData observe = new JoinData(null, gameID);
+    clientComm.put(temp, observe, "Authorization", auth.authToken());
   }
   public void logout() throws IOException {
     String temp = serverUrl + "/session";
