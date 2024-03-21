@@ -1,6 +1,7 @@
 package ui;
 
 import com.google.gson.Gson;
+import model.ExceptionData;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -59,6 +60,9 @@ public class ClientCommunicator {
     }
     else{
       responseBody = connection.getErrorStream();
+//      InputStreamReader reader = new InputStreamReader(responseBody);
+//      response = new Gson().fromJson(reader, ExceptionData.class);
+
     }
     InputStreamReader reader = new InputStreamReader(responseBody);
     if (responseClass != null){

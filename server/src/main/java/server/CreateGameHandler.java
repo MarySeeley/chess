@@ -21,8 +21,8 @@ public class CreateGameHandler extends GameHandler{
       String authToken = request.headers("Authorization");
       GameData game = new Gson().fromJson(request.body(), GameData.class);
       game = gameService.createGame(authToken, game.gameName());
-      System.out.println(game);
       CreateGameData gameID = new CreateGameData(game.gameID());
+      System.out.println(game);
 //      JsonObject gameID = new JsonObject();
 //      gameID.addProperty("gameID", game.gameID());
       return new Gson().toJson(gameID);

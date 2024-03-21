@@ -16,7 +16,7 @@ import java.util.Collection;
 public class ServerFacade {
   private final String serverUrl;
   public final ClientCommunicator clientComm;
-  private AuthData auth=null;
+  public AuthData auth=null;
 
   public ServerFacade(String serverURL) {
     this.serverUrl=serverURL;
@@ -48,17 +48,15 @@ public class ServerFacade {
 
   public Collection<GameData> list() throws IOException {
     String temp=serverUrl + "/game";
-    record listGames(Collection<GameData> gameList) {
-    }
     var list=clientComm.get(temp, ListData.class, "Authorization", auth.authToken());
-    return list.games();
+    Collection<GameData> games = (Collection<GameData>) list.games();
+    return games;
   }
 
   public void join(int gameID, String player) throws IOException {
     String temp=serverUrl + "/game";
     player=player.toUpperCase();
     JoinData join=new JoinData(player, gameID);
-    System.out.println(join);
     clientComm.put(temp, join, "Authorization", auth.authToken());
   }
 

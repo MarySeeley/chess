@@ -8,7 +8,7 @@ import model.ExceptionData;
 import spark.Request;
 import spark.Response;
 
-public class LogoutHandler extends UserHandler {
+public class LogoutHandler extends userHandler.UserHandler {
 
   public LogoutHandler(UserDAO userDAO, AuthDAO authDAO) {
     super(userDAO, authDAO);
