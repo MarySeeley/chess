@@ -55,6 +55,16 @@ public class ServerFacadeTests {
     }
 
     @Test
+    public void registerFails() throws ResponseException, IOException {
+        String user = "user";
+        AuthData auth1 = facade.register(user, "password", "email");
+        AuthData auth2 = facade.register(user, "password", "email");
+        System.out.println(auth1);
+        System.out.println(auth2);
+        Assertions.assertNull(auth2.authToken());
+    }
+
+    @Test
     public void loginWorked() throws IOException, ResponseException {
         String user = "user";
         String password = "password";
@@ -63,12 +73,28 @@ public class ServerFacadeTests {
         System.out.println(auth);
         Assertions.assertEquals(user, auth.username());
     }
-
+    @Test
+    public void loginFails() throws IOException, ResponseException {
+        String user = "user";
+        String password = "password";
+        AuthData auth = facade.login(user, password);
+        System.out.println(auth);
+        Assertions.assertNull(auth.username());
+    }
     @Test
     public void createWorked() throws IOException, ResponseException {
         facade.register("user", "password", "email");
         CreateGameData game = facade.create("gameName");
         Assertions.assertInstanceOf(CreateGameData.class, game);
+
+    }
+
+    @Test
+    public void createFails() throws IOException, ResponseException {
+//        facade.create(null);
+        facade.register("user", "password", "email");
+        facade.logout();
+        Assertions.assertThrows(NullPointerException.class, ()->{facade.create(null);});
 
     }
 
@@ -87,10 +113,26 @@ public class ServerFacadeTests {
     }
 
     @Test
+    public void listFails() throws IOException, ResponseException {
+        facade.register("user", "password", "email");
+        facade.logout();
+        Assertions.assertThrows(NullPointerException.class, ()->{facade.list();});
+    }
+
+    @Test
     public void joinWorked() throws ResponseException, IOException {
         facade.register("user", "password", "email");
         CreateGameData gameID = facade.create("gameName");
         facade.join(gameID.gameID(), "black");
+    }
+
+    @Test
+    public void joinFailed() throws ResponseException, IOException {
+        facade.register("user", "password", "email");
+        CreateGameData gameID = facade.create("gameName");
+        facade.join(gameID.gameID(), "black");
+        Assertions.assertThrows(IOException.class, ()->{facade.join(gameID.gameID(), "black");});
+
     }
 
     @Test
@@ -100,10 +142,21 @@ public class ServerFacadeTests {
         facade.observe(gameID.gameID());
     }
     @Test
+    public void observeFails() throws IOException, ResponseException {
+        facade.register("user", "password", "email");
+        facade.logout();
+        Assertions.assertThrows(NullPointerException.class, ()->{facade.observe(-1);});
+    }
+    @Test
     public void logoutWorked() throws ResponseException, IOException {
         facade.register("user", "password", "email");
         facade.logout();
         Assertions.assertNull(facade.auth);
+    }
+
+    @Test
+    public void logoutFails() throws ResponseException, IOException {
+        Assertions.assertThrows(IOException.class, ()->{facade.logout();});
     }
 
 }
