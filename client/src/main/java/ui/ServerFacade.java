@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import exception.ResponseException;
 import model.AuthData;
 import model.GameData;
+import model.ListData;
 import model.UserData;
 
 import java.io.IOException;
@@ -13,10 +14,12 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
+import java.util.Collection;
 
 public class ServerFacade {
   private final String serverUrl;
   private final ClientCommunicator clientComm;
+  private AuthData auth = null;
   public ServerFacade(String serverURL){
     this.serverUrl = serverURL;
     this.clientComm = new ClientCommunicator();
@@ -25,20 +28,26 @@ public class ServerFacade {
     UserData user = new UserData(username, password, email);
     var path = "/user";
     String temp = serverUrl + path;
-    return clientComm.post(temp, user, AuthData.class);
+
+    auth = clientComm.post(temp, user, AuthData.class, null, null);
+    return auth;
   }
   public AuthData login(String username, String password) throws IOException {
     UserData user = new UserData(username, password, null);
     String temp = serverUrl + "/session";
-    return clientComm.post(temp, user, AuthData.class);
+    auth =  clientComm.post(temp, user, AuthData.class, null, null);
+    return auth;
   }
-  public int create(String gameName) throws IOException {
+  public GameData create(String gameName) throws IOException {
     GameData game = new GameData(0,null,null,gameName, null);
     String temp = serverUrl + "/game";
-    return clientComm.post(temp, game, int.class);
+    return clientComm.post(temp, game, GameData.class, "Authorization", auth.authToken());
   }
-  public void list(){
-
+  public Collection<GameData> list() throws IOException {
+    String temp = serverUrl + "/game";
+    record listGames(Collection<GameData> gameList){}
+    var list = clientComm.get(temp, ListData.class, "Authorization", auth.authToken());
+    return list.games();
   }
   public void join(int gameID, String player){
 

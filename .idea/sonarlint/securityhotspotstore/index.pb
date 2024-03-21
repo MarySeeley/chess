@@ -27,3 +27,7 @@ U
 %src/main/java/server/UserHandler.java,7\d\7ddeec4b146c2bef9e89e6f6c01c38c7a16079c6
 V
 &src/main/java/server/LoginHandler.java,9\5\957c4b55566a46e13a54a160925bc15af181461d
+Z
+*src/main/java/server/ListGamesHandler.java,e\8\e82f6eef6bc7cdb452638642ab2d18387776046b
+Q
+!src/main/java/model/ListData.java,7\5\7580947d3e1f57b1091bb6bda707634078b409c5

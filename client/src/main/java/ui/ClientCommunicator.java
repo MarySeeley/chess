@@ -10,13 +10,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ClientCommunicator {
-  public <T> T get(String urlString, Class<T> responseClass) throws IOException {
+  public <T> T get(String urlString, Class<T> responseClass, String headerName, String headerValue) throws IOException {
     T response = null;
     URL url = new URL(urlString);
     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
     connection.setReadTimeout(5000);
     connection.setRequestMethod("GET");
-
+    if(headerName != null && headerValue != null){
+      connection.setRequestProperty(headerName, headerValue);
+    }
     connection.connect();
     InputStream responseBody;
     if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
@@ -32,13 +34,16 @@ public class ClientCommunicator {
     return response;
   }
 
-  public <T> T post(String urlString, Object request, Class<T> responseClass) throws IOException {
+  public <T> T post(String urlString, Object request, Class<T> responseClass, String headerName, String headerValue) throws IOException {
     T response = null;
     URL url = new URL(urlString);
     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
     connection.setReadTimeout(5000);
     connection.setRequestMethod("POST");
     connection.setDoOutput(true);
+    if(headerName != null && headerValue != null){
+      connection.setRequestProperty(headerName, headerValue);
+    }
     if (request != null) {
       connection.addRequestProperty("Content-Type", "application/json");
       String reqData = new Gson().toJson(request);

@@ -7,6 +7,7 @@ import model.GameData;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class ChessClient {
@@ -144,14 +145,17 @@ public class ChessClient {
     System.out.println("To create a game enter the games name: <gameName>");
     printPrompt();
     String[] params = getInput();
-//    GameData game = server.create(params[0]);
-    int gameID = server.create(params[0]);
-    System.out.println("Created the game "+gameID);
+    GameData game = server.create(params[0]);
+    int gameID = game.gameID();
+//    int gameID = server.create(params[0]);
+    System.out.println("Created the game "+game.gameName()+" with gameID: "+ gameID);
     return "created";
   }
-  public String list(){
-    server.list();
-    return null;
+  public String list() throws IOException {
+    Collection<GameData> games = server.list();
+    System.out.println("Here is your list of games:");
+    System.out.println(games);
+    return "listed";
   }
   public String join(){
     System.out.println("To join a game type the ID and what player color you want to be: <gameID> [WHITE|BLACK|<empty>]");
