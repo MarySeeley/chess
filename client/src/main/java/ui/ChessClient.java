@@ -23,6 +23,7 @@ public class ChessClient {
     System.out.println("Welcome to Chess. Enter the number correlated to the action you want to take.");
     String result =(commandUI());
     while(result != null && !result.equals("quit")){
+      System.out.println("\n");
       System.out.println(commandUI());
       printPrompt();
       String line = scanner.nextLine();
@@ -162,8 +163,10 @@ public class ChessClient {
     printPrompt();
     String[] params = getInput();
     int gameID = Integer.parseInt(params[0]);
+    String playerColor = (String)params[1];
     server.join(gameID, params[1]);
-    return null;
+    System.out.println("You have joined the game as the " + playerColor+" player!");
+    return "joined";
   }
   public String observe() throws IOException {
     System.out.println("To observe a game type the ID: <gameID>");
@@ -171,7 +174,8 @@ public class ChessClient {
     String[] params = getInput();
     int gameID = Integer.parseInt(params[0]);
     server.observe(gameID);
-    return null;
+    System.out.println("You have joined the game as an observer!");
+    return "observed";
   }
   public String logout() throws IOException {
     System.out.println("Your logged out! Thanks for playing");

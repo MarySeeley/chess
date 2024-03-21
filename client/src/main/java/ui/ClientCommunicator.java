@@ -83,18 +83,28 @@ public class ClientCommunicator {
   }
 
   public void put(String urlString, Object request, String headerName, String headerValue) throws IOException{
+    Object response = null;
     URL url = new URL(urlString);
     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
     connection.setReadTimeout(5000);
-    connection.setRequestMethod("POST");
+    connection.setRequestMethod("PUT");
     connection.setDoOutput(true);
     if(headerName != null && headerValue != null){
       connection.setRequestProperty(headerName, headerValue);
     }
+    if (request != null) {
+      connection.addRequestProperty("Content-Type", "application/json");
+      String reqData = new Gson().toJson(request);
+      try (OutputStream reqBody = connection.getOutputStream()) {
+        reqBody.write(reqData.getBytes());
+      }
+    }
     connection.connect();
-    int responseCode = connection.getResponseCode();
-    if (responseCode != HttpURLConnection.HTTP_OK) {
-      throw new IOException("Unexpected response code: " + responseCode+"\n"+"Error: " + connection.getInputStream());
+    InputStream responseBody;
+    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+      responseBody = connection.getInputStream();
+    } else {
+      throw new IOException(connection.getErrorStream().toString());
     }
   }
 }
