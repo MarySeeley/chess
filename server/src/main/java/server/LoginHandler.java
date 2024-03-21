@@ -20,7 +20,9 @@ public class LoginHandler extends UserHandler {
   public Object handle(Request request, Response response) throws Exception {
     try {
       UserData user=new Gson().fromJson(request.body(), UserData.class);
+      System.out.println(user.username());
       AuthData auth=userService.login(user);
+      System.out.println(auth);
       return new Gson().toJson(auth);
     }catch(DataAccessException e){
       response.status(e.getStatusCode());

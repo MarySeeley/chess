@@ -2,6 +2,7 @@ package ui;
 
 import exception.ResponseException;
 import model.AuthData;
+import model.CreateGameData;
 import model.GameData;
 
 import java.io.IOException;
@@ -146,10 +147,10 @@ public class ChessClient {
     System.out.println("To create a game enter the games name: <gameName>");
     printPrompt();
     String[] params = getInput();
-    GameData game = server.create(params[0]);
+    CreateGameData game = server.create(params[0]);
     int gameID = game.gameID();
 //    int gameID = server.create(params[0]);
-    System.out.println("Created the game "+game.gameName()+" with gameID: "+ gameID);
+    System.out.println("Created a game with gameID: "+ gameID);
     return "created";
   }
   public String list() throws IOException {

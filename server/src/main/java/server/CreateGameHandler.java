@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import dataAccessTests.AuthDAO;
 import dataAccessTests.DataAccessException;
 import dataAccessTests.GameDAO;
+import model.CreateGameData;
 import model.ExceptionData;
 import model.GameData;
 import spark.Request;
@@ -20,8 +21,10 @@ public class CreateGameHandler extends GameHandler{
       String authToken = request.headers("Authorization");
       GameData game = new Gson().fromJson(request.body(), GameData.class);
       game = gameService.createGame(authToken, game.gameName());
-      JsonObject gameID = new JsonObject();
-      gameID.addProperty("gameID", game.gameID());
+      System.out.println(game);
+      CreateGameData gameID = new CreateGameData(game.gameID());
+//      JsonObject gameID = new JsonObject();
+//      gameID.addProperty("gameID", game.gameID());
       return new Gson().toJson(gameID);
     }catch(DataAccessException e){
       response.status(e.getStatusCode());

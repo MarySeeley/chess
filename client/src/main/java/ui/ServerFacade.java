@@ -34,15 +34,16 @@ public class ServerFacade {
 
   public AuthData login(String username, String password) throws IOException {
     UserData user=new UserData(username, password, null);
+    System.out.println(user);
     String temp=serverUrl + "/session";
     auth=clientComm.post(temp, user, AuthData.class, null, null);
     return auth;
   }
 
-  public GameData create(String gameName) throws IOException {
+  public CreateGameData create(String gameName) throws IOException {
     GameData game=new GameData(0, null, null, gameName, null);
     String temp=serverUrl + "/game";
-    return clientComm.post(temp, game, GameData.class, "Authorization", auth.authToken());
+    return clientComm.post(temp, game, CreateGameData.class, "Authorization", auth.authToken());
   }
 
   public Collection<GameData> list() throws IOException {
