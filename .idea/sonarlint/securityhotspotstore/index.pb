@@ -19,3 +19,15 @@ X
 (src/main/java/ui/ClientCommunicator.java,4\7\47fc72fd336d6877d57b93528603dab489458b3b
 ^
 .src/test/java/serverTests/GameServiceTest.java,9\0\90457a54ab8a3b3b43f3e96a9ee1971175e1603f
+R
+"src/main/java/ui/chessBoardUI.java,1\8\1804977a42f29cd60bf7065c1d19131bc00c6ae5
+R
+"src/main/java/ui/ChessBoardUI.java,7\3\7315e7b4ca226bd0fcaa124e9e5707e9f8005160
+U
+%src/main/java/ui/EscapeSequences.java,f\5\f5164a7694d7bc0ec5a278873d5b206d75837ac4
+Q
+!src/main/java/ui/ChessClient.java,2\4\245743310212fcec9bdd7a87e449c71d097f007e
+S
+#src/main/java/chess/ChessBoard.java,1\3\139d0d4bb2b8e11a4e03dbed5b694452387fb52a
+G
+src/main/java/Main.java,e\4\e44a8606ce010ad9b89aafdfcee2ab49afbf6d10

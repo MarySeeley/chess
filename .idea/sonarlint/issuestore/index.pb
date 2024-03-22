@@ -25,3 +25,11 @@ W
 'src/main/java/server/LogoutHandler.java,2\3\23a5e167c07450fa012924c6ed9622d02af72d93
 Y
 )src/main/java/server/RegisterHandler.java,2\4\24f047eb4c9964643ad8d20cdef1a2a7ceab54f9
+R
+"src/main/java/ui/chessBoardUI.java,1\8\1804977a42f29cd60bf7065c1d19131bc00c6ae5
+R
+"src/main/java/ui/ChessBoardUI.java,7\3\7315e7b4ca226bd0fcaa124e9e5707e9f8005160
+U
+%src/main/java/ui/EscapeSequences.java,f\5\f5164a7694d7bc0ec5a278873d5b206d75837ac4
+S
+#src/main/java/chess/ChessBoard.java,1\3\139d0d4bb2b8e11a4e03dbed5b694452387fb52a
