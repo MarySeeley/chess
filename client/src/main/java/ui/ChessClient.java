@@ -1,5 +1,6 @@
 package ui;
 
+import chess.ChessGame;
 import exception.ResponseException;
 import model.AuthData;
 import model.CreateGameData;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 public class ChessClient {
@@ -16,6 +18,9 @@ public class ChessClient {
   private ServerFacade server;
 
   Boolean loggedIn = false;
+  Boolean gamePlay = false;
+  Boolean isWhite = null;
+  GameData currentGame;
   public ChessClient(String serverURL){
     server = new ServerFacade(serverURL);
 
@@ -47,6 +52,15 @@ public class ChessClient {
               4 Help
               """;
     }
+    else if(gamePlay){
+      System.out.println("""
+              1 Redraw Chess Board 
+              2 Leave
+              3 Make Move
+              4 Resign
+              5 Highlight Legal Moves
+              """);
+    }
     else{
       return """
               1 Create
@@ -58,6 +72,7 @@ public class ChessClient {
               7 Help
               """;
     }
+    return null;
   }
 
   public String eval(String input){
@@ -68,6 +83,16 @@ public class ChessClient {
           case 1 -> register();
           case 2 -> login();
           case 3 -> "quit";
+          default -> help();
+        };
+      }
+      else if(gamePlay){
+        return switch(tokens){
+          case 1 -> redraw();
+          case 2 -> leave();
+          case 3 -> move();
+          case 4 -> resign();
+          case 5 -> highlight();
           default -> help();
         };
       }
@@ -95,15 +120,24 @@ public class ChessClient {
 
   public String help(){
     if(!loggedIn){
-      return """
+      System.out.println( """
               1 Register - Create an account with a username, password, and email
               2 Login - Log in using an existing account with a username and password
               3 Quit - Finish playing chess
               4 Help - Explains commands
-              """;
+              """);
+    }
+    else if(gamePlay){
+      System.out.println("""
+              1 Redraw Chess Board - Redraws the chess board
+              2 Leave - Leave the game and return to the main menu (can rejoin later)
+              3 Make Move - Choose a piece and move them to a new spot
+              4 Resign - Forfeit the game, other player will win. (You will still need to leave the game)
+              5 Highlight Legal Moves - Choose a piece to view legal moves
+              """);
     }
     else{
-      return """
+      System.out.println( """
               1 Create - Start a new game
               2 List - List all the games
               3 Join - Join a chess game with the game ID into an white or black player
@@ -111,8 +145,9 @@ public class ChessClient {
               5 Logout - Logout when you are done
               6 Quit - Finish playing chess
               7 Help - Explains commands
-              """;
+              """);
     }
+    return "help";
   }
   public String[] getInput(){
     String line = scanner.nextLine();
@@ -134,7 +169,7 @@ public class ChessClient {
     }
     return "registered";
   }
-  public String login() throws IOException {
+  public String login() throws IOException, ResponseException {
     System.out.println("To login type: <username> <password>");
     printPrompt();
     String[] params = getInput();
@@ -149,33 +184,58 @@ public class ChessClient {
     String[] params = getInput();
     CreateGameData game = server.create(params[0]);
     int gameID = game.gameID();
-//    int gameID = server.create(params[0]);
+    game.game().squares.resetBoard();
     System.out.println("Created a game with gameID: "+ gameID);
     return "created";
   }
   public String list() throws IOException {
-    Collection<GameData> games = server.list();
+    List<GameData> games = server.list().stream().toList();
     System.out.println("Here is your list of games:");
-    System.out.println(games);
+    for(int i = 1; i <= games.toArray().length; i++){
+      GameData game = games.get(i-1);
+      System.out.println(i +" Name:"+game.gameName()+"  White Player:"+game.whiteUsername()+"  Black Player:"+ game.blackUsername());
+    }
     return "listed";
   }
   public String join() throws IOException {
     System.out.println("To join a game type the ID and what player color you want to be: <gameID> [WHITE|BLACK|<empty>]");
     printPrompt();
     String[] params = getInput();
-    int gameID = Integer.parseInt(params[0]);
+    int gameNum = Integer.parseInt(params[0]);
     String playerColor = (String)params[1];
+    List<GameData> games = server.list().stream().toList();
+    GameData game = games.get(gameNum-1);
+    int gameID = game.gameID();
     server.join(gameID, params[1]);
     System.out.println("You have joined the game as the " + playerColor+" player!");
+    currentGame = game;
+    gamePlay = true;
+    if(playerColor.equals("WHITE")){
+      isWhite = true;
+    }
+    else if(playerColor.equals("BLACK")){
+      isWhite = false;
+    }
+    else{
+      isWhite = true;
+    }
+    ChessBoardUI.main(game.game(), isWhite);
     return "joined";
   }
   public String observe() throws IOException {
     System.out.println("To observe a game type the ID: <gameID>");
     printPrompt();
     String[] params = getInput();
-    int gameID = Integer.parseInt(params[0]);
+    int gameNum = Integer.parseInt(params[0]);
+    List<GameData> games = server.list().stream().toList();
+    GameData game = games.get(gameNum-1);
+    int gameID = game.gameID();
     server.observe(gameID);
     System.out.println("You have joined the game as an observer!");
+    gamePlay = true;
+    isWhite = true;
+    currentGame = game;
+    ChessBoardUI.main(game.game(), true);
     return "observed";
   }
   public String logout() throws IOException {
@@ -187,5 +247,27 @@ public class ChessClient {
   public void printPrompt(){
     System.out.print("\n" + ">>>");
   }
-
+  public String redraw(){
+    ChessBoardUI.main(currentGame.game(), isWhite);
+    return "redraw";
+  }
+  public String leave(){
+    gamePlay = false;
+    isWhite = null;
+    currentGame = null;
+    return "leave";
+  }
+  public String move(){
+    return "move";
+  }
+  public String resign(){
+    return "resign";
+  }
+  public String highlight(){
+    System.out.println("To choose a piece to look at its moves select its position: <a8>");
+    printPrompt();
+    String[] params = getInput();
+    int gameNum = Integer.parseInt(params[0]);
+    return "highlight";
+  }
 }

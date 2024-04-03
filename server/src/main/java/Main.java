@@ -11,10 +11,11 @@ public class Main {
                 port = Integer.parseInt(args[0]);
             }
             port = server.run(port);
+
             System.out.printf("Server started on port %d%n", port);
         }
         catch(Throwable e){
-            System.out.printf("Unable to start server: %d%n", e.getMessage());
+            System.out.printf("Unable to start server: %s%n", e.getMessage());
         }
         var piece = new ChessPiece(ChessGame.TeamColor.WHITE, ChessPiece.PieceType.PAWN);
         System.out.println("♕ 240 Chess Server: " + piece);

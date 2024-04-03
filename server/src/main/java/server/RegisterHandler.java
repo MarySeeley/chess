@@ -1,4 +1,4 @@
-package userHandler;
+package server;
 
 import com.google.gson.Gson;
 import dataAccessTests.AuthDAO;

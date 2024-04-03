@@ -28,39 +28,31 @@ import static ui.EscapeSequences.*;
     public static final String BLACK_KNIGHT = " n ";
     public static final String BLACK_ROOK = " r ";
     public static final String BLACK_PAWN = " p ";
-//    public static final String EMPTY = "\u2003 ";
-    private static final int BOARD_SIZE_IN_SQUARES = 10;
-    private static final int SQUARE_SIZE_IN_CHARS = 1;
-    private static final int LINE_WIDTH_IN_CHARS = 0;
     private static final String EMPTY = "   ";
-    private static final String X = " X ";
-    private static final String O = " O ";
+
     private static Random rand = new Random();
 
     private static ChessBoard board;
-    public static void main(String[] args) {
+    public static void main(ChessGame game, Boolean isWhite) {
       var out=new PrintStream(System.out, true, StandardCharsets.UTF_8);
-      board=new ChessBoard();
-      board.resetBoard();
+
+      board=game.squares;
       out.print(ERASE_SCREEN);
-      System.out.print("\u001B[0m");
-      System.out.println(header(true));
-      String[][] squares=makeBoard(true);
-      printBoard(squares);
-      System.out.println(header(true));
 
-      System.out.print("\u001B[0m");
-      System.out.println(header(false));
-      String[][] squares1=makeBoard(false);
-      printBoard(squares1);
-      System.out.println(header(false));
-//      drawHeaders(out);
-//
-//      drawTicTacToeBoard(out);
-//      drawHeaders(out);
-
-      out.print(SET_BG_COLOR_BLACK);
-      out.print(SET_TEXT_COLOR_WHITE);
+      if(!isWhite) {
+        System.out.print("\u001B[0m");
+        System.out.println(header(false));
+        String[][] squares1=makeBoard(false);
+        printBoard(squares1, false);
+        System.out.println(header(false));
+      }
+      else {
+        System.out.print("\u001B[0m");
+        System.out.println(header(true));
+        String[][] squares=makeBoard(true);
+        printBoard(squares, true);
+        System.out.println(header(true));
+      }
     }
     private static String header(Boolean reversal){
       String header = "";
@@ -84,31 +76,45 @@ import static ui.EscapeSequences.*;
       String[] sidesTrue = {" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "};
       String[] sidesFalse = {" 8 ", " 7 ", " 6 ", " 5 ", " 4 ", " 3 ", " 2 ", " 1 "};
       for(int row = 0; row<8; row++){
-        if(reversal){
+//        if(reversal){
           squares[row][0] = sidesTrue[row];
-        }
-        else{
-          squares[row][0] = sidesFalse[row];
-        }
+//        }
+//        else{
+//          squares[row][0] = sidesFalse[row];
+//        }
         for(int col = 1; col<9; col++){
 
           ChessPiece piece=board.getPiece(new ChessPosition(row+1, col));
           String pieceString = playerString(piece);
           squares[row][col] = pieceString;
         }
-        if(reversal){
+//        if(reversal){
           squares[row][9] = sidesTrue[row];
-        }
-        else {
-          squares[row][9]=sidesFalse[row];
-        }
+//        }
+//        else {
+//          squares[row][9]=sidesFalse[row];
+//        }
       }
       return squares;
     }
-    private static void printBoard(String[][] squares){
-      Boolean startWithBlack = false;
-      for(int row = 0; row <8; row++){
-        for(int col = 0; col<10; col++){
+    private static void printBoard(String[][] squares, Boolean reverse){
+      Boolean startWithBlack = true;
+      int startRow = 0;
+      int endRow = 8;
+      int startCol = 0;
+      int endCol = 10;
+      int increment = 1;
+
+
+      if(reverse){
+        startRow = 7;
+        endRow = -1;
+        startCol = 9;
+        endCol = -1;
+        increment = -1;
+      }
+      for(int row = startRow; row !=endRow; row+=increment){
+        for(int col = startCol; col!=endCol; col+=increment){
           String piece = squares[row][col];
           boolean isBlack = (startWithBlack && (row + col) % 2 == 0) || (!startWithBlack && (row + col) % 2 != 0);
           if(col>=1 && col<=8){
@@ -119,6 +125,111 @@ import static ui.EscapeSequences.*;
             }
             else{
               background = SET_BG_COLOR_BLACK;
+            }
+            if(isUpperCase(piece.charAt(1))){
+              textColor = SET_TEXT_COLOR_BLUE;
+            }
+            else{
+              textColor = SET_TEXT_COLOR_RED;
+            }
+            String print = background + textColor + piece + "\u001B[0m";
+            System.out.print(print);
+          }
+          else{
+            System.out.print(piece);
+          }
+        }
+        System.out.println();
+      }
+    }
+    private static void highlightBoard(String[][] squares, Boolean reverse, String position){
+      // might need to use a switch to reverse it
+      int posRow = position.charAt(0);
+      char charCol = position.charAt(1);
+      int posCol=0;
+
+      Boolean startWithBlack = true;
+      int startRow = 0;
+      int endRow = 8;
+      int startCol = 0;
+      int endCol = 10;
+      int increment = 1;
+
+      switch(charCol){
+        case 'a':
+          posCol = 8;
+        case 'b':
+          posCol = 7;
+        case 'c':
+          posCol = 6;
+        case 'd':
+          posCol = 5;
+        case 'e':
+          posCol = 4;
+        case 'f':
+          posCol = 3;
+        case 'g':
+          posCol = 2;
+        case 'h':
+          posCol = 1;
+      };
+
+
+      if(reverse){
+        startRow = 7;
+        endRow = -1;
+        startCol = 9;
+        endCol = -1;
+        increment = -1;
+        switch(charCol){
+          case 'a':
+            posCol = 1;
+          case 'b':
+            posCol = 2;
+          case 'c':
+            posCol = 3;
+          case 'd':
+            posCol = 4;
+          case 'e':
+            posCol = 5;
+          case 'f':
+            posCol = 6;
+          case 'g':
+            posCol = 7;
+          case 'h':
+            posCol = 8;
+        };
+      }
+      for(int row = startRow; row !=endRow; row+=increment){
+        for(int col = startCol; col!=endCol; col+=increment){
+          String piece = squares[row][col];
+          boolean highlight = false;
+          boolean highlightMoves = false;
+          if(row==posRow-1 && col == posCol){
+            highlight = true;
+          }
+          boolean isBlack = (startWithBlack && (row + col) % 2 == 0) || (!startWithBlack && (row + col) % 2 != 0);
+          if(col>=1 && col<=8){
+            String background;
+            String textColor;
+            if(highlight){
+              background = SET_BG_COLOR_YELLOW;
+            }
+            else if(isBlack){
+              if(highlightMoves){
+                background =SET_BG_COLOR_DARK_GREEN;
+              }
+              else {
+                background=SET_BG_COLOR_WHITE;
+              }
+            }
+            else{
+              if(highlightMoves){
+                background = SET_BG_COLOR_GREEN;
+              }
+              else {
+                background=SET_BG_COLOR_BLACK;
+              }
             }
             if(isUpperCase(piece.charAt(1))){
               textColor = SET_TEXT_COLOR_BLUE;
@@ -178,201 +289,6 @@ import static ui.EscapeSequences.*;
       }
       return EMPTY;
     }
-
-    private static void drawHeaders(PrintStream out) {
-
-      setBlack(out);
-
-      String[] headers = { EMPTY," a "," b "," c "," d "," e "," f "," g "," h ",EMPTY };
-      for (int boardCol = 0; boardCol < BOARD_SIZE_IN_SQUARES; ++boardCol) {
-        drawHeader(out, headers[boardCol]);
-
-        if (boardCol < BOARD_SIZE_IN_SQUARES - 1) {
-          out.print(EMPTY.repeat(LINE_WIDTH_IN_CHARS));
-        }
-      }
-
-      out.println();
-    }
-
-    private static void drawHeader(PrintStream out, String headerText) {
-      int prefixLength = SQUARE_SIZE_IN_CHARS / 2;
-      int suffixLength = SQUARE_SIZE_IN_CHARS - prefixLength - 1;
-
-      out.print(EMPTY.repeat(prefixLength));
-      printHeaderText(out, headerText);
-      out.print(EMPTY.repeat(suffixLength));
-    }
-
-    private static void printHeaderText(PrintStream out, String player) {
-      out.print(SET_BG_COLOR_BLACK);
-      out.print(SET_TEXT_COLOR_GREEN);
-
-      out.print(player);
-
-      setBlack(out);
-    }
-    private static void drawChessBoard(PrintStream out){
-
-    }
-
-    private static void drawTicTacToeBoard(PrintStream out) {
-
-      for (int boardRow = 0; boardRow < BOARD_SIZE_IN_SQUARES; ++boardRow) {
-        for(int boardCol = 0; boardCol <BOARD_SIZE_IN_SQUARES; ++boardCol){
-          if(boardCol >=1 &&boardCol<=8 && boardRow>=1 && boardRow<=8) {
-            ChessPiece piece=board.getPiece(new ChessPosition(boardRow, boardCol));
-            printPlayer(out, piece);
-          }
-        }
-        out.println();
-
-//        drawRowOfSquares(out);
-
-//        if (boardRow < BOARD_SIZE_IN_SQUARES - 1) {
-//          drawVerticalLine(out);
-////          setBlack(out);
-//        }
-      }
-    }
-
-    private static void drawRowOfSquares(PrintStream out) {
-
-      for (int squareRow = 0; squareRow < SQUARE_SIZE_IN_CHARS; ++squareRow) {
-        for (int boardCol = 0; boardCol < BOARD_SIZE_IN_SQUARES; ++boardCol) {
-          setWhite(out);
-
-          if (squareRow == SQUARE_SIZE_IN_CHARS / 2) {
-            int prefixLength = SQUARE_SIZE_IN_CHARS / 2;
-            int suffixLength = SQUARE_SIZE_IN_CHARS - prefixLength - 1;
-
-            out.print(EMPTY.repeat(prefixLength));
-            if(boardCol >=1 &&boardCol<=8 && squareRow>=1 && squareRow<=8) {
-              ChessPiece piece=board.getPiece(new ChessPosition(squareRow, boardCol));
-              printPlayer(out, piece);
-            }
-//            printPlayer(out, rand.nextBoolean() ? X : O);
-            out.print(EMPTY.repeat(suffixLength));
-          }
-          else {
-            out.print(EMPTY.repeat(SQUARE_SIZE_IN_CHARS));
-          }
-
-          if (boardCol < BOARD_SIZE_IN_SQUARES - 1) {
-            // Draw right line
-            setRed(out);
-            out.print(EMPTY.repeat(LINE_WIDTH_IN_CHARS));
-          }
-
-          setBlack(out);
-        }
-
-        out.println();
-      }
-    }
-    private static void printPlayer(PrintStream out, ChessPiece piece) {
-      out.print(SET_BG_COLOR_WHITE);
-      if(piece == null){
-        out.print(EMPTY);
-      }
-      else if(piece.getTeamColor().equals(ChessGame.TeamColor.WHITE)){
-        if(piece.getPieceType().equals(ChessPiece.PieceType.PAWN)){
-          out.print(SET_TEXT_COLOR_RED);
-          out.print(WHITE_PAWN);
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.ROOK)){
-          out.print(SET_TEXT_COLOR_RED);
-          out.print(WHITE_ROOK);
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.KNIGHT)){
-          out.print(SET_TEXT_COLOR_RED);
-          out.print(WHITE_KNIGHT);
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.BISHOP)){
-          out.print(SET_TEXT_COLOR_RED);
-          out.print(WHITE_BISHOP);
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.KING)){
-          out.print(SET_TEXT_COLOR_RED);
-          out.print(WHITE_KING);
-
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.QUEEN)){
-          out.print(SET_TEXT_COLOR_RED);
-          out.print(WHITE_QUEEN);
-
-
-        }
-      }
-      else{
-        if(piece.getPieceType().equals(ChessPiece.PieceType.PAWN)){
-          out.print(SET_TEXT_COLOR_BLUE);
-          out.print(BLACK_PAWN);
-
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.ROOK)){
-          out.print(SET_TEXT_COLOR_BLUE);
-          out.print(BLACK_ROOK);
-
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.KNIGHT)){
-          out.print(SET_TEXT_COLOR_BLUE);
-          out.print(BLACK_KNIGHT);
-
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.BISHOP)){
-          out.print(SET_TEXT_COLOR_BLUE);
-          out.print(BLACK_BISHOP);
-
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.KING)){
-          out.print(SET_TEXT_COLOR_BLUE);
-          out.print(BLACK_KING);
-        }
-        else if(piece.getPieceType().equals(ChessPiece.PieceType.QUEEN)){
-          out.print(SET_TEXT_COLOR_BLUE);
-          out.print(BLACK_QUEEN);
-
-        }
-      }
-//      out.print(SET_BG_COLOR_WHITE);
-//      out.print(SET_TEXT_COLOR_BLUE);
-
-//      out.print(piece);
-
-      setWhite(out);
-    }
-
-    private static void drawVerticalLine(PrintStream out) {
-
-      int boardSizeInSpaces = BOARD_SIZE_IN_SQUARES * SQUARE_SIZE_IN_CHARS +
-              (BOARD_SIZE_IN_SQUARES - 1) * LINE_WIDTH_IN_CHARS;
-
-      for (int lineRow = 0; lineRow < LINE_WIDTH_IN_CHARS; ++lineRow) {
-        setRed(out);
-        out.print(EMPTY.repeat(boardSizeInSpaces));
-
-        setBlack(out);
-        out.println();
-      }
-    }
-
-    private static void setWhite(PrintStream out) {
-      out.print(SET_BG_COLOR_WHITE);
-      out.print(SET_TEXT_COLOR_WHITE);
-    }
-
-    private static void setRed(PrintStream out) {
-      out.print(SET_BG_COLOR_RED);
-      out.print(SET_TEXT_COLOR_RED);
-    }
-
-    private static void setBlack(PrintStream out) {
-      out.print(SET_BG_COLOR_BLACK);
-      out.print(SET_TEXT_COLOR_BLACK);
-    }
-
-
   }
 
 

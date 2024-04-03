@@ -29,14 +29,21 @@ public class ServerFacade {
     String temp=serverUrl + path;
 
     auth=clientComm.post(temp, user, AuthData.class, null, null);
+    if(auth.authToken()==null){
+      System.out.println("You can't re-register a user");
+      throw new ResponseException(403, "Can't re-register");
+    }
     return auth;
   }
 
-  public AuthData login(String username, String password) throws IOException {
+  public AuthData login(String username, String password) throws IOException, ResponseException {
     UserData user=new UserData(username, password, null);
-    System.out.println(user);
     String temp=serverUrl + "/session";
     auth=clientComm.post(temp, user, AuthData.class, null, null);
+    if(auth.authToken()== null){
+      System.out.println("This user is not registered");
+      throw new ResponseException(401, "Unauthorized");
+    }
     return auth;
   }
 

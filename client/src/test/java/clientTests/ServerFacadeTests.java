@@ -58,10 +58,7 @@ public class ServerFacadeTests {
     public void registerFails() throws ResponseException, IOException {
         String user = "user";
         AuthData auth1 = facade.register(user, "password", "email");
-        AuthData auth2 = facade.register(user, "password", "email");
-        System.out.println(auth1);
-        System.out.println(auth2);
-        Assertions.assertNull(auth2.authToken());
+        Assertions.assertThrows(ResponseException.class, ()->{facade.register(user, "password", "email");});
     }
 
     @Test
@@ -77,9 +74,8 @@ public class ServerFacadeTests {
     public void loginFails() throws IOException, ResponseException {
         String user = "user";
         String password = "password";
-        AuthData auth = facade.login(user, password);
-        System.out.println(auth);
-        Assertions.assertNull(auth.username());
+        Assertions.assertThrows(ResponseException.class,()->{AuthData auth = facade.login(user, password);});
+
     }
     @Test
     public void createWorked() throws IOException, ResponseException {

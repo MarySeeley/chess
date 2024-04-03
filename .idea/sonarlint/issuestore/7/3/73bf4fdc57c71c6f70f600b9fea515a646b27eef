@@ -1,0 +1,11 @@
+
+~
+java:S1488P"aImmediately return this expression instead of assigning it to the temporary variable "hashMoves".(¹µ„8•À‚®ê1
+p
+java:S1104"SMake squares a static final constant or non-public and provide accessors if needed.(åƒ°Ğ8¹À‚®ê1
+H
+java:S1168B"+Return an empty collection instead of null.(¥¹ï8ÒÇ‚®ê1
+o
+java:S3776|"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(„İÊ8ïÇ‚®ê1
+p
+java:S3776«"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ÅÍ†õ8úÇ‚®ê1

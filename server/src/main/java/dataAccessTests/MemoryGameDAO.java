@@ -89,6 +89,12 @@ public class MemoryGameDAO implements GameDAO{
       games.add(newGame);
     }
   }
+
+  @Override
+  public void updateGameBoard(int gameID, ChessGame game) throws DataAccessException {
+
+  }
+
   public void checkGame(int gameID) throws DataAccessException{
     boolean found = false;
     for(GameData i : games){

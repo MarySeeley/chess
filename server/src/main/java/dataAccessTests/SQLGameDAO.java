@@ -71,7 +71,6 @@ public class SQLGameDAO implements GameDAO{
         }
       }
     } catch (SQLException e) {
-      System.out.println("SQL");
       e.printStackTrace();
       throw new RuntimeException(e);
     }
@@ -82,6 +81,7 @@ public class SQLGameDAO implements GameDAO{
     try(var conn = DatabaseManager.getConnection()) {
       try (var preparedStatement=conn.prepareStatement("INSERT INTO game (whiteUsername, blackUsername, gameName, chessGame)  VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
         ChessGame game = new ChessGame();
+//        game.squares.resetBoard();
         Gson gson = new Gson();
         String jsonGame = gson.toJson(game);
         preparedStatement.setString(1, null);
@@ -163,6 +163,20 @@ public class SQLGameDAO implements GameDAO{
       }
     }catch (SQLException e) {
       e.printStackTrace();
+      throw new DataAccessException(500, "Error: SQL error");
+    }
+  }
+  public void updateGameBoard(int gameID, ChessGame game) throws DataAccessException {
+    try (var conn = DatabaseManager.getConnection()) {
+      try (var preparedStatement=conn.prepareStatement("UPDATE game SET chessGame=? WHERE gameID=?")) {
+        Gson gson=new Gson();
+        String jsonGame=gson.toJson(game);
+        preparedStatement.setString(1, jsonGame);
+        preparedStatement.setInt(2, gameID);
+
+        preparedStatement.executeUpdate();
+      }
+    }catch(SQLException e){
       throw new DataAccessException(500, "Error: SQL error");
     }
   }

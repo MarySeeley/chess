@@ -1,0 +1,65 @@
+
+`	java:S112s"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112u"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112¨"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+C
+java:S5411/"(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ
+>
+java:S54117"(Use a primitive boolean expression here.(·×…
+C
+java:S5411Q"(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ
+>
+java:S5411Y"(Use a primitive boolean expression here.(·×…
+C
+java:S5411z"(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ
+?
+java:S5411‚"(Use a primitive boolean expression here.(·×…
+@	java:S106"+Replace this use of System.out by a logger.(è«©ñ
+E	java:S106 "+Replace this use of System.out by a logger.(ƒÇãˆúÿÿÿÿ
+E	java:S106!"+Replace this use of System.out by a logger.(ô©ßŒüÿÿÿÿ
+@
+java:S1181'"%Catch Exception instead of Throwable.(‡˜ÚÚøÿÿÿÿ
+@	java:S106("+Replace this use of System.out by a logger.(ìÍ¦‡
+E	java:S106+"+Replace this use of System.out by a logger.(¾©¥Çÿÿÿÿÿ
+@	java:S1068"+Replace this use of System.out by a logger.(Îñë
+[
+java:S2147t"ECombine this catch with the one at line 114, which has the same body.(ï­£Ä
+@	java:S106o"+Replace this use of System.out by a logger.(¾º¯Ä
+@	java:S106p"+Replace this use of System.out by a logger.(‡ßÅ×
+@	java:S106{"+Replace this use of System.out by a logger.(Îñë
+A	java:S106ƒ"+Replace this use of System.out by a logger.(Îñë
+A	java:S106Œ"+Replace this use of System.out by a logger.(Îñë
+O
+java:S1854¢"8Remove this useless assignment to local variable "auth".(ŒıÊ®
+A	java:S106"+Replace this use of System.out by a logger.(ıá
+@
+java:S1481¢")Remove this unused "auth" local variable.(ŒıÊ®
+A	java:S106¤"+Replace this use of System.out by a logger.(¸Ó£¨
+F	java:S106¦"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ
+O
+java:S1854°"8Remove this useless assignment to local variable "auth".(øûàî
+F	java:S106­"+Replace this use of System.out by a logger.(×´¢¥ûÿÿÿÿ
+@
+java:S1481°")Remove this unused "auth" local variable.(øûàî
+A	java:S106±"+Replace this use of System.out by a logger.(« ÊÖ
+F	java:S106¶"+Replace this use of System.out by a logger.(”€–›úÿÿÿÿ
+A	java:S106¼"+Replace this use of System.out by a logger.(ö§İÓ
+F	java:S106Á"+Replace this use of System.out by a logger.(áÛş¶ÿÿÿÿÿ
+A	java:S106Ä"+Replace this use of System.out by a logger.(„‚Ã·
+A	java:S106É"+Replace this use of System.out by a logger.(Éà«ä
+E
+java:S1905Í")Remove this unnecessary cast to "String".(êšäõøÿÿÿÿ
+F	java:S106Ò"+Replace this use of System.out by a logger.(Òç¤ûÿÿÿÿ
+A	java:S106â"+Replace this use of System.out by a logger.(‡•ÙÎ
+F	java:S106ê"+Replace this use of System.out by a logger.(ÇŸË¶üÿÿÿÿ
+F	java:S106ò"+Replace this use of System.out by a logger.(˜õ¶§şÿÿÿÿ
+A	java:S106ø"+Replace this use of System.out by a logger.(ÿ¢Ï
+W
+java:S1854";Remove this useless assignment to local variable "gameNum".(‰…Ùãûÿÿÿÿ
+A	java:S106‹"+Replace this use of System.out by a logger.(´“£
+H
+java:S1481",Remove this unused "gameNum" local variable.(‰…Ùãûÿÿÿÿ
+B
+java:S1128",Remove this unused import 'chess.ChessGame'.(†¶ØŸ
+L
+java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ

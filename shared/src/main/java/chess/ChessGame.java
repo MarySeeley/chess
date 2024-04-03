@@ -12,15 +12,22 @@ import java.util.HashSet;
  */
 public class ChessGame {
     private TeamColor color;
-    private ChessBoard squares = new ChessBoard();
+    public ChessBoard squares = new ChessBoard();
+    Boolean over = false;
     public ChessGame() {
-
+        squares.resetBoard();
     }
     public ChessGame copy(){
         ChessGame cop = new ChessGame();
         cop.color = this.color;
         cop.squares = squares.copy();
         return cop;
+    }
+    public boolean isGameOver(){
+        return this.over;
+    }
+    public void gameOver(){
+        this.over = true;
     }
     /**
      * @return Which team's turn it is

@@ -8,5 +8,12 @@ public record GameData(
         String blackUsername,
         String gameName,
         ChessGame game
+//        Boolean finished
         ) {
+//        public GameData(int gameID, String whiteUsername, String blackUsername, String gameName, ChessGame game, Boolean finished){
+//
+//        }
+//        public GameData(int gameID, String whiteUsername, String blackUsername, String gameName, ChessGame game){
+//                this(gameID, whiteUsername, blackUser)
+//        }
 }

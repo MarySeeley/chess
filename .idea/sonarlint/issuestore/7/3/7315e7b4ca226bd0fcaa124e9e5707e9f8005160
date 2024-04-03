@@ -1,0 +1,105 @@
+
+e
+java:S1192+"JDefine a constant instead of duplicating this literal "\u001B[0m" 4 times.(»Ñ÷‘üÿÿÿÿ
+2
+java:S1643?"Use a StringBuilder instead.(—¶”¥
+2
+java:S1643D"Use a StringBuilder instead.(ÇºÝ
+C
+java:S5411*"(Use a primitive boolean expression here.(¢¯”•øÿÿÿÿ
+C
+java:S5411="(Use a primitive boolean expression here.(šÂü÷ùÿÿÿÿ
+C
+java:S5411m"(Use a primitive boolean expression here.(º¿ç‰ùÿÿÿÿ
+D
+java:S5411²"(Use a primitive boolean expression here.(º¿ç‰ùÿÿÿÿ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ÐÌ’Ô
+E	java:S106%"+Replace this use of System.out by a logger.(ÌñÒÜÿÿÿÿÿ
+E	java:S106+"+Replace this use of System.out by a logger.(»Ñ÷‘üÿÿÿÿ
+@	java:S106,"+Replace this use of System.out by a logger.(ØŽ·¬
+@	java:S106/"+Replace this use of System.out by a logger.(ØŽ·¬
+E	java:S1062"+Replace this use of System.out by a logger.(»Ñ÷‘üÿÿÿÿ
+@	java:S1063"+Replace this use of System.out by a logger.(÷üúÊ
+@	java:S1066"+Replace this use of System.out by a logger.(÷üúÊ
+Y
+java:S1854M">Remove this useless assignment to local variable "sidesFalse".(õÀšˆüÿÿÿÿ
+D
+java:S1172J"/Remove this unused method parameter "reversal".(‘ëúO
+J
+java:S1481M"/Remove this unused "sidesFalse" local variable.(õÀšˆüÿÿÿÿ
+Q	java:S125O"<This block of commented-out lines of code should be removed.(ÜØÓÅ
+V	java:S125Q"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+Q	java:S125["<This block of commented-out lines of code should be removed.(ÜØÓÅ
+V	java:S125]"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+m
+java:S3776d"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(åÛš³üÿÿÿÿ
+A	java:S106ˆ"+Replace this use of System.out by a logger.(Äð’¼
+F	java:S106‹"+Replace this use of System.out by a logger.(‰Ù¬Åüÿÿÿÿ
+F	java:S106Ž"+Replace this use of System.out by a logger.(ªÓ¼áþÿÿÿÿ
+n
+java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(ˆ·ƒªúÿÿÿÿ
+V
+java:S1854 ":Remove this useless assignment to local variable "posCol".(…Þ®©úÿÿÿÿ
+V
+java:S1854¢":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ
+Q
+java:S1854¤":Remove this useless assignment to local variable "posCol".(ß¶Ï
+V
+java:S1854¦":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ
+V
+java:S1854¨":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ
+Q
+java:S1854ª":Remove this useless assignment to local variable "posCol".(×ö®Þ
+Q
+java:S1854¬":Remove this useless assignment to local variable "posCol".(ºã´±
+Q
+java:S1854º":Remove this useless assignment to local variable "posCol".(»†»Ü
+Q
+java:S1854¼":Remove this useless assignment to local variable "posCol".(ºã´±
+Q
+java:S1854¾":Remove this useless assignment to local variable "posCol".(×ö®Þ
+V
+java:S1854À":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ
+V
+java:S1854Â":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ
+Q
+java:S1854Ä":Remove this useless assignment to local variable "posCol".(ß¶Ï
+V
+java:S1854Æ":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ
+b	java:S128«"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å
+b	java:S128©"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ
+g	java:S128§"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒþÿÿÿÿ
+b	java:S128¥"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬
+a	java:S128£"LEnd this switch case with an unconditional break, return or throw statement.(ðÿ«C
+g	java:S128¡"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ðÿÿÿÿÿ
+g	java:S128Ÿ"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ
+8	java:S131ž""Add a default case to this switch.(´¯‚ÿ
+8
+java:S1116¯"Remove this empty statement.(ôŸŽìúÿÿÿÿ
+b	java:S128Å"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å
+b	java:S128Ã"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ
+g	java:S128Á"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒþÿÿÿÿ
+b	java:S128¿"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬
+a	java:S128½"LEnd this switch case with an unconditional break, return or throw statement.(ðÿ«C
+g	java:S128»"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ðÿÿÿÿÿ
+g	java:S128¹"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ
+8	java:S131¸""Add a default case to this switch.(´¯‚ÿ
+8
+java:S1116É"Remove this empty statement.(ôŸŽìúÿÿÿÿ
+A	java:S106ñ"+Replace this use of System.out by a logger.(Äð’¼
+F	java:S106ô"+Replace this use of System.out by a logger.(‰Ù¬Åüÿÿÿÿ
+F	java:S106÷"+Replace this use of System.out by a logger.(ªÓ¼áþÿÿÿÿ
+i
+java:S3776ú"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ì·šÏ
+F
+java:S1128
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+>
+java:S1068!"(Remove this unused "rand" private field.(šŸÀ¯
+O
+java:S1144‘"3Remove this unused private "highlightBoard" method.(ˆ·ƒªúÿÿÿÿ
+ã
+java:S6541‘"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 100 to 64, Complexity from 32 to 14, Nesting Level from 5 to 2, Number of Variables from 21 to 6.(ˆ·ƒªúÿÿÿÿ
