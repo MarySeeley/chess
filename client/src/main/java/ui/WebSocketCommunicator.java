@@ -7,22 +7,6 @@ import webSocketMessages.serverMessages.Notification;
 import webSocketMessages.serverMessages.ServerMessage;
 
 public class WebSocketCommunicator{
-  public void joinGame(){
-
-  }
-  public void joinObserve(){
-
-  }
-  public void makeMove(){
-
-  }
-  public void leave(){
-
-  }
-  public void resign(){
-
-  }
-
   public void displayNotification(String message){
 
   }

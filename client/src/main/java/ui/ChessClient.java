@@ -219,7 +219,7 @@ public class ChessClient {
     else{
       isWhite = true;
     }
-    ChessBoardUI.main(game.game(), isWhite);
+    ChessBoardUI.main(game.game(), isWhite, null,null);
     return "joined";
   }
   public String observe() throws IOException {
@@ -235,7 +235,7 @@ public class ChessClient {
     gamePlay = true;
     isWhite = true;
     currentGame = game;
-    ChessBoardUI.main(game.game(), true);
+    ChessBoardUI.main(game.game(), true, null, null);
     return "observed";
   }
   public String logout() throws IOException {
@@ -248,7 +248,7 @@ public class ChessClient {
     System.out.print("\n" + ">>>");
   }
   public String redraw(){
-    ChessBoardUI.main(currentGame.game(), isWhite);
+    ChessBoardUI.main(currentGame.game(), isWhite, null, null);
     return "redraw";
   }
   public String leave(){
@@ -268,6 +268,8 @@ public class ChessClient {
     printPrompt();
     String[] params = getInput();
     int gameNum = Integer.parseInt(params[0]);
+    ChessGame newGame = ChessGame.createNewGame();
+    ChessBoardUI.main(newGame, false, true, "a8");
     return "highlight";
   }
 }

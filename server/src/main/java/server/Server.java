@@ -17,9 +17,6 @@ public class Server {
 
           // Instantiate DAOs
 
-//        AuthDAO authDAO = new MemoryAuthDAO();
-//        UserDAO userDAO = new MemoryUserDAO();
-//        GameDAO gameDAO = new MemoryGameDAO();
           UserDAO userDAO;
           AuthDAO authDAO;
           GameDAO gameDAO;
@@ -35,7 +32,6 @@ public class Server {
           WebSocketHandler webSocketHandler = new WebSocketHandler(authDAO, gameDAO);
 
           // Register
-//          Spark.webSocket("/connect", new WebSocketHandler(authDAO, gameDAO));
           Spark.webSocket("/connect", webSocketHandler);
           Spark.post("/user", new RegisterHandler(userDAO, authDAO));
           Spark.delete("/db", new ClearHandler(userDAO, authDAO, gameDAO));

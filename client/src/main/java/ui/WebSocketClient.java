@@ -18,15 +18,12 @@ public class WebSocketClient extends Endpoint {
       @Override
       public void onMessage(String s) {
         try{
-          System.out.println("message recieved: " + s);
           ServerMessage message = new Gson().fromJson(s,ServerMessage.class);
-
-          System.out.println(message);
-//          observer.notify(message);
+          observer.notify(message);
         }catch(Exception ex){
           System.out.println("error client");
           ex.printStackTrace();
-//          observer.notify(new ErrorMessage(ex.getMessage()));
+          observer.notify(new ServerMessage(ServerMessage.ServerMessageType.ERROR));
         }
       }
     });

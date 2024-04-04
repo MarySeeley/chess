@@ -92,12 +92,12 @@ public class SQLGameDAO implements GameDAO{
         preparedStatement.executeUpdate();
 
         ResultSet resultSet = preparedStatement.getGeneratedKeys();
-        Integer ID = null;
+        Integer id = null;
         if (resultSet.next()) {
-          ID = resultSet.getInt(1);
+          id = resultSet.getInt(1);
         }
 
-        return new GameData(ID, null, null, gameName, chessGame);
+        return new GameData(id, null, null, gameName, chessGame);
       }
     }
     catch(SQLException e){

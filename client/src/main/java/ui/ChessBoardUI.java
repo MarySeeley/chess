@@ -33,13 +33,17 @@ import static ui.EscapeSequences.*;
     private static Random rand = new Random();
 
     private static ChessBoard board;
-    public static void main(ChessGame game, Boolean isWhite) {
+    public static void main(ChessGame game, Boolean isWhite, Boolean highlight, String position) {
       var out=new PrintStream(System.out, true, StandardCharsets.UTF_8);
 
       board=game.squares;
       out.print(ERASE_SCREEN);
 
-      if(!isWhite) {
+      if(highlight && !isWhite){
+        String[][] squares1=makeBoard(false);
+        highlightBoard(squares1, false, position);
+      }
+      else if(!isWhite) {
         System.out.print("\u001B[0m");
         System.out.println(header(false));
         String[][] squares1=makeBoard(false);
@@ -76,24 +80,16 @@ import static ui.EscapeSequences.*;
       String[] sidesTrue = {" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "};
       String[] sidesFalse = {" 8 ", " 7 ", " 6 ", " 5 ", " 4 ", " 3 ", " 2 ", " 1 "};
       for(int row = 0; row<8; row++){
-//        if(reversal){
           squares[row][0] = sidesTrue[row];
-//        }
-//        else{
-//          squares[row][0] = sidesFalse[row];
-//        }
+
         for(int col = 1; col<9; col++){
 
           ChessPiece piece=board.getPiece(new ChessPosition(row+1, col));
           String pieceString = playerString(piece);
           squares[row][col] = pieceString;
         }
-//        if(reversal){
           squares[row][9] = sidesTrue[row];
-//        }
-//        else {
-//          squares[row][9]=sidesFalse[row];
-//        }
+
       }
       return squares;
     }
@@ -142,19 +138,8 @@ import static ui.EscapeSequences.*;
         System.out.println();
       }
     }
-    private static void highlightBoard(String[][] squares, Boolean reverse, String position){
-      // might need to use a switch to reverse it
-      int posRow = position.charAt(0);
-      char charCol = position.charAt(1);
-      int posCol=0;
-
-      Boolean startWithBlack = true;
-      int startRow = 0;
-      int endRow = 8;
-      int startCol = 0;
-      int endCol = 10;
-      int increment = 1;
-
+    private static int intCol(char charCol){
+      int posCol = 10;
       switch(charCol){
         case 'a':
           posCol = 8;
@@ -173,32 +158,56 @@ import static ui.EscapeSequences.*;
         case 'h':
           posCol = 1;
       };
+      return posCol;
+    }
+
+    private static int reverseIntCol(char charCol){
+      int posCol = 10;
+      switch(charCol){
+        case 'a':
+          posCol = 1;
+        case 'b':
+          posCol = 2;
+        case 'c':
+          posCol = 3;
+        case 'd':
+          posCol = 4;
+        case 'e':
+          posCol = 5;
+        case 'f':
+          posCol = 6;
+        case 'g':
+          posCol = 7;
+        case 'h':
+          posCol = 8;
+      };
+      return posCol;
+    }
+    private static void highlightBoard(String[][] squares, Boolean reverse, String position){
+      // might need to use a switch to reverse it
+      int posRow = position.charAt(0);
+      char charCol = position.charAt(1);
+      int posCol=0;
+
+      Boolean startWithBlack = true;
+      int startRow = 0;
+      int endRow = 8;
+      int startCol = 0;
+      int endCol = 10;
+      int increment = 1;
+
+      posCol = intCol(charCol);
+
 
 
       if(reverse){
+        posCol = reverseIntCol(charCol);
         startRow = 7;
         endRow = -1;
         startCol = 9;
         endCol = -1;
         increment = -1;
-        switch(charCol){
-          case 'a':
-            posCol = 1;
-          case 'b':
-            posCol = 2;
-          case 'c':
-            posCol = 3;
-          case 'd':
-            posCol = 4;
-          case 'e':
-            posCol = 5;
-          case 'f':
-            posCol = 6;
-          case 'g':
-            posCol = 7;
-          case 'h':
-            posCol = 8;
-        };
+
       }
       for(int row = startRow; row !=endRow; row+=increment){
         for(int col = startCol; col!=endCol; col+=increment){

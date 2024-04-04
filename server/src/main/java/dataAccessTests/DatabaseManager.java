@@ -9,7 +9,7 @@ public class DatabaseManager {
     private static final String password;
     private static final String connectionUrl;
 
-    /*
+    /**
      * Load the database information for the db.properties file.
      */
     static {
@@ -68,51 +68,5 @@ public class DatabaseManager {
             throw new DataAccessException(500, e.getMessage());
         }
     }
-//    public static void configureDatabase() throws ResponseException, DataAccessException {
-//        createDatabase();
-//        try (var conn = getConnection()) {
-//            for (var statement : createStatements) {
-//                try (var preparedStatement = conn.prepareStatement(statement)) {
-//                    preparedStatement.executeUpdate();
-//                }
-//            }
-//        } catch (SQLException | DataAccessException ex) {
-//            throw new ResponseException(500, String.format("Unable to configure database: %s", ex.getMessage()));
-//        }
-//    }
 
-//    public static final String[] createStatements = {
-//            """
-//            CREATE TABLE IF NOT EXISTS  auth (
-//              `authToken` varchar(256) NOT NULL,
-//              `username` varchar(256) NOT NULL,
-//              PRIMARY KEY (`authToken`),
-//              INDEX(username)
-//            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
-//            """,
-//            """
-//            CREATE TABLE IF NOT EXISTS  user (
-//              `username` varchar(256) NOT NULL,
-//              `password` varchar(256) NOT NULL,
-//              `email` varchar(256) NOT NULL,
-//              PRIMARY KEY (`username`),
-//              INDEX(password)
-//              INDEX(email)
-//            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
-//            """,
-//            """
-//            CREATE TABLE IF NOT EXISTS  game (
-//              `gameID` int NOT NULL,
-//              `whiteUsername` varchar(256) NOT NULL,
-//              `blackUsername` varchar(256) NOT NULL,
-//              `gameName` varchar(256) NOT NULL,
-//              `chessGame` blob NOT NULL,
-//              PRIMARY KEY (`gameID`),
-//              INDEX(whiteUsername)
-//              INDEX(blackUsername)
-//              INDEX(gameName)
-//              INDEX(chessGame)
-//            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
-//            """
-//    };
 }

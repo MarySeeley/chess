@@ -1,105 +1,101 @@
 
-e
-java:S1192+"JDefine a constant instead of duplicating this literal "\u001B[0m" 4 times.(»Ñ÷‘üÿÿÿÿ
-2
-java:S1643?"Use a StringBuilder instead.(—¶”¥
-2
-java:S1643D"Use a StringBuilder instead.(Çºİ
-C
-java:S5411*"(Use a primitive boolean expression here.(¢¯”•øÿÿÿÿ
-C
-java:S5411="(Use a primitive boolean expression here.(šÂü÷ùÿÿÿÿ
-C
-java:S5411m"(Use a primitive boolean expression here.(º¿ç‰ùÿÿÿÿ
-D
-java:S5411²"(Use a primitive boolean expression here.(º¿ç‰ùÿÿÿÿ
-P
-java:S1118":Add a private constructor to hide the implicit public one.(ĞÌ’Ô
-E	java:S106%"+Replace this use of System.out by a logger.(ÌñÒÜÿÿÿÿÿ
-E	java:S106+"+Replace this use of System.out by a logger.(»Ñ÷‘üÿÿÿÿ
-@	java:S106,"+Replace this use of System.out by a logger.(Ø·¬
-@	java:S106/"+Replace this use of System.out by a logger.(Ø·¬
-E	java:S1062"+Replace this use of System.out by a logger.(»Ñ÷‘üÿÿÿÿ
-@	java:S1063"+Replace this use of System.out by a logger.(÷üúÊ
-@	java:S1066"+Replace this use of System.out by a logger.(÷üúÊ
-Y
-java:S1854M">Remove this useless assignment to local variable "sidesFalse".(õÀšˆüÿÿÿÿ
-D
-java:S1172J"/Remove this unused method parameter "reversal".(‘ëúO
+l
+java:S1192/"JDefine a constant instead of duplicating this literal "\u001B[0m" 4 times.(»Ñ÷‘üÿÿÿÿ8àöÑê1
+9
+java:S1643C"Use a StringBuilder instead.(—¶”¥8¢àöÑê1
+9
+java:S1643H"Use a StringBuilder instead.(Çºİ8¢àöÑê1
 J
-java:S1481M"/Remove this unused "sidesFalse" local variable.(õÀšˆüÿÿÿÿ
-Q	java:S125O"<This block of commented-out lines of code should be removed.(ÜØÓÅ
-V	java:S125Q"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
-Q	java:S125["<This block of commented-out lines of code should be removed.(ÜØÓÅ
-V	java:S125]"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
-m
-java:S3776d"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(åÛš³üÿÿÿÿ
-A	java:S106ˆ"+Replace this use of System.out by a logger.(Äğ’¼
-F	java:S106‹"+Replace this use of System.out by a logger.(‰Ù¬Åüÿÿÿÿ
-F	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
-n
-java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(ˆ·ƒªúÿÿÿÿ
-V
-java:S1854 ":Remove this useless assignment to local variable "posCol".(…Ş®©úÿÿÿÿ
-V
-java:S1854¢":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ
+java:S5411*"(Use a primitive boolean expression here.(›…Ë‹ûÿÿÿÿ8¥àöÑê1
+E
+java:S5411."(Use a primitive boolean expression here.(™ùÖÊ8¥àöÑê1
+J
+java:S5411A"(Use a primitive boolean expression here.(šÂü÷ùÿÿÿÿ8¥àöÑê1
+J
+java:S5411i"(Use a primitive boolean expression here.(º¿ç‰ùÿÿÿÿ8¦àöÑê1
+K
+java:S5411Ë"(Use a primitive boolean expression here.(º¿ç‰ùÿÿÿÿ8¦àöÑê1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ĞÌ’Ô8‡çöÑê1
+L	java:S106%"+Replace this use of System.out by a logger.(ÌñÒÜÿÿÿÿÿ8“çöÑê1
+L	java:S106/"+Replace this use of System.out by a logger.(»Ñ÷‘üÿÿÿÿ8•çöÑê1
+G	java:S1060"+Replace this use of System.out by a logger.(Ø·¬8•çöÑê1
+G	java:S1063"+Replace this use of System.out by a logger.(Ø·¬8—çöÑê1
+L	java:S1066"+Replace this use of System.out by a logger.(»Ñ÷‘üÿÿÿÿ8—çöÑê1
+G	java:S1067"+Replace this use of System.out by a logger.(÷üúÊ8˜çöÑê1
+G	java:S106:"+Replace this use of System.out by a logger.(÷üúÊ8˜çöÑê1
+`
+java:S1854Q">Remove this useless assignment to local variable "sidesFalse".(õÀšˆüÿÿÿÿ8šçöÑê1
+K
+java:S1172N"/Remove this unused method parameter "reversal".(‘ëúO8›çöÑê1
 Q
-java:S1854¤":Remove this useless assignment to local variable "posCol".(ß¶Ï
-V
-java:S1854¦":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ
-V
-java:S1854¨":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ
-Q
-java:S1854ª":Remove this useless assignment to local variable "posCol".(×ö®Ş
-Q
-java:S1854¬":Remove this useless assignment to local variable "posCol".(ºã´±
-Q
-java:S1854º":Remove this useless assignment to local variable "posCol".(»†»Ü
-Q
-java:S1854¼":Remove this useless assignment to local variable "posCol".(ºã´±
-Q
-java:S1854¾":Remove this useless assignment to local variable "posCol".(×ö®Ş
-V
-java:S1854À":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ
-V
-java:S1854Â":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ
-Q
-java:S1854Ä":Remove this useless assignment to local variable "posCol".(ß¶Ï
-V
-java:S1854Æ":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ
-b	java:S128«"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å
-b	java:S128©"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ
-g	java:S128§"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ
-b	java:S128¥"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬
-a	java:S128£"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C
-g	java:S128¡"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ
-g	java:S128Ÿ"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ
-8	java:S131""Add a default case to this switch.(´¯‚ÿ
-8
-java:S1116¯"Remove this empty statement.(ôŸìúÿÿÿÿ
-b	java:S128Å"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å
-b	java:S128Ã"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ
-g	java:S128Á"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ
-b	java:S128¿"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬
-a	java:S128½"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C
-g	java:S128»"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ
-g	java:S128¹"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ
-8	java:S131¸""Add a default case to this switch.(´¯‚ÿ
-8
-java:S1116É"Remove this empty statement.(ôŸìúÿÿÿÿ
-A	java:S106ñ"+Replace this use of System.out by a logger.(Äğ’¼
-F	java:S106ô"+Replace this use of System.out by a logger.(‰Ù¬Åüÿÿÿÿ
-F	java:S106÷"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
-i
-java:S3776ú"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ì·šÏ
-F
+java:S1481Q"/Remove this unused "sidesFalse" local variable.(õÀšˆüÿÿÿÿ8›çöÑê1
+t
+java:S3776`"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(åÛš³üÿÿÿÿ8ƒçšÒê1
+H	java:S106„"+Replace this use of System.out by a logger.(Äğ’¼8‹çšÒê1
+M	java:S106‡"+Replace this use of System.out by a logger.(‰Ù¬Åüÿÿÿÿ8‹çšÒê1
+M	java:S106Š"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8‹çšÒê1
+]
+java:S1854‘":Remove this useless assignment to local variable "posCol".(…Ş®©úÿÿÿÿ8‹çšÒê1
+]
+java:S1854“":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8‹çšÒê1
+X
+java:S1854•":Remove this useless assignment to local variable "posCol".(ß¶Ï8‹çšÒê1
+]
+java:S1854—":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8‹çšÒê1
+]
+java:S1854™":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8‹çšÒê1
+X
+java:S1854›":Remove this useless assignment to local variable "posCol".(×ö®Ş8‹çšÒê1
+X
+java:S1854":Remove this useless assignment to local variable "posCol".(ºã´±8‹çšÒê1
+i	java:S128œ"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8¬çšÒê1
+i	java:S128š"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8¼çšÒê1
+n	java:S128˜"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8½çšÒê1
+i	java:S128–"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8½çšÒê1
+h	java:S128”"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8½çšÒê1
+n	java:S128’"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8½çšÒê1
+n	java:S128"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8½çšÒê1
+?	java:S131""Add a default case to this switch.(´¯‚ÿ8½çšÒê1
+?
+java:S1116 "Remove this empty statement.(ôŸìúÿÿÿÿ8½çšÒê1
+X
+java:S1854¨":Remove this useless assignment to local variable "posCol".(»†»Ü8½çšÒê1
+X
+java:S1854ª":Remove this useless assignment to local variable "posCol".(ºã´±8½çšÒê1
+X
+java:S1854¬":Remove this useless assignment to local variable "posCol".(×ö®Ş8½çšÒê1
+]
+java:S1854®":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8½çšÒê1
+]
+java:S1854°":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8½çšÒê1
+X
+java:S1854²":Remove this useless assignment to local variable "posCol".(ß¶Ï8ÆçšÒê1
+]
+java:S1854´":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8ÕçšÒê1
+i	java:S128³"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8İçšÒê1
+i	java:S128±"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8ŞçšÒê1
+n	java:S128¯"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8ŞçšÒê1
+i	java:S128­"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8ŞçšÒê1
+h	java:S128«"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8ŞçšÒê1
+n	java:S128©"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8ŞçšÒê1
+n	java:S128§"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8ŞçšÒê1
+?	java:S131¦""Add a default case to this switch.(´¯‚ÿ8ŞçšÒê1
+?
+java:S1116·"Remove this empty statement.(ôŸìúÿÿÿÿ8ŞçšÒê1
+u
+java:S3776º"RRefactor this method to reduce its Cognitive Complexity from 39 to the 15 allowed.(ˆ·ƒªúÿÿÿÿ8âçšÒê1
+H	java:S106ú"+Replace this use of System.out by a logger.(Äğ’¼8ìçšÒê1
+M	java:S106ı"+Replace this use of System.out by a logger.(‰Ù¬Åüÿÿÿÿ8ìçšÒê1
+M	java:S106€"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ìçšÒê1
+p
+java:S3776ƒ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ì·šÏ8ùçšÒê1
+M
 java:S1128
-"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
->
-java:S1068!"(Remove this unused "rand" private field.(šŸÀ¯
-O
-java:S1144‘"3Remove this unused private "highlightBoard" method.(ˆ·ƒªúÿÿÿÿ
-ã
-java:S6541‘"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 100 to 64, Complexity from 32 to 14, Nesting Level from 5 to 2, Number of Variables from 21 to 6.(ˆ·ƒªúÿÿÿÿ
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8œç÷Ñê1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8œç÷Ñê1
+E
+java:S1068!"(Remove this unused "rand" private field.(šŸÀ¯8àçöÑê1
+é
+java:S6541º"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 66 to 64, Complexity from 16 to 14, Nesting Level from 5 to 2, Number of Variables from 21 to 6.(ˆ·ƒªúÿÿÿÿ8­èšÒê1

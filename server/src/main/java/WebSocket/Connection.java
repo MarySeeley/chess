@@ -15,12 +15,8 @@ public class Connection {
     this.authToken = authToken;
     this.session = session;
   }
-  public void setGameID(int gameID){
-    this.gameID = gameID;
-  }
 
   public static void sendError(Session session, String msg) throws IOException {
-//    System.out.println(msg);
     String errormsg = "Error: "+msg;
     Error errorMessage = new Error(errormsg);
     String errorJson = new Gson().toJson(errorMessage, Error.class);

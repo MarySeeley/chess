@@ -2,7 +2,6 @@
 g	java:S112K"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ãŸ Ğê1
 h	java:S112‰"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ëŸ Ğê1
 h	java:S112Ç"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ëŸ Ğê1
-r	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÙ£¹ıÿÿÿÿ8ïŸ Ğê1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(É µŠûÿÿÿÿ8öŸ Ğê1
 ?
 java:S2386"Make this member "protected".(ÖÏ–ªşÿÿÿÿ8˜  Ğê1
