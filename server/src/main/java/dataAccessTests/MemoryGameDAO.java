@@ -36,8 +36,7 @@ public class MemoryGameDAO implements GameDAO{
         randomID = Math.abs(random.nextInt());
       }
     }
-    ChessGame chessGame = new ChessGame();
-    chessGame.setUp();
+    ChessGame chessGame = ChessGame.createNewGame();
     GameData game = new GameData(randomID, null, null, gameName, chessGame);
     games.add(game);
     return game;

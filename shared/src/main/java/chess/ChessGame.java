@@ -14,7 +14,13 @@ public class ChessGame {
     private TeamColor color;
     public ChessBoard squares = new ChessBoard();
     Boolean over;
-
+    public static ChessGame createNewGame(){
+        ChessGame game = new ChessGame();
+        game.color = TeamColor.WHITE;
+        game.over = false;
+        game.squares.resetBoard();
+        return game;
+    }
     public ChessGame() {
 
     }
@@ -24,11 +30,7 @@ public class ChessGame {
         cop.squares = squares.copy();
         return cop;
     }
-    public void setUp(){
-        color = TeamColor.WHITE;
-        over = false;
-        squares.resetBoard();
-    }
+
     public boolean isGameOver(){
         return this.over;
     }
