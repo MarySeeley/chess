@@ -1,10 +1,15 @@
 package ui;
 
 import chess.ChessGame;
+import com.google.gson.Gson;
 import exception.ResponseException;
 import model.AuthData;
 import model.CreateGameData;
 import model.GameData;
+import webSocketMessages.serverMessages.Error;
+import webSocketMessages.serverMessages.LoadGame;
+import webSocketMessages.serverMessages.Notification;
+import webSocketMessages.serverMessages.ServerMessage;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -13,7 +18,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
-public class ChessClient {
+public class ChessClient implements NotificationHandler{
   Scanner scanner = new Scanner(System.in);
   private ServerFacade server;
 
@@ -21,8 +26,9 @@ public class ChessClient {
   Boolean gamePlay = false;
   Boolean isWhite = null;
   GameData currentGame;
+  ChessGame localChessGame;
   public ChessClient(String serverURL){
-    server = new ServerFacade(serverURL);
+    server = new ServerFacade(serverURL, this);
 
   }
   public void run(){
@@ -209,20 +215,29 @@ public class ChessClient {
 
     currentGame = game;
     gamePlay = true;
-    ChessGame.TeamColor color = ChessGame.TeamColor.WHITE;
-    if(playerColor.equals("WHITE")){
+    ChessGame.TeamColor color = null;
+    if(playerColor.equals("white")){
+      color = ChessGame.TeamColor.WHITE;
       isWhite = true;
     }
-    else if(playerColor.equals("BLACK")){
+    else if(playerColor.equals("black")){
       color = ChessGame.TeamColor.BLACK;
       isWhite = false;
     }
     else{
       isWhite = true;
     }
+
     server.join(gameID, params[1], color);
     System.out.println("You have joined the game as the " + playerColor+" player!");
-    ChessBoardUI.main(game.game(), isWhite, null,null);
+
+
+    if(color == ChessGame.TeamColor.BLACK){
+      ChessBoardUI.main(localChessGame, false, false, null);
+    }
+    else{
+      ChessBoardUI.main(localChessGame, true, false, null);
+    }
     return "joined";
   }
   public String observe() throws IOException {
@@ -238,7 +253,7 @@ public class ChessClient {
     gamePlay = true;
     isWhite = true;
     currentGame = game;
-    ChessBoardUI.main(game.game(), true, null, null);
+    ChessBoardUI.main(game.game(), true, false, null);
     return "observed";
   }
   public String logout() throws IOException {
@@ -251,7 +266,7 @@ public class ChessClient {
     System.out.print("\n" + ">>>");
   }
   public String redraw(){
-    ChessBoardUI.main(currentGame.game(), isWhite, null, null);
+    ChessBoardUI.main(currentGame.game(), isWhite, false, null);
     return "redraw";
   }
   public String leave(){
@@ -274,5 +289,34 @@ public class ChessClient {
     ChessGame newGame = ChessGame.createNewGame();
     ChessBoardUI.main(newGame, false, true, "a8");
     return "highlight";
+  }
+
+
+
+
+  public void displayNotification(String jsonMessage){
+    Notification notification = new Gson().fromJson(jsonMessage, Notification.class);
+    System.out.println(notification.getMessage());
+    printPrompt();
+  }
+  public void displayError(String jsonMessage){
+    Error error = new Gson().fromJson(jsonMessage, Error.class);
+    System.out.println(error.getMessage());
+    printPrompt();
+  }
+  public void loadGame(String jsonMessage){
+    LoadGame loadGame = new Gson().fromJson(jsonMessage, LoadGame.class);
+    GameData game = loadGame.getGame();
+    ChessGame chessGame = game.game();
+    localChessGame =chessGame;
+
+  }
+  @Override
+  public void notify (ServerMessage message, String jsonMessage){
+    switch (message.getServerMessageType()){
+      case NOTIFICATION -> displayNotification(jsonMessage);
+      case ERROR -> displayError(jsonMessage);
+      case LOAD_GAME -> loadGame(jsonMessage);
+    }
   }
 }

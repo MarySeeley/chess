@@ -1,5 +1,6 @@
 package ui;
 
+import chess.ChessGame;
 import com.google.gson.Gson;
 import model.GameData;
 import webSocketMessages.serverMessages.Error;
@@ -19,7 +20,10 @@ public class WebSocketCommunicator{
   public void loadGame(String jsonMessage){
     LoadGame loadGame = new Gson().fromJson(jsonMessage, LoadGame.class);
     GameData game = loadGame.getGame();
-    ChessBoardUI.main(game.game(), true, null, null);
+    ChessGame chessGame = game.game();
+
+
+
   }
   public void notify (ServerMessage message, String jsonMessage){
     switch (message.getServerMessageType()){

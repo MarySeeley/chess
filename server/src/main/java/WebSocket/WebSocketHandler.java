@@ -96,6 +96,8 @@ public class WebSocketHandler {
       }
       String authUsername = authDAO.getUser(command.getAuthString());
       if(!authUsername.equals(gamePlayer)){
+        System.out.println(authUsername);
+        System.out.println(gamePlayer);
         conn.sendError(conn.session, "PlayerColor is already taken");
         return;
       }
@@ -166,7 +168,7 @@ public class WebSocketHandler {
       connections.broadcast(command.authToken, notifyBroadcast, game.gameID());
       Notification playerBroadcast = new Notification(playerMsg);
       String playerBroadcastJson = new Gson().toJson(playerBroadcast, Notification.class);
-      conn.send(playerBroadcastJson);
+//      conn.send(playerBroadcastJson);
       connections.remove(command.getGameID(), command.getAuthString());
 
 

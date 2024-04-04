@@ -28,7 +28,7 @@ public class ServerFacadeTests {
         var port = server.run(0);
         System.out.println("Started test HTTP server on " + port);
         url = "http://localhost:" + port;
-        facade = new ServerFacade(url);
+//        facade = new ServerFacade(url);
         facade.clientComm.delete(url + "/db", null,null);
     }
 

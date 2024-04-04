@@ -101,3 +101,7 @@ _
 /src/test/java/serverTests/ClearServiceTest.java,1\3\136e8419f06d60bb336f581c0352f3efa01053ee
 ^
 .src/test/java/serverTests/GameServiceTest.java,9\0\90457a54ab8a3b3b43f3e96a9ee1971175e1603f
+X
+(src/main/java/ui/ClientCommunicator.java,4\7\47fc72fd336d6877d57b93528603dab489458b3b
+Y
+)src/main/java/ui/NotificationHandler.java,4\b\4bc504dee1ab53fa829d6f8fa0d91e109da0de3e

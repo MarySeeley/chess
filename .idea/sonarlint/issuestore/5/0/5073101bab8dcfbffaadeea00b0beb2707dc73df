@@ -1,3 +1,7 @@
 
-L	java:S106"+Replace this use of System.out by a logger.(‡¢Š¼ùÿÿÿÿ8½ËËÔê1
-G	java:S106"+Replace this use of System.out by a logger.(ÉĞëš8ËËËÔê1
+L	java:S106"+Replace this use of System.out by a logger.(‡¢Š¼ùÿÿÿÿ8ã½°Öê1
+G	java:S106"+Replace this use of System.out by a logger.(ÉĞëš8ä½°Öê1
+_
+java:S1854"=Remove this useless assignment to local variable "chessGame".(˜š·‰ÿÿÿÿÿ8 »×ê1
+P
+java:S1481".Remove this unused "chessGame" local variable.(˜š·‰ÿÿÿÿÿ8 »×ê1

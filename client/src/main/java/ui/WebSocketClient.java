@@ -8,8 +8,7 @@ import java.net.URI;
 
 public class WebSocketClient extends Endpoint {
   private Session session;
-  private WebSocketCommunicator observer = new WebSocketCommunicator();
-  public WebSocketClient(){
+  public WebSocketClient(NotificationHandler observer){
     try {
       URI uri=new URI("ws://localhost:8080/connect");
       WebSocketContainer container=ContainerProvider.getWebSocketContainer();
@@ -37,6 +36,7 @@ public class WebSocketClient extends Endpoint {
     try {
       // use this for all, join sends auth token
       this.session.getBasicRemote().sendText(msg);
+      Thread.sleep(200);
     }catch(Exception e){
       e.printStackTrace();
     }

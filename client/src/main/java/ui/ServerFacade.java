@@ -20,12 +20,14 @@ public class ServerFacade {
   private final String serverUrl;
   public final ClientCommunicator clientComm;
   public AuthData auth=null;
+  public int gameID = -1;
 
-  public final WebSocketClient webSocket = new WebSocketClient();
+  public final WebSocketClient webSocket;
 
-  public ServerFacade(String serverURL){
+  public ServerFacade(String serverURL, NotificationHandler notificationHandler){
     this.serverUrl=serverURL;
     this.clientComm=new ClientCommunicator();
+    webSocket = new WebSocketClient(notificationHandler);
   }
 
   public AuthData register(String username, String password, String email) throws ResponseException, IOException {
@@ -72,6 +74,7 @@ public class ServerFacade {
     clientComm.put(temp, join, "Authorization", auth.authToken());
     JoinPlayer joinPlayer = new JoinPlayer(gameID, color, auth.authToken());
     webSocket.send(new Gson().toJson(joinPlayer));
+    this.gameID = gameID;
   }
 
   public void observe(int gameID) throws IOException {
@@ -80,6 +83,7 @@ public class ServerFacade {
     clientComm.put(temp, observe, "Authorization", auth.authToken());
     JoinObserver joinObserver = new JoinObserver(gameID, auth.authToken());
     webSocket.send(new Gson().toJson(joinObserver));
+    this.gameID = gameID;
   }
 
   public void logout() throws IOException {
@@ -88,16 +92,17 @@ public class ServerFacade {
     auth=null;
   }
 
-  public void leave(int gameID){
+  public void leave(){
     Leave leave = new Leave(gameID, auth.authToken());
     webSocket.send(new Gson().toJson(leave));
+    this.gameID = -1;
   }
 
-  public void makeMove(int gameID, ChessMove chessMove){
+  public void makeMove(ChessMove chessMove){
     MakeMove makeMove = new MakeMove(gameID, chessMove, auth.authToken());
     webSocket.send(new Gson().toJson(makeMove));
   }
-  public void resign(int gameID){
+  public void resign(){
     Resign resign = new Resign(gameID, auth.authToken());
     webSocket.send(new Gson().toJson(resign));
   }

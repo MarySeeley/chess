@@ -17,15 +17,7 @@ public class Main {
         if (args.length == 1) {
             serverUrl = args[0];
         }
-        var ws = new WebSocketClient();
-        ;
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a message you want to echo");
-        Leave msg = new Leave(1, "auth");
-        String jsonmsg = new Gson().toJson(msg, Leave.class);
-        ws.send(jsonmsg);
-        Thread.sleep(10000);
-//        new ChessClient(serverUrl).run();
+        new ChessClient(serverUrl).run();
     }
 }
