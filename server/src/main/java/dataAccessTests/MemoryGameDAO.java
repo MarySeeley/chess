@@ -18,7 +18,7 @@ public class MemoryGameDAO implements GameDAO{
   public Collection<GameData> listGames(){
     return games;
   }
-  public GameData createGame(String gameName){
+  public GameData createGame(String gameName, ChessGame chessGame){
     Random random = new Random();
     int randomID = Math.abs(random.nextInt());
     boolean loop = true;
@@ -36,7 +36,6 @@ public class MemoryGameDAO implements GameDAO{
         randomID = Math.abs(random.nextInt());
       }
     }
-    ChessGame chessGame = ChessGame.createNewGame();
     GameData game = new GameData(randomID, null, null, gameName, chessGame);
     games.add(game);
     return game;

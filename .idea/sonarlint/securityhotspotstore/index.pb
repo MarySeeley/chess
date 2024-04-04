@@ -93,3 +93,11 @@ Q
 :
 
 client.iml,8\1\81276a78d81379d1349e1ff0f16babcbe4db95cc
+U
+%src/main/java/server/GameHandler.java,f\4\f4e5e84ac996e7d0d82b71f61ad6a5a82a550c25
+a
+1src/test/java/dataAccessTests/SQLGameDAOTest.java,4\7\47d38ef5ccddd898cc6f772579f82c7f3e7b5038
+_
+/src/test/java/serverTests/ClearServiceTest.java,1\3\136e8419f06d60bb336f581c0352f3efa01053ee
+^
+.src/test/java/serverTests/GameServiceTest.java,9\0\90457a54ab8a3b3b43f3e96a9ee1971175e1603f

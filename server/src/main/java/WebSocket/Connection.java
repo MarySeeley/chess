@@ -22,13 +22,11 @@ public class Connection {
   public static void sendError(Session session, String msg) throws IOException {
 //    System.out.println(msg);
     String errormsg = "Error: "+msg;
-    System.out.println(errormsg);
     Error errorMessage = new Error(errormsg);
     String errorJson = new Gson().toJson(errorMessage, Error.class);
     session.getRemote().sendString(errorJson);
   }
   public void send(String msg) throws IOException {
-
     session.getRemote().sendString(msg);
   }
 }

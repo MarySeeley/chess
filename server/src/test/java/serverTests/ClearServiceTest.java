@@ -1,5 +1,6 @@
 package serverTests;
 
+import chess.ChessGame;
 import dataAccessTests.*;
 import model.GameData;
 import model.UserData;
@@ -30,7 +31,8 @@ class ClearServiceTest {
   void clearDB() throws DataAccessException{
     userDAO.createUser(new UserData("user", "password", "email"));
     authDAO.createAuth("username");
-    gameDAO.createGame("gameName");
+    ChessGame chessGame = ChessGame.createNewGame();
+    gameDAO.createGame("gameName", chessGame);
     service.clearDB();
     Collection<GameData> games = gameDAO.listGames();
     assertEquals(games, new ArrayList<>());

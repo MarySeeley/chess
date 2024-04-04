@@ -33,14 +33,16 @@ class SQLGameDAOTest {
 
   @Test
   void clearGames() throws DataAccessException {
-    GameData game = gameDAO.createGame("gameName");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("gameName", chessGame);
     gameDAO.clearGames();
     assertThrows(DataAccessException.class, ()->{gameDAO.checkGame(game.gameID());});
   }
 
   @Test
   void listGamesWorks() throws DataAccessException {
-    gameDAO.createGame("name");
+    ChessGame chessGame = ChessGame.createNewGame();
+    gameDAO.createGame("name", chessGame);
     Collection<GameData> list = gameDAO.listGames();
     assertTrue(list instanceof Collection<GameData>);
   }
@@ -53,19 +55,22 @@ class SQLGameDAOTest {
 
   @Test
   void createGameWorks() throws DataAccessException {
-    GameData game = gameDAO.createGame("name");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("name", chessGame);
     assertTrue(game instanceof GameData);
 
   }
 
   @Test
   void createGameFails(){
-    assertThrows(DataAccessException.class, ()->{gameDAO.createGame(null);});
+    ChessGame chessGame = ChessGame.createNewGame();
+    assertThrows(DataAccessException.class, ()->{gameDAO.createGame(null, chessGame);});
   }
 
   @Test
   void checkColorWorks() throws DataAccessException {
-    GameData game = gameDAO.createGame("name");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("name", chessGame);
     gameDAO.checkColor("WHITE", game.gameID());
   }
   @Test
@@ -75,7 +80,8 @@ class SQLGameDAOTest {
 
   @Test
   void updateGameWorks() throws DataAccessException {
-    GameData game = gameDAO.createGame("name");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("name", chessGame);
     gameDAO.updateGame(game.gameID(), "WHITE", "white");
   }
   @Test
@@ -85,7 +91,8 @@ class SQLGameDAOTest {
 
   @Test
   void checkGameWorks() throws DataAccessException {
-    game = gameDAO.createGame("name");
+    ChessGame chessGame = ChessGame.createNewGame();
+    game = gameDAO.createGame("name", chessGame);
     gameDAO.checkGame(game.gameID());
   }
   @Test

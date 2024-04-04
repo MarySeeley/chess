@@ -56,7 +56,8 @@ class GameServiceTest {
   @Test
   @DisplayName("Join Game White Tests")
   void joinGameWhite() throws DataAccessException{
-    GameData game = gameDAO.createGame("join test");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("join test", chessGame);
     service.joinGame(auth.authToken(), new JoinData("WHITE", game.gameID()));
     Collection<GameData> games = gameDAO.listGames();
     for(GameData i : games){
@@ -70,7 +71,8 @@ class GameServiceTest {
   @Test
   @DisplayName("Join Game Black Tests")
   void joinGameBlack() throws DataAccessException{
-    GameData game = gameDAO.createGame("join test");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("join test", chessGame);
     service.joinGame(auth.authToken(), new JoinData("BLACK", game.gameID()));
     Collection<GameData> games = gameDAO.listGames();
     for(GameData i : games){
@@ -84,7 +86,8 @@ class GameServiceTest {
   @Test
   @DisplayName("Join Game Watch Test")
   void joinGameWatch()throws DataAccessException{
-    GameData game = gameDAO.createGame("join test");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("join test", chessGame);
     service.joinGame(auth.authToken(), new JoinData(null, game.gameID()));
     Collection<GameData> games = gameDAO.listGames();
     for(GameData i : games){
@@ -98,7 +101,8 @@ class GameServiceTest {
   @Test
   @DisplayName("Join Game Error Tests")
   void joinGameError() throws DataAccessException{
-    GameData game = gameDAO.createGame("join test");
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame("join test", chessGame);
     service.joinGame(auth.authToken(), new JoinData("WHITE", game.gameID()));
     Collection<GameData> games = gameDAO.listGames();
     for(GameData i : games){

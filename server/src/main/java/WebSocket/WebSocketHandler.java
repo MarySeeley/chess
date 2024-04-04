@@ -36,7 +36,6 @@ public class WebSocketHandler {
   @OnWebSocketMessage
   public void onMessage(Session session, String message) throws IOException {
     UserGameCommand command =new Gson().fromJson(message, UserGameCommand.class);
-    System.out.println("on command");
     // check for authToken
     var conn = getConnection(command.authToken, session);
 //    Connection conn = null;
@@ -144,37 +143,31 @@ public class WebSocketHandler {
 
   private void leave(Connection conn, String message) throws IOException {
     try {
-      System.out.println("Leave");
       Leave command=new Gson().fromJson(message, Leave.class);
       String playerName=authDAO.getUser(command.getAuthString());
       GameData game=getGame(command.getGameID());
       String broadcastMsg;
       String playerMsg = "You have successfully left the game";
       if(playerName.equals(game.whiteUsername())){
-        System.out.println("white");
         gameDAO.updateGame(game.gameID(), "WHITE", null);
         broadcastMsg = playerName + " has left the game as White";
         playerMsg = playerMsg + " as the White player";
       }
       else if(playerName.equals(game.blackUsername())){
-        System.out.println("black");
         gameDAO.updateGame(game.gameID(), "BLACK", null);
         broadcastMsg = playerName + " has left the game as Black";
         playerMsg = playerMsg + " as the Black player";
       }
       else{
-        System.out.println("observer");
         broadcastMsg = playerName + " has left the game as an observer";
         playerMsg = playerMsg + " as an observer";
       }
-      System.out.println("after game update");
       Notification notifyBroadcast = new Notification(broadcastMsg);
       connections.broadcast(command.authToken, notifyBroadcast, game.gameID());
-      System.out.println("after broadcast");
       Notification playerBroadcast = new Notification(playerMsg);
       String playerBroadcastJson = new Gson().toJson(playerBroadcast, Notification.class);
       conn.send(playerBroadcastJson);
-      System.out.println("after player send");
+      connections.remove(command.getGameID(), command.getAuthString());
 
 
 

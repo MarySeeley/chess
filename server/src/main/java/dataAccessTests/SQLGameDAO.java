@@ -77,12 +77,12 @@ public class SQLGameDAO implements GameDAO{
   }
 
   @Override
-  public GameData createGame(String gameName) throws DataAccessException {
+  public GameData createGame(String gameName, ChessGame chessGame) throws DataAccessException {
     try(var conn = DatabaseManager.getConnection()) {
       try (var preparedStatement=conn.prepareStatement("INSERT INTO game (whiteUsername, blackUsername, gameName, chessGame)  VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
-        ChessGame game = ChessGame.createNewGame();
+
         Gson gson = new Gson();
-        String jsonGame = gson.toJson(game);
+        String jsonGame = gson.toJson(chessGame);
         preparedStatement.setString(1, null);
         preparedStatement.setString(2, null);
         preparedStatement.setString(3, gameName);
@@ -97,7 +97,7 @@ public class SQLGameDAO implements GameDAO{
           ID = resultSet.getInt(1);
         }
 
-        return new GameData(ID, null, null, gameName, game);
+        return new GameData(ID, null, null, gameName, chessGame);
       }
     }
     catch(SQLException e){

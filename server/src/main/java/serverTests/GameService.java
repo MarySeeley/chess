@@ -1,5 +1,6 @@
 package serverTests;
 
+import chess.ChessGame;
 import dataAccessTests.AuthDAO;
 import dataAccessTests.DataAccessException;
 import dataAccessTests.GameDAO;
@@ -23,8 +24,8 @@ public class GameService {
 
   public GameData createGame(String authToken, String gameName) throws DataAccessException{
     authDAO.checkAuth(authToken);
-
-    GameData game = gameDAO.createGame(gameName);
+    ChessGame chessGame = ChessGame.createNewGame();
+    GameData game = gameDAO.createGame(gameName, chessGame);
     return game;
   }
   public void joinGame(String authToken, JoinData join) throws DataAccessException{
