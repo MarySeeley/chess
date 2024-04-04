@@ -1,5 +1,6 @@
 package clientTests;
 
+import chess.ChessGame;
 import exception.ResponseException;
 import model.AuthData;
 import model.CreateGameData;
@@ -119,15 +120,15 @@ public class ServerFacadeTests {
     public void joinWorked() throws ResponseException, IOException {
         facade.register("user", "password", "email");
         CreateGameData gameID = facade.create("gameName");
-        facade.join(gameID.gameID(), "black");
+        facade.join(gameID.gameID(), "black", ChessGame.TeamColor.BLACK);
     }
 
     @Test
     public void joinFailed() throws ResponseException, IOException {
         facade.register("user", "password", "email");
         CreateGameData gameID = facade.create("gameName");
-        facade.join(gameID.gameID(), "black");
-        Assertions.assertThrows(IOException.class, ()->{facade.join(gameID.gameID(), "black");});
+        facade.join(gameID.gameID(), "black", ChessGame.TeamColor.BLACK);
+        Assertions.assertThrows(IOException.class, ()->{facade.join(gameID.gameID(), "black", ChessGame.TeamColor.BLACK);});
 
     }
 

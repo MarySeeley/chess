@@ -1,8 +1,11 @@
 package ui;
 
+import chess.ChessGame;
+import chess.ChessMove;
 import com.google.gson.Gson;
 import exception.ResponseException;
 import model.*;
+import webSocketMessages.userCommands.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +21,9 @@ public class ServerFacade {
   public final ClientCommunicator clientComm;
   public AuthData auth=null;
 
-  public ServerFacade(String serverURL) {
+  public final WebSocketClient webSocket = new WebSocketClient();
+
+  public ServerFacade(String serverURL){
     this.serverUrl=serverURL;
     this.clientComm=new ClientCommunicator();
   }
@@ -60,17 +65,21 @@ public class ServerFacade {
     return games;
   }
 
-  public void join(int gameID, String player) throws IOException {
+  public void join(int gameID, String player, ChessGame.TeamColor color) throws IOException {
     String temp=serverUrl + "/game";
     player=player.toUpperCase();
     JoinData join=new JoinData(player, gameID);
     clientComm.put(temp, join, "Authorization", auth.authToken());
+    JoinPlayer joinPlayer = new JoinPlayer(gameID, color, auth.authToken());
+    webSocket.send(new Gson().toJson(joinPlayer));
   }
 
   public void observe(int gameID) throws IOException {
     String temp=serverUrl + "/game";
     JoinData observe=new JoinData(null, gameID);
     clientComm.put(temp, observe, "Authorization", auth.authToken());
+    JoinObserver joinObserver = new JoinObserver(gameID, auth.authToken());
+    webSocket.send(new Gson().toJson(joinObserver));
   }
 
   public void logout() throws IOException {
@@ -78,4 +87,19 @@ public class ServerFacade {
     clientComm.delete(temp, "Authorization", auth.authToken());
     auth=null;
   }
+
+  public void leave(int gameID){
+    Leave leave = new Leave(gameID, auth.authToken());
+    webSocket.send(new Gson().toJson(leave));
+  }
+
+  public void makeMove(int gameID, ChessMove chessMove){
+    MakeMove makeMove = new MakeMove(gameID, chessMove, auth.authToken());
+    webSocket.send(new Gson().toJson(makeMove));
+  }
+  public void resign(int gameID){
+    Resign resign = new Resign(gameID, auth.authToken());
+    webSocket.send(new Gson().toJson(resign));
+  }
+
 }

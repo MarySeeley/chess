@@ -49,13 +49,13 @@ H	java:S106Ä"+Replace this use of System.out by a logger.(„‚Ã·8¬û‘Òê1
 H	java:S106É"+Replace this use of System.out by a logger.(Éà«ä8®û‘Òê1
 L
 java:S1905Í")Remove this unnecessary cast to "String".(êšäõøÿÿÿÿ8¯û‘Òê1
-M	java:S106Ò"+Replace this use of System.out by a logger.(Òç¤ûÿÿÿÿ8±û‘Òê1
-H	java:S106â"+Replace this use of System.out by a logger.(‡•ÙÎ8³û‘Òê1
-M	java:S106ê"+Replace this use of System.out by a logger.(ÇŸË¶üÿÿÿÿ8¶û‘Òê1
-M	java:S106ò"+Replace this use of System.out by a logger.(˜õ¶§şÿÿÿÿ8ºû‘Òê1
-H	java:S106ø"+Replace this use of System.out by a logger.(ÿ¢Ï8»û‘Òê1
+M	java:S106à"+Replace this use of System.out by a logger.(Òç¤ûÿÿÿÿ8³û‘Òê1
+H	java:S106å"+Replace this use of System.out by a logger.(‡•ÙÎ8¶û‘Òê1
+M	java:S106í"+Replace this use of System.out by a logger.(ÇŸË¶üÿÿÿÿ8ºû‘Òê1
+M	java:S106õ"+Replace this use of System.out by a logger.(˜õ¶§şÿÿÿÿ8»û‘Òê1
+H	java:S106û"+Replace this use of System.out by a logger.(ÿ¢Ï8½û‘Òê1
 ^
-java:S1854";Remove this useless assignment to local variable "gameNum".(‰…Ùãûÿÿÿÿ8½û‘Òê1
-H	java:S106‹"+Replace this use of System.out by a logger.(´“£8½û‘Òê1
+java:S1854‘";Remove this useless assignment to local variable "gameNum".(‰…Ùãûÿÿÿÿ8½û‘Òê1
+H	java:S106"+Replace this use of System.out by a logger.(´“£8÷­–Õê1
 O
-java:S1481",Remove this unused "gameNum" local variable.(‰…Ùãûÿÿÿÿ8¿û‘Òê1
+java:S1481‘",Remove this unused "gameNum" local variable.(‰…Ùãûÿÿÿÿ8¿û‘Òê1

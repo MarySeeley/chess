@@ -1,8 +1,3 @@
 
-£
-java:S1186
-"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ùäÔÇþÿÿÿÿ8è÷×Žé1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÕÄŠ¸ùÿÿÿÿ8è÷×Žé1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¬ºÑõþÿÿÿÿ8è÷×Žé1
+L	java:S106"+Replace this use of System.out by a logger.(‡¢Š¼ùÿÿÿÿ8½ËËÔê1
+G	java:S106"+Replace this use of System.out by a logger.(ÉÐëš8ËËËÔê1

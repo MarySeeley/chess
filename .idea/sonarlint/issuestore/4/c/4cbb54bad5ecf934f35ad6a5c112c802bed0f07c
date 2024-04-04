@@ -1,30 +1,27 @@
 
-d
-java:S11925"NDefine a constant instead of duplicating this literal "Authorization" 5 times.(äßØ§
-\
-java:S11924"FDefine a constant instead of duplicating this literal "/game" 4 times.(ıØ»
-x
-java:S1488;"]Immediately return this expression instead of assigning it to the temporary variable "games".(Û…‡öøÿÿÿÿ
 k
-java:S1104"PMake auth a static final constant or non-public and provide accessors if needed.(ÓÂ€·üÿÿÿÿ
-\
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(”É÷ùÿÿÿÿ
-@	java:S106!"+Replace this use of System.out by a logger.(”Ÿ•×
-E	java:S106,"+Replace this use of System.out by a logger.(ÈÊ¥øÿÿÿÿ
-H
-java:S1905;"-Remove this unnecessary cast to "Collection".(Û…‡öøÿÿÿÿ
-G
-java:S1128"1Remove this unused import 'com.google.gson.Gson'.(–§
-F
-java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º
-L
-java:S1128	"6Remove this unused import 'java.io.InputStreamReader'.(ãˆÎÉ
-L
-java:S1128
-"1Remove this unused import 'java.io.OutputStream'.(Ó ³ÿÿÿÿÿ
+java:S1192:"NDefine a constant instead of duplicating this literal "Authorization" 5 times.(äßØ§8¶¢ºÕê1
+c
+java:S11929"FDefine a constant instead of duplicating this literal "/game" 4 times.(ıØ»8·¢ºÕê1
+
+java:S1488@"]Immediately return this expression instead of assigning it to the temporary variable "games".(Û…‡öøÿÿÿÿ8¸¢ºÕê1
+r
+java:S1104"PMake auth a static final constant or non-public and provide accessors if needed.(ÓÂ€·üÿÿÿÿ8¸¢ºÕê1
+c
+java:S1075!"ARefactor your code to get this URI from a customizable parameter.(”É÷ùÿÿÿÿ8Í¢ºÕê1
+G	java:S106&"+Replace this use of System.out by a logger.(”Ÿ•×8Í¢ºÕê1
+L	java:S1061"+Replace this use of System.out by a logger.(ÈÊ¥øÿÿÿÿ8Î¢ºÕê1
+O
+java:S1905@"-Remove this unnecessary cast to "Collection".(Û…‡öøÿÿÿÿ8Ğ¢ºÕê1
 M
-java:S1128"7Remove this unused import 'java.net.HttpURLConnection'.(¬¬˜­
-?
-java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°
-D
-java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8ß¢ºÕê1
+S
+java:S1128"6Remove this unused import 'java.io.InputStreamReader'.(ãˆÎÉ8ß¢ºÕê1
+S
+java:S1128"1Remove this unused import 'java.io.OutputStream'.(Ó ³ÿÿÿÿÿ8ß¢ºÕê1
+T
+java:S1128"7Remove this unused import 'java.net.HttpURLConnection'.(¬¬˜­8ß¢ºÕê1
+F
+java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8ß¢ºÕê1
+K
+java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8ß¢ºÕê1

@@ -206,19 +206,22 @@ public class ChessClient {
     List<GameData> games = server.list().stream().toList();
     GameData game = games.get(gameNum-1);
     int gameID = game.gameID();
-    server.join(gameID, params[1]);
-    System.out.println("You have joined the game as the " + playerColor+" player!");
+
     currentGame = game;
     gamePlay = true;
+    ChessGame.TeamColor color = ChessGame.TeamColor.WHITE;
     if(playerColor.equals("WHITE")){
       isWhite = true;
     }
     else if(playerColor.equals("BLACK")){
+      color = ChessGame.TeamColor.BLACK;
       isWhite = false;
     }
     else{
       isWhite = true;
     }
+    server.join(gameID, params[1], color);
+    System.out.println("You have joined the game as the " + playerColor+" player!");
     ChessBoardUI.main(game.game(), isWhite, null,null);
     return "joined";
   }
