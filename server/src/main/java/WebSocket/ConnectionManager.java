@@ -43,4 +43,13 @@ public class ConnectionManager {
 
   }
 
+  public void broadcastGame(String loadJson, int gameID) throws IOException{
+    for (var c : connections.get(gameID)) {
+      if (c.session.isOpen()) {
+        c.send(loadJson);
+
+      }
+    }
+  }
+
 }

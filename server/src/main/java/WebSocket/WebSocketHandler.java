@@ -36,6 +36,7 @@ public class WebSocketHandler {
   @OnWebSocketMessage
   public void onMessage(Session session, String message) throws IOException {
     UserGameCommand command =new Gson().fromJson(message, UserGameCommand.class);
+    System.out.println("on command");
     // check for authToken
     var conn = getConnection(command.authToken, session);
 //    Connection conn = null;
@@ -109,13 +110,77 @@ public class WebSocketHandler {
       conn.sendError(conn.session, e.getMessage());
     }
   }
-  private void resign(Connection conn, String message) {
-    Resign command =new Gson().fromJson(message, Resign.class);
+  private void resign(Connection conn, String message) throws IOException {
+    try {
+      Resign command=new Gson().fromJson(message, Resign.class);
+      String authUsername = authDAO.getUser(command.getAuthString());
+      GameData gameData = getGame(command.getGameID());
+      String msg;
+      if(gameData.whiteUsername().equals(authUsername)){
+        msg = authUsername + " has resigned, Black player has won the game. Good game!";
+      }
+      else if(gameData.blackUsername().equals(authUsername)){
+        msg = authUsername + " has resigned, White player has won the game. Good game!";
+      }
+      else{
+        conn.sendError(conn.session, "Observer can not resign from the game, but you can leave");
+        return;
+      }
+      ChessGame game = gameData.game();
+      if(game.isGameOver()){
+        conn.sendError(conn.session, "The game is already over");
+        return;
+      }
+      game.gameOver();
+      gameDAO.updateGameBoard(gameData.gameID(), game);
+      Notification end = new Notification(msg);
+      String notifyJson = new Gson().toJson(end);
+      connections.broadcastGame(notifyJson, gameData.gameID());
+    }catch(Exception e){
+      conn.sendError(conn.session, e.getMessage());
+    }
 
   }
 
-  private void leave(Connection conn, String message) {
-    Leave command =new Gson().fromJson(message, Leave.class);
+  private void leave(Connection conn, String message) throws IOException {
+    try {
+      System.out.println("Leave");
+      Leave command=new Gson().fromJson(message, Leave.class);
+      String playerName=authDAO.getUser(command.getAuthString());
+      GameData game=getGame(command.getGameID());
+      String broadcastMsg;
+      String playerMsg = "You have successfully left the game";
+      if(playerName.equals(game.whiteUsername())){
+        System.out.println("white");
+        gameDAO.updateGame(game.gameID(), "WHITE", null);
+        broadcastMsg = playerName + " has left the game as White";
+        playerMsg = playerMsg + " as the White player";
+      }
+      else if(playerName.equals(game.blackUsername())){
+        System.out.println("black");
+        gameDAO.updateGame(game.gameID(), "BLACK", null);
+        broadcastMsg = playerName + " has left the game as Black";
+        playerMsg = playerMsg + " as the Black player";
+      }
+      else{
+        System.out.println("observer");
+        broadcastMsg = playerName + " has left the game as an observer";
+        playerMsg = playerMsg + " as an observer";
+      }
+      System.out.println("after game update");
+      Notification notifyBroadcast = new Notification(broadcastMsg);
+      connections.broadcast(command.authToken, notifyBroadcast, game.gameID());
+      System.out.println("after broadcast");
+      Notification playerBroadcast = new Notification(playerMsg);
+      String playerBroadcastJson = new Gson().toJson(playerBroadcast, Notification.class);
+      conn.send(playerBroadcastJson);
+      System.out.println("after player send");
+
+
+
+    } catch(Exception e){
+      conn.sendError(conn.session, e.getMessage());
+    }
   }
 
   private void move(Connection conn, String message) throws IOException {
@@ -130,6 +195,7 @@ public class WebSocketHandler {
       Collection<ChessMove> valid = game.validMoves(command.move.getStartPosition());
       if(!valid.contains(command.move)){
         conn.sendError(conn.session, "Not a valid move");
+        return;
       }
       String playerName = authDAO.getUser(command.getAuthString());
       if(playerName.equals(gameData.blackUsername())){
@@ -150,7 +216,8 @@ public class WebSocketHandler {
           gameDAO.updateGameBoard(gameData.gameID(), game);
           GameData newGame = getGame(command.getGameID());
           String load = new Gson().toJson(new LoadGame(newGame), LoadGame.class);
-          conn.send(load);
+          connections.broadcastGame(load, newGame.gameID());
+
           Notification broadcast = new Notification(msg);
           connections.broadcast(command.authToken, broadcast, command.getGameID());;
         }
@@ -173,7 +240,7 @@ public class WebSocketHandler {
           gameDAO.updateGameBoard(gameData.gameID(), game);
           GameData newGame = getGame(command.getGameID());
           String load = new Gson().toJson(new LoadGame(newGame), LoadGame.class);
-          conn.send(load);
+          connections.broadcastGame(load, newGame.gameID());
           Notification broadcast = new Notification(msg);
           connections.broadcast(command.authToken, broadcast, command.getGameID());
         }

@@ -13,15 +13,21 @@ import java.util.HashSet;
 public class ChessGame {
     private TeamColor color;
     public ChessBoard squares = new ChessBoard();
-    Boolean over = false;
+    Boolean over;
+
     public ChessGame() {
-        squares.resetBoard();
+
     }
     public ChessGame copy(){
         ChessGame cop = new ChessGame();
         cop.color = this.color;
         cop.squares = squares.copy();
         return cop;
+    }
+    public void setUp(){
+        color = TeamColor.WHITE;
+        over = false;
+        squares.resetBoard();
     }
     public boolean isGameOver(){
         return this.over;
