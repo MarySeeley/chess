@@ -1,231 +1,205 @@
 
-g	java:S112}"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¥—ûÜê1
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¥—ûÜê1
-h	java:S112³"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¦—ûÜê1
+g	java:S112}"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ğ‹ÕŞê1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ñ‹ÕŞê1
+h	java:S112³"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ñ‹ÕŞê1
 J
-java:S54118"(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ8¯—ûÜê1
+java:S54118"(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ8ô‹ÕŞê1
 E
-java:S5411@"(Use a primitive boolean expression here.(·×…8¯—ûÜê1
+java:S5411@"(Use a primitive boolean expression here.(·×…8ô‹ÕŞê1
 J
-java:S5411["(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ8¯—ûÜê1
+java:S5411["(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ8ô‹ÕŞê1
 E
-java:S5411c"(Use a primitive boolean expression here.(·×…8¯—ûÜê1
+java:S5411c"(Use a primitive boolean expression here.(·×…8õ‹ÕŞê1
 K
-java:S5411„"(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ8¯—ûÜê1
+java:S5411„"(Use a primitive boolean expression here.(ëšÑÿıÿÿÿÿ8õ‹ÕŞê1
 F
-java:S5411Œ"(Use a primitive boolean expression here.(·×…8°—ûÜê1
-F
-java:S5411ë"(Use a primitive boolean expression here.(²©äÛ8°—ûÜê1
+java:S5411Œ"(Use a primitive boolean expression here.(·×…8õ‹ÕŞê1
 K
-java:S5411ü"(Use a primitive boolean expression here.(’Â®Ğüÿÿÿÿ8°—ûÜê1
+java:S5411…"(Use a primitive boolean expression here.(’Â®Ğüÿÿÿÿ8õ‹ÕŞê1
 K
-java:S5411ÿ"(Use a primitive boolean expression here.(êÓ¸¾şÿÿÿÿ8°—ûÜê1
-y
-java:S4144É"[Update this method so that its implementation is not identical to "intColMove" on line 282.(˜òíŸ8êšûÜê1
+java:S5411ˆ"(Use a primitive boolean expression here.(êÓ¸¾şÿÿÿÿ8õ‹ÕŞê1
 …
-java:S4144á"bUpdate this method so that its implementation is not identical to "reverseIntColMove" on line 305.(™Ï‰Áúÿÿÿÿ8êšûÜê1
-G	java:S106&"+Replace this use of System.out by a logger.(è«©ñ8ñšûÜê1
-L	java:S106)"+Replace this use of System.out by a logger.(ƒÇãˆúÿÿÿÿ8òšûÜê1
-L	java:S106*"+Replace this use of System.out by a logger.(ô©ßŒüÿÿÿÿ8òšûÜê1
+java:S4144é"bUpdate this method so that its implementation is not identical to "reverseIntColMove" on line 320.(™Ï‰Áúÿÿÿÿ8ÉŒÕŞê1
+G	java:S106&"+Replace this use of System.out by a logger.(è«©ñ8ÏŒÕŞê1
+L	java:S106)"+Replace this use of System.out by a logger.(ƒÇãˆúÿÿÿÿ8ĞŒÕŞê1
+L	java:S106*"+Replace this use of System.out by a logger.(ô©ßŒüÿÿÿÿ8ĞŒÕŞê1
 G
-java:S11810"%Catch Exception instead of Throwable.(‡˜ÚÚøÿÿÿÿ8óšûÜê1
-G	java:S1061"+Replace this use of System.out by a logger.(ìÍ¦‡8óšûÜê1
-L	java:S1064"+Replace this use of System.out by a logger.(¾©¥Çÿÿÿÿÿ8óšûÜê1
-G	java:S106A"+Replace this use of System.out by a logger.(Îñë8ôšûÜê1
+java:S11810"%Catch Exception instead of Throwable.(‡˜ÚÚøÿÿÿÿ8ÑŒÕŞê1
+G	java:S1061"+Replace this use of System.out by a logger.(ìÍ¦‡8ÑŒÕŞê1
+L	java:S1064"+Replace this use of System.out by a logger.(¾©¥Çÿÿÿÿÿ8ÑŒÕŞê1
+G	java:S106A"+Replace this use of System.out by a logger.(Îñë8ÒŒÕŞê1
 b
-java:S2147~"ECombine this catch with the one at line 124, which has the same body.(ï­£Ä8öšûÜê1
-G	java:S106y"+Replace this use of System.out by a logger.(¾º¯Ä8ûšûÜê1
-G	java:S106z"+Replace this use of System.out by a logger.(‡ßÅ×8ûšûÜê1
-H	java:S106…"+Replace this use of System.out by a logger.(Îñë8şšûÜê1
-H	java:S106"+Replace this use of System.out by a logger.(Îñë8şšûÜê1
-H	java:S106—"+Replace this use of System.out by a logger.(Îñë8ÿšûÜê1
+java:S2147~"ECombine this catch with the one at line 124, which has the same body.(ï­£Ä8ÓŒÕŞê1
+G	java:S106y"+Replace this use of System.out by a logger.(¾º¯Ä8ÕŒÕŞê1
+G	java:S106z"+Replace this use of System.out by a logger.(‡ßÅ×8ÕŒÕŞê1
+H	java:S106…"+Replace this use of System.out by a logger.(Îñë8×ŒÕŞê1
+H	java:S106"+Replace this use of System.out by a logger.(Îñë8ØŒÕŞê1
+H	java:S106—"+Replace this use of System.out by a logger.(Îñë8ØŒÕŞê1
 V
-java:S1854­"8Remove this useless assignment to local variable "auth".(ŒıÊ®8›ûÜê1
-H	java:S106©"+Replace this use of System.out by a logger.(ıá8‚›ûÜê1
+java:S1854­"8Remove this useless assignment to local variable "auth".(ŒıÊ®8ÙŒÕŞê1
+H	java:S106©"+Replace this use of System.out by a logger.(ıá8ÚŒÕŞê1
 G
-java:S1481­")Remove this unused "auth" local variable.(ŒıÊ®8ƒ›ûÜê1
-H	java:S106¯"+Replace this use of System.out by a logger.(¸Ó£¨8ƒ›ûÜê1
-M	java:S106±"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8ƒ›ûÜê1
+java:S1481­")Remove this unused "auth" local variable.(ŒıÊ®8ÚŒÕŞê1
+H	java:S106¯"+Replace this use of System.out by a logger.(¸Ó£¨8ÚŒÕŞê1
+M	java:S106±"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8ÛŒÕŞê1
 V
-java:S1854»"8Remove this useless assignment to local variable "auth".(øûàî8„›ûÜê1
-M	java:S106¸"+Replace this use of System.out by a logger.(×´¢¥ûÿÿÿÿ8„›ûÜê1
+java:S1854»"8Remove this useless assignment to local variable "auth".(øûàî8ÛŒÕŞê1
+M	java:S106¸"+Replace this use of System.out by a logger.(×´¢¥ûÿÿÿÿ8ÛŒÕŞê1
 G
-java:S1481»")Remove this unused "auth" local variable.(øûàî8†›ûÜê1
-H	java:S106¼"+Replace this use of System.out by a logger.(« ÊÖ8†›ûÜê1
-M	java:S106Á"+Replace this use of System.out by a logger.(”€–›úÿÿÿÿ8‡›ûÜê1
-H	java:S106Ç"+Replace this use of System.out by a logger.(ö§İÓ8ˆ›ûÜê1
-M	java:S106Ì"+Replace this use of System.out by a logger.(áÛş¶ÿÿÿÿÿ8‰›ûÜê1
-H	java:S106Ï"+Replace this use of System.out by a logger.(„‚Ã·8Š›ûÜê1
-H	java:S106Ô"+Replace this use of System.out by a logger.(Éà«ä8‹›ûÜê1
+java:S1481»")Remove this unused "auth" local variable.(øûàî8ÜŒÕŞê1
+H	java:S106¼"+Replace this use of System.out by a logger.(« ÊÖ8ÜŒÕŞê1
+M	java:S106Á"+Replace this use of System.out by a logger.(”€–›úÿÿÿÿ8ÜŒÕŞê1
+H	java:S106Ç"+Replace this use of System.out by a logger.(ö§İÓ8İŒÕŞê1
+M	java:S106Ì"+Replace this use of System.out by a logger.(áÛş¶ÿÿÿÿÿ8ŞŒÕŞê1
+H	java:S106Ï"+Replace this use of System.out by a logger.(„‚Ã·8ŞŒÕŞê1
+H	java:S106Ô"+Replace this use of System.out by a logger.(Éà«ä8ßŒÕŞê1
 L
-java:S1905Ø")Remove this unnecessary cast to "String".(êšäõøÿÿÿÿ8Œ›ûÜê1
-M	java:S106í"+Replace this use of System.out by a logger.(Òç¤ûÿÿÿÿ8›ûÜê1
-H	java:S106ö"+Replace this use of System.out by a logger.(‡•ÙÎ8›ûÜê1
-M	java:S106ş"+Replace this use of System.out by a logger.(ÇŸË¶üÿÿÿÿ8›ûÜê1
-M	java:S106†"+Replace this use of System.out by a logger.(˜õ¶§şÿÿÿÿ8‘›ûÜê1
-H	java:S106Œ"+Replace this use of System.out by a logger.(ÿ¢Ï8’›ûÜê1
-H	java:S106—"+Replace this use of System.out by a logger.(÷­“ş8“›ûÜê1
-]
-java:S1854":Remove this useless assignment to local variable "posCol".(…Ş®©úÿÿÿÿ8”›ûÜê1
-]
-java:S1854 ":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8”›ûÜê1
-X
-java:S1854¢":Remove this useless assignment to local variable "posCol".(ß¶Ï8”›ûÜê1
-]
-java:S1854¤":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8”›ûÜê1
-]
-java:S1854¦":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8”›ûÜê1
-X
-java:S1854¨":Remove this useless assignment to local variable "posCol".(×ö®Ş8”›ûÜê1
-X
-java:S1854ª":Remove this useless assignment to local variable "posCol".(ºã´±8”›ûÜê1
-i	java:S128©"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8•›ûÜê1
-i	java:S128§"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8•›ûÜê1
-n	java:S128¥"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8•›ûÜê1
-i	java:S128£"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8•›ûÜê1
-h	java:S128¡"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8•›ûÜê1
-n	java:S128Ÿ"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8•›ûÜê1
-n	java:S128"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8•›ûÜê1
-?	java:S131œ""Add a default case to this switch.(´¯‚ÿ8•›ûÜê1
-?
-java:S1116­"Remove this empty statement.(ôŸìúÿÿÿÿ8•›ûÜê1
-X
-java:S1854µ":Remove this useless assignment to local variable "posCol".(»†»Ü8–›ûÜê1
-X
-java:S1854·":Remove this useless assignment to local variable "posCol".(ºã´±8–›ûÜê1
-X
-java:S1854¹":Remove this useless assignment to local variable "posCol".(×ö®Ş8–›ûÜê1
-]
-java:S1854»":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8–›ûÜê1
-]
-java:S1854½":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8–›ûÜê1
-X
-java:S1854¿":Remove this useless assignment to local variable "posCol".(ß¶Ï8–›ûÜê1
-]
-java:S1854Á":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8–›ûÜê1
-i	java:S128À"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8–›ûÜê1
-i	java:S128¾"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8–›ûÜê1
-n	java:S128¼"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8–›ûÜê1
-i	java:S128º"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8–›ûÜê1
-h	java:S128¸"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8–›ûÜê1
-n	java:S128¶"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8—›ûÜê1
-n	java:S128´"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8—›ûÜê1
-?	java:S131³""Add a default case to this switch.(´¯‚ÿ8—›ûÜê1
-?
-java:S1116Ä"Remove this empty statement.(ôŸìúÿÿÿÿ8—›ûÜê1
-X
-java:S1854Ë":Remove this useless assignment to local variable "posCol".(»†»Ü8—›ûÜê1
-X
-java:S1854Í":Remove this useless assignment to local variable "posCol".(ºã´±8—›ûÜê1
-X
-java:S1854Ï":Remove this useless assignment to local variable "posCol".(×ö®Ş8—›ûÜê1
-]
-java:S1854Ñ":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8—›ûÜê1
-]
-java:S1854Ó":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8—›ûÜê1
-X
-java:S1854Õ":Remove this useless assignment to local variable "posCol".(ß¶Ï8—›ûÜê1
-]
-java:S1854×":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8—›ûÜê1
-n	java:S128Ö"LEnd this switch case with an unconditional break, return or throw statement.(úâúÿÿÿÿ8˜›ûÜê1
-n	java:S128Ô"LEnd this switch case with an unconditional break, return or throw statement.(‰ÆÄÎşÿÿÿÿ8˜›ûÜê1
-n	java:S128Ò"LEnd this switch case with an unconditional break, return or throw statement.(µ»ïşıÿÿÿÿ8˜›ûÜê1
-n	java:S128Ğ"LEnd this switch case with an unconditional break, return or throw statement.(ÌÊëÎüÿÿÿÿ8˜›ûÜê1
-h	java:S128Î"LEnd this switch case with an unconditional break, return or throw statement.(û¿48˜›ûÜê1
-h	java:S128Ì"LEnd this switch case with an unconditional break, return or throw statement.(ÒñŠ{8˜›ûÜê1
-n	java:S128Ê"LEnd this switch case with an unconditional break, return or throw statement.(˜Çúÿÿÿÿ8˜›ûÜê1
-D	java:S131É""Add a default case to this switch.(à¶Âıÿÿÿÿ8˜›ûÜê1
-?
-java:S1116Ú"Remove this empty statement.(ôŸìúÿÿÿÿ8˜›ûÜê1
-H	java:S106Ş"+Replace this use of System.out by a logger.(¬¸¿8š›ûÜê1
-y
-java:S3923ë"[Remove this conditional structure or edit its code blocks so that they're not all the same.(²©äÛ8Ğ¿Èİê1
-^	java:S125ò"<This block of commented-out lines of code should be removed.(¢¡ŒÅşÿÿÿÿ8ÅÙ“İê1
-M	java:S106÷"+Replace this use of System.out by a logger.(œÎ¤†úÿÿÿÿ8›ûÜê1
-M	java:S106ø"+Replace this use of System.out by a logger.(†ÙûÌüÿÿÿÿ8›ûÜê1
-H	java:S106ù"+Replace this use of System.out by a logger.(ÅÕ¶8Ÿ›ûÜê1
-p
-java:S1871ÿ"MThis branch's code block is the same as the block for the branch on line 380.(êÓ¸¾şÿÿÿÿ8›ûÜê1
-H	java:S106ƒ"+Replace this use of System.out by a logger.(‚ó”Œ8Ÿ›ûÜê1
-H	java:S106„"+Replace this use of System.out by a logger.(†¿ğÊ8¢›ûÜê1
+java:S1905Ø")Remove this unnecessary cast to "String".(êšäõøÿÿÿÿ8ßŒÕŞê1
 |
-java:S2142Š"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾8Šù‡İê1
-[
-java:S1854˜"8Remove this useless assignment to local variable "prom".( ¼‘Ãùÿÿÿÿ8¡›ûÜê1
-[
-java:S1854š"8Remove this useless assignment to local variable "prom".(…Ûõøÿÿÿÿ8¡›ûÜê1
-[
-java:S1854œ"8Remove this useless assignment to local variable "prom".(ß¬Âšùÿÿÿÿ8¡›ûÜê1
-M	java:S106’"+Replace this use of System.out by a logger.(™¾§·øÿÿÿÿ8¤›ûÜê1
-i	java:S128›"LEnd this switch case with an unconditional break, return or throw statement.(ƒªš8£›ûÜê1
-h	java:S128™"LEnd this switch case with an unconditional break, return or throw statement.(¼Ã¬>8£›ûÜê1
-i	java:S128—"LEnd this switch case with an unconditional break, return or throw statement.(ºİŸª8£›ûÜê1
-D	java:S131–""Add a default case to this switch.(ŠØÅÌûÿÿÿÿ8£›ûÜê1
+java:S2142ï"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾8áŒÕŞê1
+M	java:S106ò"+Replace this use of System.out by a logger.(Òç¤ûÿÿÿÿ8áŒÕŞê1
+H	java:S106ú"+Replace this use of System.out by a logger.(‡•ÙÎ8âŒÕŞê1
+M	java:S106‚"+Replace this use of System.out by a logger.(ÇŸË¶üÿÿÿÿ8ãŒÕŞê1
+|
+java:S2142‡"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾8ëŒÕŞê1
+M	java:S106"+Replace this use of System.out by a logger.(˜õ¶§şÿÿÿÿ8ãŒÕŞê1
+H	java:S106“"+Replace this use of System.out by a logger.(ÿ¢Ï8äŒÕŞê1
+H	java:S106"+Replace this use of System.out by a logger.(÷­“ş8äŒÕŞê1
+?	java:S131£""Add a default case to this switch.(´¯‚ÿ8åŒÕŞê1
 ?
-java:S1116"Remove this empty statement.(¬¥ãªûÿÿÿÿ8£›ûÜê1
+java:S1116¼"Remove this empty statement.(ôŸìúÿÿÿÿ8åŒÕŞê1
+X
+java:S1854Ä":Remove this useless assignment to local variable "posCol".(»†»Ü8åŒÕŞê1
+X
+java:S1854Æ":Remove this useless assignment to local variable "posCol".(ºã´±8åŒÕŞê1
+X
+java:S1854È":Remove this useless assignment to local variable "posCol".(×ö®Ş8åŒÕŞê1
+]
+java:S1854Ê":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8åŒÕŞê1
+]
+java:S1854Ì":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8åŒÕŞê1
+X
+java:S1854Î":Remove this useless assignment to local variable "posCol".(ß¶Ï8åŒÕŞê1
+]
+java:S1854Ğ":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8åŒÕŞê1
+i	java:S128Ï"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8æŒÕŞê1
+i	java:S128Í"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8æŒÕŞê1
+n	java:S128Ë"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8æŒÕŞê1
+i	java:S128É"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8æŒÕŞê1
+h	java:S128Ç"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8æŒÕŞê1
+n	java:S128Å"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8æŒÕŞê1
+n	java:S128Ã"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8æŒÕŞê1
+?	java:S131Â""Add a default case to this switch.(´¯‚ÿ8æŒÕŞê1
+?
+java:S1116Ó"Remove this empty statement.(ôŸìúÿÿÿÿ8æŒÕŞê1
+X
+java:S1854Ú":Remove this useless assignment to local variable "posCol".(»†»Ü8æŒÕŞê1
+X
+java:S1854Ü":Remove this useless assignment to local variable "posCol".(ºã´±8æŒÕŞê1
+X
+java:S1854Ş":Remove this useless assignment to local variable "posCol".(×ö®Ş8æŒÕŞê1
+]
+java:S1854à":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8æŒÕŞê1
+]
+java:S1854â":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8æŒÕŞê1
+X
+java:S1854ä":Remove this useless assignment to local variable "posCol".(ß¶Ï8æŒÕŞê1
+]
+java:S1854æ":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8æŒÕŞê1
+n	java:S128å"LEnd this switch case with an unconditional break, return or throw statement.(úâúÿÿÿÿ8æŒÕŞê1
+n	java:S128ã"LEnd this switch case with an unconditional break, return or throw statement.(‰ÆÄÎşÿÿÿÿ8æŒÕŞê1
+n	java:S128á"LEnd this switch case with an unconditional break, return or throw statement.(µ»ïşıÿÿÿÿ8æŒÕŞê1
+n	java:S128ß"LEnd this switch case with an unconditional break, return or throw statement.(ÌÊëÎüÿÿÿÿ8æŒÕŞê1
+h	java:S128İ"LEnd this switch case with an unconditional break, return or throw statement.(û¿48çŒÕŞê1
+h	java:S128Û"LEnd this switch case with an unconditional break, return or throw statement.(ÒñŠ{8çŒÕŞê1
+n	java:S128Ù"LEnd this switch case with an unconditional break, return or throw statement.(˜Çúÿÿÿÿ8çŒÕŞê1
+D	java:S131Ø""Add a default case to this switch.(à¶Âıÿÿÿÿ8çŒÕŞê1
+?
+java:S1116é"Remove this empty statement.(ôŸìúÿÿÿÿ8çŒÕŞê1
+_
+java:S1854‹"<Remove this useless assignment to local variable "endPiece".(íÜÇÚûÿÿÿÿ8çŒÕŞê1
+H	java:S106í"+Replace this use of System.out by a logger.(¬¸¿8èŒÕŞê1
+p
+java:S1871ˆ"MThis branch's code block is the same as the block for the branch on line 389.(êÓ¸¾şÿÿÿÿ8éŒÕŞê1
+P
+java:S1481‹"-Remove this unused "endPiece" local variable.(íÜÇÚûÿÿÿÿ8êŒÕŞê1
+|
+java:S2142’"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾8ìÌïŞê1
+[
+java:S1854 "8Remove this useless assignment to local variable "prom".( ¼‘Ãùÿÿÿÿ8ëŒÕŞê1
+[
+java:S1854¢"8Remove this useless assignment to local variable "prom".(…Ûõøÿÿÿÿ8ëŒÕŞê1
+[
+java:S1854¤"8Remove this useless assignment to local variable "prom".(ß¬Âšùÿÿÿÿ8ëŒÕŞê1
+M	java:S106š"+Replace this use of System.out by a logger.(™¾§·øÿÿÿÿ8ëŒÕŞê1
+i	java:S128£"LEnd this switch case with an unconditional break, return or throw statement.(ƒªš8ìŒÕŞê1
+h	java:S128¡"LEnd this switch case with an unconditional break, return or throw statement.(¼Ã¬>8ìŒÕŞê1
+i	java:S128Ÿ"LEnd this switch case with an unconditional break, return or throw statement.(ºİŸª8ìŒÕŞê1
+D	java:S131""Add a default case to this switch.(ŠØÅÌûÿÿÿÿ8ìŒÕŞê1
+?
+java:S1116¦"Remove this empty statement.(¬¥ãªûÿÿÿÿ8ìŒÕŞê1
 ^
-java:S1854©";Remove this useless assignment to local variable "gameNum".(‰…Ùãûÿÿÿÿ8¤›ûÜê1
-H	java:S106¦"+Replace this use of System.out by a logger.(´“£8¬›ûÜê1
+java:S1854±";Remove this useless assignment to local variable "gameNum".(‰…Ùãûÿÿÿÿ8ìŒÕŞê1
+H	java:S106®"+Replace this use of System.out by a logger.(´“£8íŒÕŞê1
 O
-java:S1481©",Remove this unused "gameNum" local variable.(‰…Ùãûÿÿÿÿ8¥›ûÜê1
-M	java:S106±"+Replace this use of System.out by a logger.(‡¢Š¼ùÿÿÿÿ8­›ûÜê1
-H	java:S106¶"+Replace this use of System.out by a logger.(ÉĞëš8®›ûÜê1
-M	java:S106¿"+Replace this use of System.out by a logger.(¶¬Šûÿÿÿÿ8öî­İê1
+java:S1481±",Remove this unused "gameNum" local variable.(‰…Ùãûÿÿÿÿ8íŒÕŞê1
+M	java:S106¹"+Replace this use of System.out by a logger.(‡¢Š¼ùÿÿÿÿ8òŒÕŞê1
+H	java:S106¾"+Replace this use of System.out by a logger.(ÉĞëš8óŒÕŞê1
 ]
-java:S1854Í":Remove this useless assignment to local variable "posCol".(…Ş®©úÿÿÿÿ8±›ûÜê1
+java:S1854Õ":Remove this useless assignment to local variable "posCol".(…Ş®©úÿÿÿÿ8õŒÕŞê1
 ]
-java:S1854Ï":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8²›ûÜê1
+java:S1854×":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8õŒÕŞê1
 X
-java:S1854Ñ":Remove this useless assignment to local variable "posCol".(ß¶Ï8²›ûÜê1
+java:S1854Ù":Remove this useless assignment to local variable "posCol".(ß¶Ï8õŒÕŞê1
 ]
-java:S1854Ó":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8²›ûÜê1
+java:S1854Û":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8öŒÕŞê1
 ]
-java:S1854Õ":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8²›ûÜê1
+java:S1854İ":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8öŒÕŞê1
 X
-java:S1854×":Remove this useless assignment to local variable "posCol".(×ö®Ş8²›ûÜê1
+java:S1854ß":Remove this useless assignment to local variable "posCol".(×ö®Ş8öŒÕŞê1
 X
-java:S1854Ù":Remove this useless assignment to local variable "posCol".(ºã´±8²›ûÜê1
-i	java:S128Ø"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8³›ûÜê1
-i	java:S128Ö"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8³›ûÜê1
-n	java:S128Ô"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8³›ûÜê1
-i	java:S128Ò"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8³›ûÜê1
-h	java:S128Ğ"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8³›ûÜê1
-n	java:S128Î"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8³›ûÜê1
-n	java:S128Ì"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8³›ûÜê1
-?	java:S131Ë""Add a default case to this switch.(´¯‚ÿ8³›ûÜê1
+java:S1854á":Remove this useless assignment to local variable "posCol".(ºã´±8öŒÕŞê1
+i	java:S128à"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8öŒÕŞê1
+i	java:S128Ş"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8öŒÕŞê1
+n	java:S128Ü"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8öŒÕŞê1
+i	java:S128Ú"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8öŒÕŞê1
+h	java:S128Ø"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8öŒÕŞê1
+n	java:S128Ö"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8öŒÕŞê1
+n	java:S128Ô"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8öŒÕŞê1
+?	java:S131Ó""Add a default case to this switch.(´¯‚ÿ8öŒÕŞê1
 ?
-java:S1116İ"Remove this empty statement.(Åñ­õşÿÿÿÿ8³›ûÜê1
+java:S1116å"Remove this empty statement.(Åñ­õşÿÿÿÿ8öŒÕŞê1
 X
-java:S1854å":Remove this useless assignment to local variable "posCol".(»†»Ü8´›ûÜê1
+java:S1854í":Remove this useless assignment to local variable "posCol".(»†»Ü8öŒÕŞê1
 X
-java:S1854ç":Remove this useless assignment to local variable "posCol".(ºã´±8´›ûÜê1
+java:S1854ï":Remove this useless assignment to local variable "posCol".(ºã´±8öŒÕŞê1
 X
-java:S1854é":Remove this useless assignment to local variable "posCol".(×ö®Ş8´›ûÜê1
+java:S1854ñ":Remove this useless assignment to local variable "posCol".(×ö®Ş8÷ŒÕŞê1
 ]
-java:S1854ë":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8´›ûÜê1
+java:S1854ó":Remove this useless assignment to local variable "posCol".(ûß Éùÿÿÿÿ8÷ŒÕŞê1
 ]
-java:S1854í":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8´›ûÜê1
+java:S1854õ":Remove this useless assignment to local variable "posCol".(¿ãèüüÿÿÿÿ8÷ŒÕŞê1
 X
-java:S1854ï":Remove this useless assignment to local variable "posCol".(ß¶Ï8´›ûÜê1
+java:S1854÷":Remove this useless assignment to local variable "posCol".(ß¶Ï8÷ŒÕŞê1
 ]
-java:S1854ñ":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8´›ûÜê1
-i	java:S128ğ"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8µ›ûÜê1
-i	java:S128î"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8µ›ûÜê1
-n	java:S128ì"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8µ›ûÜê1
-i	java:S128ê"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8µ›ûÜê1
-h	java:S128è"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8µ›ûÜê1
-n	java:S128æ"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8µ›ûÜê1
-n	java:S128ä"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8µ›ûÜê1
-?	java:S131ã""Add a default case to this switch.(´¯‚ÿ8µ›ûÜê1
+java:S1854ù":Remove this useless assignment to local variable "posCol".(‰›¿Õÿÿÿÿÿ8÷ŒÕŞê1
+i	java:S128ø"LEnd this switch case with an unconditional break, return or throw statement.(ßŒ†Å8øŒÕŞê1
+i	java:S128ö"LEnd this switch case with an unconditional break, return or throw statement.(Ö®Àƒ8øŒÕŞê1
+n	java:S128ô"LEnd this switch case with an unconditional break, return or throw statement.(†–ÈÒşÿÿÿÿ8øŒÕŞê1
+i	java:S128ò"LEnd this switch case with an unconditional break, return or throw statement.(£Ì×¬8øŒÕŞê1
+h	java:S128ğ"LEnd this switch case with an unconditional break, return or throw statement.(ğÿ«C8øŒÕŞê1
+n	java:S128î"LEnd this switch case with an unconditional break, return or throw statement.(¯“×ğÿÿÿÿÿ8øŒÕŞê1
+n	java:S128ì"LEnd this switch case with an unconditional break, return or throw statement.(àçÙºÿÿÿÿÿ8øŒÕŞê1
+?	java:S131ë""Add a default case to this switch.(´¯‚ÿ8øŒÕŞê1
 ?
-java:S1116õ"Remove this empty statement.(Åñ­õşÿÿÿÿ8µ›ûÜê1
+java:S1116ı"Remove this empty statement.(Åñ­õşÿÿÿÿ8ùŒÕŞê1
 S
-java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8ã¿Èİê1
-R
-java:S1144š"/Remove this unused private "intColMove" method.(ß¶àıÿÿÿÿ8Ë£Èİê1
+java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8ùŒÕŞê1
+T
+java:S1144À"6Remove this unused private "reverseIntColMove" method.(•õƒå8ùŒÕŞê1
 U
-java:S1144Ç"2Remove this unused private "reverseSecond" method.(È˜ı²üÿÿÿÿ8ÚÙ“İê1
+java:S1144Ö"2Remove this unused private "reverseSecond" method.(È˜ı²üÿÿÿÿ8ùŒÕŞê1
 I
-java:S1144É"+Remove this unused private "intCol" method.(˜òíŸ8¶›ûÜê1
+java:S1144Ñ"+Remove this unused private "intCol" method.(˜òíŸ8ùŒÕŞê1
 U
-java:S1144á"2Remove this unused private "reverseIntCol" method.(™Ï‰Áúÿÿÿÿ8¶›ûÜê1
+java:S1144é"2Remove this unused private "reverseIntCol" method.(™Ï‰Áúÿÿÿÿ8ùŒÕŞê1

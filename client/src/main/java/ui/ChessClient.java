@@ -27,7 +27,7 @@ public class ChessClient implements NotificationHandler{
 
   Boolean loggedIn = false;
   Boolean gamePlay = false;
-  Boolean isWhite = null;
+  Boolean isWhite = true;
   ChessGame localChessGame;
   GameData localGameData;
   public ChessClient(String serverURL){
@@ -234,11 +234,15 @@ public class ChessClient implements NotificationHandler{
     }
 
     server.join(gameID, params[1], color);
+    try{
+      Thread.sleep(300);
+    }catch(Exception e){
+      e.printStackTrace();
+    }
     System.out.println("You have joined the game as the " + playerColor+" player!");
 
 
 
-    ChessBoardUI.main(localChessGame, isWhite, false, null);
 
     return "joined";
   }
@@ -254,8 +258,11 @@ public class ChessClient implements NotificationHandler{
     System.out.println("You have joined the game as an observer!");
     gamePlay = true;
     isWhite = true;
-
-    ChessBoardUI.main(localChessGame, true, false, null);
+    try{
+      Thread.sleep(300);
+    }catch(Exception e){
+      e.printStackTrace();
+    }
     return "observed";
   }
   public String logout() throws IOException {
@@ -445,7 +452,7 @@ public class ChessClient implements NotificationHandler{
       ChessGame chessGame=game.game();
       localGameData=game;
       localChessGame=chessGame;
-      System.out.println("Game has updated");
+      ChessBoardUI.main(localChessGame, isWhite, false, null);
 
     }
     @Override public void notify (ServerMessage message, String jsonMessage){
