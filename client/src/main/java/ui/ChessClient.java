@@ -1,6 +1,9 @@
 package ui;
 
 import chess.ChessGame;
+import chess.ChessMove;
+import chess.ChessPiece;
+import chess.ChessPosition;
 import com.google.gson.Gson;
 import exception.ResponseException;
 import model.AuthData;
@@ -25,8 +28,8 @@ public class ChessClient implements NotificationHandler{
   Boolean loggedIn = false;
   Boolean gamePlay = false;
   Boolean isWhite = null;
-  GameData currentGame;
   ChessGame localChessGame;
+  GameData localGameData;
   public ChessClient(String serverURL){
     server = new ServerFacade(serverURL, this);
 
@@ -65,6 +68,7 @@ public class ChessClient implements NotificationHandler{
               3 Make Move
               4 Resign
               5 Highlight Legal Moves
+              6 Help
               """);
     }
     else{
@@ -140,6 +144,7 @@ public class ChessClient implements NotificationHandler{
               3 Make Move - Choose a piece and move them to a new spot
               4 Resign - Forfeit the game, other player will win. (You will still need to leave the game)
               5 Highlight Legal Moves - Choose a piece to view legal moves
+              6 Help - Explains commands
               """);
     }
     else{
@@ -213,7 +218,7 @@ public class ChessClient implements NotificationHandler{
     GameData game = games.get(gameNum-1);
     int gameID = game.gameID();
 
-    currentGame = game;
+
     gamePlay = true;
     ChessGame.TeamColor color = null;
     if(playerColor.equals("white")){
@@ -232,12 +237,9 @@ public class ChessClient implements NotificationHandler{
     System.out.println("You have joined the game as the " + playerColor+" player!");
 
 
-    if(color == ChessGame.TeamColor.BLACK){
-      ChessBoardUI.main(localChessGame, false, false, null);
-    }
-    else{
-      ChessBoardUI.main(localChessGame, true, false, null);
-    }
+
+    ChessBoardUI.main(localChessGame, isWhite, false, null);
+
     return "joined";
   }
   public String observe() throws IOException {
@@ -252,8 +254,8 @@ public class ChessClient implements NotificationHandler{
     System.out.println("You have joined the game as an observer!");
     gamePlay = true;
     isWhite = true;
-    currentGame = game;
-    ChessBoardUI.main(game.game(), true, false, null);
+
+    ChessBoardUI.main(localChessGame, true, false, null);
     return "observed";
   }
   public String logout() throws IOException {
@@ -266,57 +268,237 @@ public class ChessClient implements NotificationHandler{
     System.out.print("\n" + ">>>");
   }
   public String redraw(){
-    ChessBoardUI.main(currentGame.game(), isWhite, false, null);
+    ChessBoardUI.main(localChessGame, isWhite, false, null);
     return "redraw";
   }
   public String leave(){
     gamePlay = false;
     isWhite = null;
-    currentGame = null;
+    localChessGame = null;
+    server.leave();
+    System.out.println("You have left "+ localGameData.gameName()+". Have a great day!");
     return "leave";
   }
-  public String move(){
-    return "move";
+  private int intColMove(char charCol){
+    int posCol = 10;
+    switch(charCol){
+      case 'a':
+        posCol = 8;
+      case 'b':
+        posCol = 7;
+      case 'c':
+        posCol = 6;
+      case 'd':
+        posCol = 5;
+      case 'e':
+        posCol = 4;
+      case 'f':
+        posCol = 3;
+      case 'g':
+        posCol = 2;
+      case 'h':
+        posCol = 1;
+    };
+    return posCol;
   }
-  public String resign(){
-    return "resign";
+
+  private  int reverseIntColMove(char charCol){
+    int posCol = 10;
+    switch(charCol){
+      case 'a':
+        posCol = 1;
+      case 'b':
+        posCol = 2;
+      case 'c':
+        posCol = 3;
+      case 'd':
+        posCol = 4;
+      case 'e':
+        posCol = 5;
+      case 'f':
+        posCol = 6;
+      case 'g':
+        posCol = 7;
+      case 'h':
+        posCol = 8;
+    };
+    return posCol;
   }
-  public String highlight(){
-    System.out.println("To choose a piece to look at its moves select its position: <a8>");
+  private int reverseSecond(int pos){
+    int posCol = 10;
+    switch(pos){
+      case 8:
+        posCol = 1;
+      case 7:
+        posCol = 2;
+      case 6:
+        posCol = 3;
+      case 5:
+        posCol = 4;
+      case 4:
+        posCol = 5;
+      case 3:
+        posCol = 6;
+      case 2:
+        posCol = 7;
+      case 1:
+        posCol = 8;
+    };
+    return posCol;
+  }
+  public String move() {
+    System.out.println("To make a move please type the starting position and the ending position with a space between: <a2> <a3>");
     printPrompt();
     String[] params = getInput();
-    int gameNum = Integer.parseInt(params[0]);
-    ChessGame newGame = ChessGame.createNewGame();
-    ChessBoardUI.main(newGame, false, true, "a8");
-    return "highlight";
+    String startingString = params[0];
+    String endingString = params[1];
+    char firstStarting = startingString.charAt(0);
+    char secondStarting = startingString.charAt(1);
+    char firstEnding = endingString.charAt(0);
+    char secondEnding = endingString.charAt(1);
+    int intStarting;
+    int intEnding;
+    int numberStarting = secondStarting - '0';
+    int numberEnding = secondEnding - '0';
+    if(isWhite){
+      intStarting = reverseIntColMove(firstStarting);
+      intEnding = reverseIntColMove(firstEnding);
+    }
+    else{
+      intStarting = reverseIntColMove(firstStarting);
+      intEnding = reverseIntColMove(firstEnding);
+//      numberStarting = reverseSecond(numberStarting);
+//      numberEnding = reverseSecond(numberEnding);
+    }
+    ChessPosition startPos = new ChessPosition(numberStarting, intStarting);
+    ChessPosition endPos = new ChessPosition(numberEnding, intEnding);
+    System.out.println("starting pos: "+startPos);
+    System.out.println("ending pos: "+ endPos);
+    System.out.println(localChessGame.squares);
+    ChessPiece startPiece = localChessGame.getBoard().getPiece(startPos);
+    ChessPiece.PieceType promotionPiece = null;
+    if(isWhite && startPiece.getPieceType()== ChessPiece.PieceType.PAWN && numberEnding == 8){
+      promotionPiece = promotion();
+    }
+    else if(!isWhite && startPiece.getPieceType()== ChessPiece.PieceType.PAWN && numberEnding == 1){
+      promotionPiece = promotion();
+    }
+    ChessPiece endPiece = localChessGame.getBoard().getPiece(endPos);
+    System.out.println("starting piece: "+startPiece);
+    System.out.println("ending piece: "+endPiece);
+    ChessMove newMove = new ChessMove(startPos, endPos, promotionPiece);
+
+    server.makeMove(newMove);
+    try {
+      Thread.sleep(300);
+    }catch(Exception e){
+      e.printStackTrace();
+    }
+    ChessBoardUI.main(localChessGame, isWhite, false, null);
+
+    return "move";
   }
-
-
-
-
-  public void displayNotification(String jsonMessage){
-    Notification notification = new Gson().fromJson(jsonMessage, Notification.class);
-    System.out.println(notification.getMessage());
+  public ChessPiece.PieceType promotion() {
+    System.out.println("Type the starting letter of the piece you would like to promote your pawn to: <q>");
     printPrompt();
-  }
-  public void displayError(String jsonMessage){
-    Error error = new Gson().fromJson(jsonMessage, Error.class);
-    System.out.println(error.getMessage());
-    printPrompt();
-  }
-  public void loadGame(String jsonMessage){
-    LoadGame loadGame = new Gson().fromJson(jsonMessage, LoadGame.class);
-    GameData game = loadGame.getGame();
-    ChessGame chessGame = game.game();
-    localChessGame =chessGame;
+    String[] params1=getInput();
+    ChessPiece.PieceType prom = null;
+    switch (params1[0]) {
+      case "q":
+        prom = ChessPiece.PieceType.QUEEN;
+      case "r":
+        prom = ChessPiece.PieceType.ROOK;
+      case "b":
+        prom = ChessPiece.PieceType.BISHOP;
+      case "n":
+        prom = ChessPiece.PieceType.KNIGHT;};
+    return prom;
+    }
+    public String resign () {
+      server.resign();
+      return "resign";
+    }
+    public String highlight () {
+      System.out.println("To choose a piece to look at its moves select its position: <a8>");
+      printPrompt();
+      String[] params=getInput();
+      int gameNum=Integer.parseInt(params[0]);
+      ChessBoardUI.main(localChessGame, isWhite, true, "a8");
+      return "highlight";
+    }
 
-  }
-  @Override
-  public void notify (ServerMessage message, String jsonMessage){
-    switch (message.getServerMessageType()){
-      case NOTIFICATION -> displayNotification(jsonMessage);
-      case ERROR -> displayError(jsonMessage);
-      case LOAD_GAME -> loadGame(jsonMessage);
+
+    public void displayNotification (String jsonMessage){
+      Notification notification=new Gson().fromJson(jsonMessage, Notification.class);
+      System.out.println(notification.getMessage());
+      printPrompt();
+    }
+    public void displayError (String jsonMessage){
+      Error error=new Gson().fromJson(jsonMessage, Error.class);
+      System.out.println(error.getMessage());
+      printPrompt();
+    }
+    public void loadGame (String jsonMessage){
+      LoadGame loadGame=new Gson().fromJson(jsonMessage, LoadGame.class);
+      GameData game=loadGame.getGame();
+      ChessGame chessGame=game.game();
+      localGameData=game;
+      localChessGame=chessGame;
+      System.out.println("Game has updated");
+
+    }
+    @Override public void notify (ServerMessage message, String jsonMessage){
+      switch (message.getServerMessageType()) {
+        case NOTIFICATION -> displayNotification(jsonMessage);
+        case ERROR -> displayError(jsonMessage);
+        case LOAD_GAME -> loadGame(jsonMessage);
+      }
+    }
+    private static int intCol ( char charCol){
+      int posCol=10;
+      switch (charCol) {
+        case 'a':
+          posCol=8;
+        case 'b':
+          posCol=7;
+        case 'c':
+          posCol=6;
+        case 'd':
+          posCol=5;
+        case 'e':
+          posCol=4;
+        case 'f':
+          posCol=3;
+        case 'g':
+          posCol=2;
+        case 'h':
+          posCol=1;
+      }
+      ;
+      return posCol;
+    }
+
+    private static int reverseIntCol ( char charCol){
+      int posCol=10;
+      switch (charCol) {
+        case 'a':
+          posCol=1;
+        case 'b':
+          posCol=2;
+        case 'c':
+          posCol=3;
+        case 'd':
+          posCol=4;
+        case 'e':
+          posCol=5;
+        case 'f':
+          posCol=6;
+        case 'g':
+          posCol=7;
+        case 'h':
+          posCol=8;
+      }
+      ;
+      return posCol;
     }
   }
-}

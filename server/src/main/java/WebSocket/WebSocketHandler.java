@@ -212,7 +212,7 @@ public class WebSocketHandler {
           GameData newGame = getGame(command.getGameID());
           String load = new Gson().toJson(new LoadGame(newGame), LoadGame.class);
           connections.broadcastGame(load, newGame.gameID());
-
+          conn.send(load);
           Notification broadcast = new Notification(msg);
           connections.broadcast(command.authToken, broadcast, command.getGameID());;
         }
