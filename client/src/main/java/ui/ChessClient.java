@@ -284,20 +284,28 @@ public class ChessClient implements NotificationHandler{
     switch(charCol){
       case 'a':
         posCol = 8;
+        break;
       case 'b':
         posCol = 7;
+        break;
       case 'c':
         posCol = 6;
+        break;
       case 'd':
         posCol = 5;
+        break;
       case 'e':
         posCol = 4;
+        break;
       case 'f':
         posCol = 3;
+        break;
       case 'g':
         posCol = 2;
+        break;
       case 'h':
         posCol = 1;
+        break;
     };
     return posCol;
   }
@@ -360,21 +368,15 @@ public class ChessClient implements NotificationHandler{
     int intEnding;
     int numberStarting = secondStarting - '0';
     int numberEnding = secondEnding - '0';
-    if(isWhite){
-      intStarting = reverseIntColMove(firstStarting);
-      intEnding = reverseIntColMove(firstEnding);
-    }
-    else{
-      intStarting = reverseIntColMove(firstStarting);
-      intEnding = reverseIntColMove(firstEnding);
-//      numberStarting = reverseSecond(numberStarting);
-//      numberEnding = reverseSecond(numberEnding);
-    }
+
+    intStarting = intColMove(firstStarting);
+    intEnding = intColMove(firstEnding);
+
+
     ChessPosition startPos = new ChessPosition(numberStarting, intStarting);
     ChessPosition endPos = new ChessPosition(numberEnding, intEnding);
-    System.out.println("starting pos: "+startPos);
-    System.out.println("ending pos: "+ endPos);
-    System.out.println(localChessGame.squares);
+
+
     ChessPiece startPiece = localChessGame.getBoard().getPiece(startPos);
     ChessPiece.PieceType promotionPiece = null;
     if(isWhite && startPiece.getPieceType()== ChessPiece.PieceType.PAWN && numberEnding == 8){
@@ -384,8 +386,7 @@ public class ChessClient implements NotificationHandler{
       promotionPiece = promotion();
     }
     ChessPiece endPiece = localChessGame.getBoard().getPiece(endPos);
-    System.out.println("starting piece: "+startPiece);
-    System.out.println("ending piece: "+endPiece);
+
     ChessMove newMove = new ChessMove(startPos, endPos, promotionPiece);
 
     server.makeMove(newMove);

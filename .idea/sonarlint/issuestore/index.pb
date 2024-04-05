@@ -107,3 +107,5 @@ X
 (src/main/java/ui/ClientCommunicator.java,4\7\47fc72fd336d6877d57b93528603dab489458b3b
 Y
 )src/main/java/ui/NotificationHandler.java,4\b\4bc504dee1ab53fa829d6f8fa0d91e109da0de3e
+Q
+!src/main/java/chess/PawnMove.java,b\d\bd5ff3c07583fd75816563c189e131d0e4d43a89
